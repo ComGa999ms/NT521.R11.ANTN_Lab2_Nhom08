@@ -4,3 +4,14 @@ __MACOSX/
 sample-app/.scannerwork/
 crass/.git/
 vulnerable-api/.git/
+crass/README.md
+crass/bloat-it.sh
+crass/clean-it.sh
+crass/diff-it.sh
+crass/extract-it.sh
+crass/find-it.sh
+crass/grep-it.sh
+crass/java-decompile.sh
+crass/visualize-it.sh
+crass/decompiler-alternatives/
+crass/testing/
