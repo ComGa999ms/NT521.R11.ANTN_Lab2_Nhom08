@@ -1,0 +1,3 @@
+# Info: All c files (cleartext?) according to their file extension (.c)
+# Filename: 3_find_c.txt
+# Search: find -iname '*.c'

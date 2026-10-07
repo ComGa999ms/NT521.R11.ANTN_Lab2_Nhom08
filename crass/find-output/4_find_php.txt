@@ -1,0 +1,3 @@
+# Info: All php files (cleartext!) according to their file extension (.php .php5 etc.)
+# Filename: 4_find_php.txt
+# Search: find -iname '*.php?'

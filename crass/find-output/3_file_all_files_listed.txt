@@ -1,0 +1,72 @@
+# Info: All files and their type according to the file command
+# Filename: 3_file_all_files_listed.txt
+# Search: file {}
+../vulnerable-api: directory
+../vulnerable-api/.git: directory
+../vulnerable-api/.git/branches: directory
+../vulnerable-api/.git/config: ASCII text
+../vulnerable-api/.git/description: ASCII text
+../vulnerable-api/.git/HEAD: ASCII text
+../vulnerable-api/.git/hooks: directory
+../vulnerable-api/.git/hooks/applypatch-msg.sample: POSIX shell script, ASCII text executable
+../vulnerable-api/.git/hooks/commit-msg.sample: POSIX shell script, ASCII text executable
+../vulnerable-api/.git/hooks/fsmonitor-watchman.sample: Perl script text executable
+../vulnerable-api/.git/hooks/post-update.sample: POSIX shell script, ASCII text executable
+../vulnerable-api/.git/hooks/pre-applypatch.sample: POSIX shell script, ASCII text executable
+../vulnerable-api/.git/hooks/pre-commit.sample: POSIX shell script, ASCII text executable
+../vulnerable-api/.git/hooks/pre-merge-commit.sample: POSIX shell script, ASCII text executable
+../vulnerable-api/.git/hooks/pre-push.sample: POSIX shell script, ASCII text executable
+../vulnerable-api/.git/hooks/pre-rebase.sample: POSIX shell script, ASCII text executable
+../vulnerable-api/.git/hooks/pre-receive.sample: POSIX shell script, ASCII text executable
+../vulnerable-api/.git/hooks/prepare-commit-msg.sample: POSIX shell script, ASCII text executable
+../vulnerable-api/.git/hooks/push-to-checkout.sample: POSIX shell script, ASCII text executable
+../vulnerable-api/.git/hooks/sendemail-validate.sample: POSIX shell script, ASCII text executable
+../vulnerable-api/.git/hooks/update.sample: POSIX shell script, ASCII text executable
+../vulnerable-api/.git/index: Git index, version 2, 17 entries
+../vulnerable-api/.git/info: directory
+../vulnerable-api/.git/info/exclude: ASCII text
+../vulnerable-api/.git/logs: directory
+../vulnerable-api/.git/logs/HEAD: ASCII text
+../vulnerable-api/.git/logs/refs: directory
+../vulnerable-api/.git/logs/refs/heads: directory
+../vulnerable-api/.git/logs/refs/heads/master: ASCII text
+../vulnerable-api/.git/logs/refs/remotes: directory
+../vulnerable-api/.git/logs/refs/remotes/origin: directory
+../vulnerable-api/.git/logs/refs/remotes/origin/HEAD: ASCII text
+../vulnerable-api/.git/objects: directory
+../vulnerable-api/.git/objects/info: directory
+../vulnerable-api/.git/objects/pack: directory
+../vulnerable-api/.git/objects/pack/pack-091b857311155b508ddcd09af7a5581785c6c70c.idx: Git pack index, version 2
+../vulnerable-api/.git/objects/pack/pack-091b857311155b508ddcd09af7a5581785c6c70c.pack: Git pack, version 2, 516 objects
+../vulnerable-api/.git/objects/pack/pack-091b857311155b508ddcd09af7a5581785c6c70c.rev: data
+../vulnerable-api/.git/packed-refs: ASCII text
+../vulnerable-api/.git/refs: directory
+../vulnerable-api/.git/refs/heads: directory
+../vulnerable-api/.git/refs/heads/master: ASCII text
+../vulnerable-api/.git/refs/remotes: directory
+../vulnerable-api/.git/refs/remotes/origin: directory
+../vulnerable-api/.git/refs/remotes/origin/HEAD: ASCII text
+../vulnerable-api/.git/refs/tags: directory
+../vulnerable-api/.gitignore: ASCII text
+../vulnerable-api/ansible: directory
+../vulnerable-api/ansible/inventory: directory
+../vulnerable-api/ansible/inventory/hosts: ASCII text
+../vulnerable-api/ansible/main.yml: ASCII text
+../vulnerable-api/ansible/roles: directory
+../vulnerable-api/ansible/roles/api: directory
+../vulnerable-api/ansible/roles/api/files: directory
+../vulnerable-api/ansible/roles/api/files/Dockerfile: ASCII text
+../vulnerable-api/ansible/roles/api/files/vAPI.conf: ASCII text
+../vulnerable-api/ansible/roles/api/files/vAPI.db: SQLite 3.x database, last written using SQLite version 3008002, page size 1024, file counter 21, database pages 3, cookie 0x6, schema 4, UTF-8, version-valid-for 21
+../vulnerable-api/ansible/roles/api/files/vAPI.py: Python script, ASCII text executable
+../vulnerable-api/ansible/roles/api/tasks: directory
+../vulnerable-api/ansible/roles/api/tasks/app.yml: ASCII text
+../vulnerable-api/ansible/roles/api/tasks/main.yml: ASCII text
+../vulnerable-api/ansible/roles/api/tasks/os.yml: ASCII text
+../vulnerable-api/ansible/roles/api/tasks/sql.yml: ASCII text
+../vulnerable-api/browser.png: PNG image data, 351 x 90, 8-bit/color RGBA, non-interlaced
+../vulnerable-api/create.png: PNG image data, 1512 x 907, 8-bit/color RGBA, non-interlaced
+../vulnerable-api/ip.png: PNG image data, 1509 x 900, 8-bit/color RGBA, non-interlaced
+../vulnerable-api/kitematic.png: PNG image data, 849 x 716, 8-bit/color RGBA, non-interlaced
+../vulnerable-api/kitematic_win.png: PNG image data, 279 x 433, 8-bit/color RGBA, non-interlaced
+../vulnerable-api/README.md: Unicode text, UTF-8 text, with very long lines (352)

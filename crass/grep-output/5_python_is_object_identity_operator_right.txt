@@ -1,0 +1,11 @@
+# Info: The 'is' object identity operator should not be used for numbers, see https://access.redhat.com/blogs/766093/posts/2592591
+# Filename 5_python_is_object_identity_operator_right.txt
+# Example: 1+1 is 2
+# False positive example: FALSE_POSITIVES_EXAMPLE_PLACEHOLDER
+# Grep args: 
+# Search regex: \s{1,20}is\s{1,20}\d
+[35m[K../vulnerable-api/.git/hooks/update.sample[m[K[36m[K-[m[K[32m[K59[m[K[36m[K-[m[Kesac
+[35m[K../vulnerable-api/.git/hooks/update.sample[m[K[36m[K-[m[K[32m[K60[m[K[36m[K-[m[K
+[35m[K../vulnerable-api/.git/hooks/update.sample[m[K[36m[K-[m[K[32m[K61[m[K[36m[K-[m[K# --- Check types
+[35m[K../vulnerable-api/.git/hooks/update.sample[m[K[36m[K:[m[K[32m[K62[m[K[36m[K:[m[K# if $newrev[01;31m[K is 0[m[K000...0000, it's a commit to delete a ref.
+[35m[K../vulnerable-api/.git/hooks/update.sample[m[K[36m[K-[m[K[32m[K63[m[K[36m[K-[m[Kzero=$(git hash-object --stdin </dev/null | tr '[0-9a-f]' '0')

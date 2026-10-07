@@ -1,0 +1,9 @@
+# Info: URIs with authentication information specified as username:password@example.org
+# Filename 2_general_uris_auth_info_wide.txt
+# Example: username:password@example.com
+# False positive example: android:duration="@integer/animator_heartbeat_scaling_duration" or addObject:NSLocalizedString(@
+# Grep args: -i
+# Search regex: [^ @\:/]{1,20}:[^ @\:/]{1,20}@
+grep: ../vulnerable-api/.git/objects/pack/pack-091b857311155b508ddcd09af7a5581785c6c70c.pack: binary file matches
+grep: ../vulnerable-api/create.png: binary file matches
+grep: ../vulnerable-api/ip.png: binary file matches

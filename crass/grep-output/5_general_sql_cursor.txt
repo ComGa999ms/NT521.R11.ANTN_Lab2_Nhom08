@@ -1,0 +1,29 @@
+# Info: SQL cursor?
+# Filename 5_general_sql_cursor.txt
+# Example: cursor
+# False positive example: FALSE_POSITIVES_EXAMPLE_PLACEHOLDER
+# Grep args: -i
+# Search regex: cursor
+[35m[K../vulnerable-api/ansible/roles/api/files/vAPI.py[m[K[36m[K-[m[K[32m[K62[m[K[36m[K-[m[K        username = data['auth']['passwordCredentials']['username']
+[35m[K../vulnerable-api/ansible/roles/api/files/vAPI.py[m[K[36m[K-[m[K[32m[K63[m[K[36m[K-[m[K        password = data['auth']['passwordCredentials']['password']
+[35m[K../vulnerable-api/ansible/roles/api/files/vAPI.py[m[K[36m[K-[m[K[32m[K64[m[K[36m[K-[m[K    conn = sqlite3.connect('vAPI.db')
+[35m[K../vulnerable-api/ansible/roles/api/files/vAPI.py[m[K[36m[K:[m[K[32m[K65[m[K[36m[K:[m[K    c = conn.[01;31m[Kcursor[m[K()
+[35m[K../vulnerable-api/ansible/roles/api/files/vAPI.py[m[K[36m[K-[m[K[32m[K66[m[K[36m[K-[m[K    # no data validation
+[36m[K--[m[K
+[35m[K../vulnerable-api/ansible/roles/api/files/vAPI.py[m[K[36m[K-[m[K[32m[K137[m[K[36m[K-[m[K    /tokens is only supposed to accept a POST! Are you checking the other verbs?
+[35m[K../vulnerable-api/ansible/roles/api/files/vAPI.py[m[K[36m[K-[m[K[32m[K138[m[K[36m[K-[m[K    '''
+[35m[K../vulnerable-api/ansible/roles/api/files/vAPI.py[m[K[36m[K-[m[K[32m[K139[m[K[36m[K-[m[K    conn = sqlite3.connect('vAPI.db')
+[35m[K../vulnerable-api/ansible/roles/api/files/vAPI.py[m[K[36m[K:[m[K[32m[K140[m[K[36m[K:[m[K    c = conn.[01;31m[Kcursor[m[K()
+[35m[K../vulnerable-api/ansible/roles/api/files/vAPI.py[m[K[36m[K-[m[K[32m[K141[m[K[36m[K-[m[K    query = "SELECT * FROM users"
+[36m[K--[m[K
+[35m[K../vulnerable-api/ansible/roles/api/files/vAPI.py[m[K[36m[K-[m[K[32m[K152[m[K[36m[K-[m[K    '''
+[35m[K../vulnerable-api/ansible/roles/api/files/vAPI.py[m[K[36m[K-[m[K[32m[K153[m[K[36m[K-[m[K    token = request.headers.get('X-Auth-Token')
+[35m[K../vulnerable-api/ansible/roles/api/files/vAPI.py[m[K[36m[K-[m[K[32m[K154[m[K[36m[K-[m[K    conn = sqlite3.connect('vAPI.db')
+[35m[K../vulnerable-api/ansible/roles/api/files/vAPI.py[m[K[36m[K:[m[K[32m[K155[m[K[36m[K:[m[K    c = conn.[01;31m[Kcursor[m[K()
+[35m[K../vulnerable-api/ansible/roles/api/files/vAPI.py[m[K[36m[K-[m[K[32m[K156[m[K[36m[K-[m[K    user_query = "SELECT * FROM users WHERE id = '%s'" % (user)
+[36m[K--[m[K
+[35m[K../vulnerable-api/ansible/roles/api/files/vAPI.py[m[K[36m[K-[m[K[32m[K186[m[K[36m[K-[m[Kdef create_user():
+[35m[K../vulnerable-api/ansible/roles/api/files/vAPI.py[m[K[36m[K-[m[K[32m[K187[m[K[36m[K-[m[K    token = request.headers.get('X-Auth-Token')
+[35m[K../vulnerable-api/ansible/roles/api/files/vAPI.py[m[K[36m[K-[m[K[32m[K188[m[K[36m[K-[m[K    conn = sqlite3.connect('vAPI.db')
+[35m[K../vulnerable-api/ansible/roles/api/files/vAPI.py[m[K[36m[K:[m[K[32m[K189[m[K[36m[K:[m[K    c = conn.[01;31m[Kcursor[m[K()
+[35m[K../vulnerable-api/ansible/roles/api/files/vAPI.py[m[K[36m[K-[m[K[32m[K190[m[K[36m[K-[m[K    token_query = "SELECT * FROM tokens WHERE token = '%s' AND userid = 10" % (

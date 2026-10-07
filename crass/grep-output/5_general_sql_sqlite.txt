@@ -1,0 +1,47 @@
+# Info: SQL SQLITE
+# Filename 5_general_sql_sqlite.txt
+# Example: sqlite
+# False positive example: FALSE_POSITIVES_EXAMPLE_PLACEHOLDER
+# Grep args: -i
+# Search regex: sqlite
+[35m[K../vulnerable-api/ansible/roles/api/files/Dockerfile[m[K[36m[K-[m[K[32m[K1[m[K[36m[K-[m[KFROM python:2.7
+[35m[K../vulnerable-api/ansible/roles/api/files/Dockerfile[m[K[36m[K:[m[K[32m[K2[m[K[36m[K:[m[KRUN apt-get update && apt-get install -y [01;31m[Ksqlite[m[K3 supervisor
+[35m[K../vulnerable-api/ansible/roles/api/files/Dockerfile[m[K[36m[K-[m[K[32m[K3[m[K[36m[K-[m[KRUN pip install bottle requests lxml
+grep: ../vulnerable-api/ansible/roles/api/files/vAPI.db: binary file matches
+[36m[K--[m[K
+[35m[K../vulnerable-api/ansible/roles/api/files/vAPI.py[m[K[36m[K-[m[K[32m[K11[m[K[36m[K-[m[K7. There is an *undocumented* GET that returns the user database
+[35m[K../vulnerable-api/ansible/roles/api/files/vAPI.py[m[K[36m[K-[m[K[32m[K12[m[K[36m[K-[m[K"""
+[35m[K../vulnerable-api/ansible/roles/api/files/vAPI.py[m[K[36m[K-[m[K[32m[K13[m[K[36m[K-[m[K
+[35m[K../vulnerable-api/ansible/roles/api/files/vAPI.py[m[K[36m[K:[m[K[32m[K14[m[K[36m[K:[m[Kimport [01;31m[Ksqlite[m[K3
+[35m[K../vulnerable-api/ansible/roles/api/files/vAPI.py[m[K[36m[K-[m[K[32m[K15[m[K[36m[K-[m[Kimport json
+[36m[K--[m[K
+[35m[K../vulnerable-api/ansible/roles/api/files/vAPI.py[m[K[36m[K-[m[K[32m[K61[m[K[36m[K-[m[K        data = request.json
+[35m[K../vulnerable-api/ansible/roles/api/files/vAPI.py[m[K[36m[K-[m[K[32m[K62[m[K[36m[K-[m[K        username = data['auth']['passwordCredentials']['username']
+[35m[K../vulnerable-api/ansible/roles/api/files/vAPI.py[m[K[36m[K-[m[K[32m[K63[m[K[36m[K-[m[K        password = data['auth']['passwordCredentials']['password']
+[35m[K../vulnerable-api/ansible/roles/api/files/vAPI.py[m[K[36m[K:[m[K[32m[K64[m[K[36m[K:[m[K    conn = [01;31m[Ksqlite[m[K3.connect('vAPI.db')
+[35m[K../vulnerable-api/ansible/roles/api/files/vAPI.py[m[K[36m[K-[m[K[32m[K65[m[K[36m[K-[m[K    c = conn.cursor()
+[36m[K--[m[K
+[35m[K../vulnerable-api/ansible/roles/api/files/vAPI.py[m[K[36m[K-[m[K[32m[K136[m[K[36m[K-[m[K    this is an undocumented request. EASTER EGG
+[35m[K../vulnerable-api/ansible/roles/api/files/vAPI.py[m[K[36m[K-[m[K[32m[K137[m[K[36m[K-[m[K    /tokens is only supposed to accept a POST! Are you checking the other verbs?
+[35m[K../vulnerable-api/ansible/roles/api/files/vAPI.py[m[K[36m[K-[m[K[32m[K138[m[K[36m[K-[m[K    '''
+[35m[K../vulnerable-api/ansible/roles/api/files/vAPI.py[m[K[36m[K:[m[K[32m[K139[m[K[36m[K:[m[K    conn = [01;31m[Ksqlite[m[K3.connect('vAPI.db')
+[35m[K../vulnerable-api/ansible/roles/api/files/vAPI.py[m[K[36m[K-[m[K[32m[K140[m[K[36m[K-[m[K    c = conn.cursor()
+[36m[K--[m[K
+[35m[K../vulnerable-api/ansible/roles/api/files/vAPI.py[m[K[36m[K-[m[K[32m[K151[m[K[36m[K-[m[K    X-Auth-Token is also expected
+[35m[K../vulnerable-api/ansible/roles/api/files/vAPI.py[m[K[36m[K-[m[K[32m[K152[m[K[36m[K-[m[K    '''
+[35m[K../vulnerable-api/ansible/roles/api/files/vAPI.py[m[K[36m[K-[m[K[32m[K153[m[K[36m[K-[m[K    token = request.headers.get('X-Auth-Token')
+[35m[K../vulnerable-api/ansible/roles/api/files/vAPI.py[m[K[36m[K:[m[K[32m[K154[m[K[36m[K:[m[K    conn = [01;31m[Ksqlite[m[K3.connect('vAPI.db')
+[35m[K../vulnerable-api/ansible/roles/api/files/vAPI.py[m[K[36m[K-[m[K[32m[K155[m[K[36m[K-[m[K    c = conn.cursor()
+[36m[K--[m[K
+[35m[K../vulnerable-api/ansible/roles/api/files/vAPI.py[m[K[36m[K-[m[K[32m[K185[m[K[36m[K-[m[K@route('/user', method='POST')
+[35m[K../vulnerable-api/ansible/roles/api/files/vAPI.py[m[K[36m[K-[m[K[32m[K186[m[K[36m[K-[m[Kdef create_user():
+[35m[K../vulnerable-api/ansible/roles/api/files/vAPI.py[m[K[36m[K-[m[K[32m[K187[m[K[36m[K-[m[K    token = request.headers.get('X-Auth-Token')
+[35m[K../vulnerable-api/ansible/roles/api/files/vAPI.py[m[K[36m[K:[m[K[32m[K188[m[K[36m[K:[m[K    conn = [01;31m[Ksqlite[m[K3.connect('vAPI.db')
+[35m[K../vulnerable-api/ansible/roles/api/files/vAPI.py[m[K[36m[K-[m[K[32m[K189[m[K[36m[K-[m[K    c = conn.cursor()
+[36m[K--[m[K
+[35m[K../vulnerable-api/ansible/roles/api/tasks/os.yml[m[K[36m[K-[m[K[32m[K3[m[K[36m[K-[m[K  apt: name=python state=present
+[35m[K../vulnerable-api/ansible/roles/api/tasks/os.yml[m[K[36m[K-[m[K[32m[K4[m[K[36m[K-[m[K- name: Install Pip
+[35m[K../vulnerable-api/ansible/roles/api/tasks/os.yml[m[K[36m[K-[m[K[32m[K5[m[K[36m[K-[m[K  apt: name=python-pip state=present
+[35m[K../vulnerable-api/ansible/roles/api/tasks/os.yml[m[K[36m[K:[m[K[32m[K6[m[K[36m[K:[m[K- name: Install [01;31m[KSQLite[m[K3
+[35m[K../vulnerable-api/ansible/roles/api/tasks/os.yml[m[K[36m[K:[m[K[32m[K7[m[K[36m[K:[m[K  apt: name=[01;31m[Ksqlite[m[K3 state=present
+[35m[K../vulnerable-api/ansible/roles/api/tasks/os.yml[m[K[36m[K-[m[K[32m[K8[m[K[36m[K-[m[K- name: Install Supervisor

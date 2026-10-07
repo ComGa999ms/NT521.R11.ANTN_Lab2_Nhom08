@@ -1,0 +1,11 @@
+# Info: DES cipher. Security depends heavily on usage and what is secured.
+# Filename 7_cryptocred_ciphers_des.txt
+# Example: DES
+# False positive example: DESCRIPTION TRADES
+# Grep args: 
+# Search regex: DES
+[35m[K../vulnerable-api/ansible/roles/api/files/vAPI.py[m[K[36m[K-[m[K[32m[K75[m[K[36m[K-[m[K        response['access']['user'] = {'id': user[0], 'name': user[1]}
+[35m[K../vulnerable-api/ansible/roles/api/files/vAPI.py[m[K[36m[K-[m[K[32m[K76[m[K[36m[K-[m[K        # make sure to get most recent token in database, because we arent
+[35m[K../vulnerable-api/ansible/roles/api/files/vAPI.py[m[K[36m[K-[m[K[32m[K77[m[K[36m[K-[m[K        # removing them...
+[35m[K../vulnerable-api/ansible/roles/api/files/vAPI.py[m[K[36m[K:[m[K[32m[K78[m[K[36m[K:[m[K        token_query = "SELECT * FROM tokens WHERE userid = '%s' ORDER BY expires [01;31m[KDES[m[KC" % (user[
+[35m[K../vulnerable-api/ansible/roles/api/files/vAPI.py[m[K[36m[K-[m[K[32m[K79[m[K[36m[K-[m[K                                                                                          0])

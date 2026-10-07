@@ -1,0 +1,3 @@
+# Info: All p12 files (certificates and private key) according to their file extension
+# Filename: 2_find_p12.txt
+# Search: find -iname '*.p12'

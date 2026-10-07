@@ -1,0 +1,21 @@
+# Info: SHA1. Security depends heavily on usage and what is secured.
+# Filename 4_cryptocred_ciphers_sha1_uppercase.txt
+# Example: SHA1
+# False positive example: FALSE_POSITIVES_EXAMPLE_PLACEHOLDER
+# Grep args: 
+# Search regex: SHA-?1
+[35m[K../vulnerable-api/.git/hooks/prepare-commit-msg.sample[m[K[36m[K-[m[K[32m[K22[m[K[36m[K-[m[K
+[35m[K../vulnerable-api/.git/hooks/prepare-commit-msg.sample[m[K[36m[K-[m[K[32m[K23[m[K[36m[K-[m[KCOMMIT_MSG_FILE=$1
+[35m[K../vulnerable-api/.git/hooks/prepare-commit-msg.sample[m[K[36m[K-[m[K[32m[K24[m[K[36m[K-[m[KCOMMIT_SOURCE=$2
+[35m[K../vulnerable-api/.git/hooks/prepare-commit-msg.sample[m[K[36m[K:[m[K[32m[K25[m[K[36m[K:[m[K[01;31m[KSHA1[m[K=$3
+[35m[K../vulnerable-api/.git/hooks/prepare-commit-msg.sample[m[K[36m[K-[m[K[32m[K26[m[K[36m[K-[m[K
+[35m[K../vulnerable-api/.git/hooks/prepare-commit-msg.sample[m[K[36m[K-[m[K[32m[K27[m[K[36m[K-[m[K/usr/bin/perl -i.bak -ne 'print unless(m/^. Please enter the commit message/..m/^#$/)' "$COMMIT_MSG_FILE"
+[35m[K../vulnerable-api/.git/hooks/prepare-commit-msg.sample[m[K[36m[K-[m[K[32m[K28[m[K[36m[K-[m[K
+[35m[K../vulnerable-api/.git/hooks/prepare-commit-msg.sample[m[K[36m[K:[m[K[32m[K29[m[K[36m[K:[m[K# case "$COMMIT_SOURCE,$[01;31m[KSHA1[m[K" in
+[35m[K../vulnerable-api/.git/hooks/prepare-commit-msg.sample[m[K[36m[K-[m[K[32m[K30[m[K[36m[K-[m[K#  ,|template,)
+[36m[K--[m[K
+[35m[K../vulnerable-api/.git/hooks/push-to-checkout.sample[m[K[36m[K-[m[K[32m[K59[m[K[36m[K-[m[K
+[35m[K../vulnerable-api/.git/hooks/push-to-checkout.sample[m[K[36m[K-[m[K[32m[K60[m[K[36m[K-[m[K# This is a rough translation of:
+[35m[K../vulnerable-api/.git/hooks/push-to-checkout.sample[m[K[36m[K-[m[K[32m[K61[m[K[36m[K-[m[K#
+[35m[K../vulnerable-api/.git/hooks/push-to-checkout.sample[m[K[36m[K:[m[K[32m[K62[m[K[36m[K:[m[K#   head_has_history() ? "HEAD" : EMPTY_TREE_[01;31m[KSHA1[m[K_HEX
+[35m[K../vulnerable-api/.git/hooks/push-to-checkout.sample[m[K[36m[K-[m[K[32m[K63[m[K[36m[K-[m[Kif git cat-file -e HEAD 2>/dev/null

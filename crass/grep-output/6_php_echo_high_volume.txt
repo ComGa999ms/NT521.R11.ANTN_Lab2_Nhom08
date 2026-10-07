@@ -1,0 +1,129 @@
+# Info: Methods that often introduce XSS: echo
+# Filename 6_php_echo_high_volume.txt
+# Example: echo
+# False positive example: FALSE_POSITIVES_EXAMPLE_PLACEHOLDER
+# Grep args: -i
+# Search regex: echo
+[35m[K../vulnerable-api/.git/hooks/commit-msg.sample[m[K[36m[K-[m[K[32m[K13[m[K[36m[K-[m[K# hook is more suited to it.
+[35m[K../vulnerable-api/.git/hooks/commit-msg.sample[m[K[36m[K-[m[K[32m[K14[m[K[36m[K-[m[K#
+[35m[K../vulnerable-api/.git/hooks/commit-msg.sample[m[K[36m[K-[m[K[32m[K15[m[K[36m[K-[m[K# SOB=$(git var GIT_AUTHOR_IDENT | sed -n 's/^\(.*>\).*$/Signed-off-by: \1/p')
+[35m[K../vulnerable-api/.git/hooks/commit-msg.sample[m[K[36m[K:[m[K[32m[K16[m[K[36m[K:[m[K# grep -qs "^$SOB" "$1" || [01;31m[Kecho[m[K "$SOB" >> "$1"
+[35m[K../vulnerable-api/.git/hooks/commit-msg.sample[m[K[36m[K-[m[K[32m[K17[m[K[36m[K-[m[K
+[36m[K--[m[K
+[35m[K../vulnerable-api/.git/hooks/commit-msg.sample[m[K[36m[K-[m[K[32m[K19[m[K[36m[K-[m[K
+[35m[K../vulnerable-api/.git/hooks/commit-msg.sample[m[K[36m[K-[m[K[32m[K20[m[K[36m[K-[m[Ktest "" = "$(grep '^Signed-off-by: ' "$1" |
+[35m[K../vulnerable-api/.git/hooks/commit-msg.sample[m[K[36m[K-[m[K[32m[K21[m[K[36m[K-[m[K	 sort | uniq -c | sed -e '/^[ 	]*1[ 	]/d')" || {
+[35m[K../vulnerable-api/.git/hooks/commit-msg.sample[m[K[36m[K:[m[K[32m[K22[m[K[36m[K:[m[K	[01;31m[Kecho[m[K >&2 Duplicate Signed-off-by lines.
+[35m[K../vulnerable-api/.git/hooks/commit-msg.sample[m[K[36m[K-[m[K[32m[K23[m[K[36m[K-[m[K	exit 1
+[36m[K--[m[K
+[35m[K../vulnerable-api/.git/hooks/pre-push.sample[m[K[36m[K-[m[K[32m[K44[m[K[36m[K-[m[K		commit=$(git rev-list -n 1 --grep '^WIP' "$range")
+[35m[K../vulnerable-api/.git/hooks/pre-push.sample[m[K[36m[K-[m[K[32m[K45[m[K[36m[K-[m[K		if test -n "$commit"
+[35m[K../vulnerable-api/.git/hooks/pre-push.sample[m[K[36m[K-[m[K[32m[K46[m[K[36m[K-[m[K		then
+[35m[K../vulnerable-api/.git/hooks/pre-push.sample[m[K[36m[K:[m[K[32m[K47[m[K[36m[K:[m[K			[01;31m[Kecho[m[K >&2 "Found WIP commit in $local_ref, not pushing"
+[35m[K../vulnerable-api/.git/hooks/pre-push.sample[m[K[36m[K-[m[K[32m[K48[m[K[36m[K-[m[K			exit 1
+[36m[K--[m[K
+[35m[K../vulnerable-api/.git/hooks/pre-rebase.sample[m[K[36m[K-[m[K[32m[K38[m[K[36m[K-[m[K
+[35m[K../vulnerable-api/.git/hooks/pre-rebase.sample[m[K[36m[K-[m[K[32m[K39[m[K[36m[K-[m[K# Does the topic really exist?
+[35m[K../vulnerable-api/.git/hooks/pre-rebase.sample[m[K[36m[K-[m[K[32m[K40[m[K[36m[K-[m[Kgit show-ref -q "$topic" || {
+[35m[K../vulnerable-api/.git/hooks/pre-rebase.sample[m[K[36m[K:[m[K[32m[K41[m[K[36m[K:[m[K	[01;31m[Kecho[m[K >&2 "No such branch $topic"
+[35m[K../vulnerable-api/.git/hooks/pre-rebase.sample[m[K[36m[K-[m[K[32m[K42[m[K[36m[K-[m[K	exit 1
+[36m[K--[m[K
+[35m[K../vulnerable-api/.git/hooks/pre-rebase.sample[m[K[36m[K-[m[K[32m[K46[m[K[36m[K-[m[Knot_in_master=`git rev-list --pretty=oneline ^master "$topic"`
+[35m[K../vulnerable-api/.git/hooks/pre-rebase.sample[m[K[36m[K-[m[K[32m[K47[m[K[36m[K-[m[Kif test -z "$not_in_master"
+[35m[K../vulnerable-api/.git/hooks/pre-rebase.sample[m[K[36m[K-[m[K[32m[K48[m[K[36m[K-[m[Kthen
+[35m[K../vulnerable-api/.git/hooks/pre-rebase.sample[m[K[36m[K:[m[K[32m[K49[m[K[36m[K:[m[K	[01;31m[Kecho[m[K >&2 "$topic is fully merged to master; better remove it."
+[35m[K../vulnerable-api/.git/hooks/pre-rebase.sample[m[K[36m[K-[m[K[32m[K50[m[K[36m[K-[m[K	exit 1 ;# we could allow it, but there is no point.
+[36m[K--[m[K
+[35m[K../vulnerable-api/.git/hooks/pre-rebase.sample[m[K[36m[K-[m[K[32m[K58[m[K[36m[K-[m[K	not_in_topic=`git rev-list "^$topic" master`
+[35m[K../vulnerable-api/.git/hooks/pre-rebase.sample[m[K[36m[K-[m[K[32m[K59[m[K[36m[K-[m[K	if test -z "$not_in_topic"
+[35m[K../vulnerable-api/.git/hooks/pre-rebase.sample[m[K[36m[K-[m[K[32m[K60[m[K[36m[K-[m[K	then
+[35m[K../vulnerable-api/.git/hooks/pre-rebase.sample[m[K[36m[K:[m[K[32m[K61[m[K[36m[K:[m[K		[01;31m[Kecho[m[K >&2 "$topic is already up to date with master"
+[35m[K../vulnerable-api/.git/hooks/pre-rebase.sample[m[K[36m[K-[m[K[32m[K62[m[K[36m[K-[m[K		exit 1 ;# we could allow it, but there is no point.
+[36m[K--[m[K
+[35m[K../vulnerable-api/.git/hooks/pre-receive.sample[m[K[36m[K-[m[K[32m[K1[m[K[36m[K-[m[K#!/bin/sh
+[35m[K../vulnerable-api/.git/hooks/pre-receive.sample[m[K[36m[K-[m[K[32m[K2[m[K[36m[K-[m[K#
+[35m[K../vulnerable-api/.git/hooks/pre-receive.sample[m[K[36m[K-[m[K[32m[K3[m[K[36m[K-[m[K# An example hook script to make use of push options.
+[35m[K../vulnerable-api/.git/hooks/pre-receive.sample[m[K[36m[K:[m[K[32m[K4[m[K[36m[K:[m[K# The example simply [01;31m[Kecho[m[Kes all push options that start with '[01;31m[Kecho[m[Kback='
+[35m[K../vulnerable-api/.git/hooks/pre-receive.sample[m[K[36m[K-[m[K[32m[K5[m[K[36m[K-[m[K# and rejects all pushes when the "reject" push option is used.
+[36m[K--[m[K
+[35m[K../vulnerable-api/.git/hooks/pre-receive.sample[m[K[36m[K-[m[K[32m[K13[m[K[36m[K-[m[K	do
+[35m[K../vulnerable-api/.git/hooks/pre-receive.sample[m[K[36m[K-[m[K[32m[K14[m[K[36m[K-[m[K		eval "value=\$GIT_PUSH_OPTION_$i"
+[35m[K../vulnerable-api/.git/hooks/pre-receive.sample[m[K[36m[K-[m[K[32m[K15[m[K[36m[K-[m[K		case "$value" in
+[35m[K../vulnerable-api/.git/hooks/pre-receive.sample[m[K[36m[K:[m[K[32m[K16[m[K[36m[K:[m[K		[01;31m[Kecho[m[Kback=*)
+[35m[K../vulnerable-api/.git/hooks/pre-receive.sample[m[K[36m[K:[m[K[32m[K17[m[K[36m[K:[m[K			[01;31m[Kecho[m[K "[01;31m[Kecho[m[K from the pre-receive-hook: ${value#*=}" >&2
+[35m[K../vulnerable-api/.git/hooks/pre-receive.sample[m[K[36m[K-[m[K[32m[K18[m[K[36m[K-[m[K			;;
+[36m[K--[m[K
+[35m[K../vulnerable-api/.git/hooks/push-to-checkout.sample[m[K[36m[K-[m[K[32m[K23[m[K[36m[K-[m[K# It can exit with a non-zero status to refuse the push (when it does
+[35m[K../vulnerable-api/.git/hooks/push-to-checkout.sample[m[K[36m[K-[m[K[32m[K24[m[K[36m[K-[m[K# so, it must not modify the index or the working tree).
+[35m[K../vulnerable-api/.git/hooks/push-to-checkout.sample[m[K[36m[K-[m[K[32m[K25[m[K[36m[K-[m[Kdie () {
+[35m[K../vulnerable-api/.git/hooks/push-to-checkout.sample[m[K[36m[K:[m[K[32m[K26[m[K[36m[K:[m[K	[01;31m[Kecho[m[K >&2 "$*"
+[35m[K../vulnerable-api/.git/hooks/push-to-checkout.sample[m[K[36m[K-[m[K[32m[K27[m[K[36m[K-[m[K	exit 1
+[36m[K--[m[K
+[35m[K../vulnerable-api/.git/hooks/sendemail-validate.sample[m[K[36m[K-[m[K[32m[K55[m[K[36m[K-[m[Kelse
+[35m[K../vulnerable-api/.git/hooks/sendemail-validate.sample[m[K[36m[K-[m[K[32m[K56[m[K[36m[K-[m[K	worktree=$(git config --get sendemail.validateWorktree)
+[35m[K../vulnerable-api/.git/hooks/sendemail-validate.sample[m[K[36m[K-[m[K[32m[K57[m[K[36m[K-[m[Kfi || {
+[35m[K../vulnerable-api/.git/hooks/sendemail-validate.sample[m[K[36m[K:[m[K[32m[K58[m[K[36m[K:[m[K	[01;31m[Kecho[m[K "sendemail-validate: error: failed to prepare worktree" >&2
+[35m[K../vulnerable-api/.git/hooks/sendemail-validate.sample[m[K[36m[K-[m[K[32m[K59[m[K[36m[K-[m[K	exit 1
+[36m[K--[m[K
+[35m[K../vulnerable-api/.git/hooks/update.sample[m[K[36m[K-[m[K[32m[K31[m[K[36m[K-[m[K
+[35m[K../vulnerable-api/.git/hooks/update.sample[m[K[36m[K-[m[K[32m[K32[m[K[36m[K-[m[K# --- Safety check
+[35m[K../vulnerable-api/.git/hooks/update.sample[m[K[36m[K-[m[K[32m[K33[m[K[36m[K-[m[Kif [ -z "$GIT_DIR" ]; then
+[35m[K../vulnerable-api/.git/hooks/update.sample[m[K[36m[K:[m[K[32m[K34[m[K[36m[K:[m[K	[01;31m[Kecho[m[K "Don't run this script from the command line." >&2
+[35m[K../vulnerable-api/.git/hooks/update.sample[m[K[36m[K:[m[K[32m[K35[m[K[36m[K:[m[K	[01;31m[Kecho[m[K " (if you want, you could supply GIT_DIR then run" >&2
+[35m[K../vulnerable-api/.git/hooks/update.sample[m[K[36m[K:[m[K[32m[K36[m[K[36m[K:[m[K	[01;31m[Kecho[m[K "  $0 <ref> <oldrev> <newrev>)" >&2
+[35m[K../vulnerable-api/.git/hooks/update.sample[m[K[36m[K-[m[K[32m[K37[m[K[36m[K-[m[K	exit 1
+[35m[K../vulnerable-api/.git/hooks/update.sample[m[K[36m[K-[m[K[32m[K38[m[K[36m[K-[m[Kfi
+[35m[K../vulnerable-api/.git/hooks/update.sample[m[K[36m[K-[m[K[32m[K39[m[K[36m[K-[m[K
+[35m[K../vulnerable-api/.git/hooks/update.sample[m[K[36m[K-[m[K[32m[K40[m[K[36m[K-[m[Kif [ -z "$refname" -o -z "$oldrev" -o -z "$newrev" ]; then
+[35m[K../vulnerable-api/.git/hooks/update.sample[m[K[36m[K:[m[K[32m[K41[m[K[36m[K:[m[K	[01;31m[Kecho[m[K "usage: $0 <ref> <oldrev> <newrev>" >&2
+[35m[K../vulnerable-api/.git/hooks/update.sample[m[K[36m[K-[m[K[32m[K42[m[K[36m[K-[m[K	exit 1
+[36m[K--[m[K
+[35m[K../vulnerable-api/.git/hooks/update.sample[m[K[36m[K-[m[K[32m[K53[m[K[36m[K-[m[Kprojectdesc=$(sed -e '1q' "$GIT_DIR/description")
+[35m[K../vulnerable-api/.git/hooks/update.sample[m[K[36m[K-[m[K[32m[K54[m[K[36m[K-[m[Kcase "$projectdesc" in
+[35m[K../vulnerable-api/.git/hooks/update.sample[m[K[36m[K-[m[K[32m[K55[m[K[36m[K-[m[K"Unnamed repository"* | "")
+[35m[K../vulnerable-api/.git/hooks/update.sample[m[K[36m[K:[m[K[32m[K56[m[K[36m[K:[m[K	[01;31m[Kecho[m[K "*** Project description file hasn't been set" >&2
+[35m[K../vulnerable-api/.git/hooks/update.sample[m[K[36m[K-[m[K[32m[K57[m[K[36m[K-[m[K	exit 1
+[36m[K--[m[K
+[35m[K../vulnerable-api/.git/hooks/update.sample[m[K[36m[K-[m[K[32m[K72[m[K[36m[K-[m[K		# un-annotated tag
+[35m[K../vulnerable-api/.git/hooks/update.sample[m[K[36m[K-[m[K[32m[K73[m[K[36m[K-[m[K		short_refname=${refname##refs/tags/}
+[35m[K../vulnerable-api/.git/hooks/update.sample[m[K[36m[K-[m[K[32m[K74[m[K[36m[K-[m[K		if [ "$allowunannotated" != "true" ]; then
+[35m[K../vulnerable-api/.git/hooks/update.sample[m[K[36m[K:[m[K[32m[K75[m[K[36m[K:[m[K			[01;31m[Kecho[m[K "*** The un-annotated tag, $short_refname, is not allowed in this repository" >&2
+[35m[K../vulnerable-api/.git/hooks/update.sample[m[K[36m[K:[m[K[32m[K76[m[K[36m[K:[m[K			[01;31m[Kecho[m[K "*** Use 'git tag [ -a | -s ]' for tags you want to propagate." >&2
+[35m[K../vulnerable-api/.git/hooks/update.sample[m[K[36m[K-[m[K[32m[K77[m[K[36m[K-[m[K			exit 1
+[36m[K--[m[K
+[35m[K../vulnerable-api/.git/hooks/update.sample[m[K[36m[K-[m[K[32m[K80[m[K[36m[K-[m[K	refs/tags/*,delete)
+[35m[K../vulnerable-api/.git/hooks/update.sample[m[K[36m[K-[m[K[32m[K81[m[K[36m[K-[m[K		# delete tag
+[35m[K../vulnerable-api/.git/hooks/update.sample[m[K[36m[K-[m[K[32m[K82[m[K[36m[K-[m[K		if [ "$allowdeletetag" != "true" ]; then
+[35m[K../vulnerable-api/.git/hooks/update.sample[m[K[36m[K:[m[K[32m[K83[m[K[36m[K:[m[K			[01;31m[Kecho[m[K "*** Deleting a tag is not allowed in this repository" >&2
+[35m[K../vulnerable-api/.git/hooks/update.sample[m[K[36m[K-[m[K[32m[K84[m[K[36m[K-[m[K			exit 1
+[36m[K--[m[K
+[35m[K../vulnerable-api/.git/hooks/update.sample[m[K[36m[K-[m[K[32m[K88[m[K[36m[K-[m[K		# annotated tag
+[35m[K../vulnerable-api/.git/hooks/update.sample[m[K[36m[K-[m[K[32m[K89[m[K[36m[K-[m[K		if [ "$allowmodifytag" != "true" ] && git rev-parse $refname > /dev/null 2>&1
+[35m[K../vulnerable-api/.git/hooks/update.sample[m[K[36m[K-[m[K[32m[K90[m[K[36m[K-[m[K		then
+[35m[K../vulnerable-api/.git/hooks/update.sample[m[K[36m[K:[m[K[32m[K91[m[K[36m[K:[m[K			[01;31m[Kecho[m[K "*** Tag '$refname' already exists." >&2
+[35m[K../vulnerable-api/.git/hooks/update.sample[m[K[36m[K:[m[K[32m[K92[m[K[36m[K:[m[K			[01;31m[Kecho[m[K "*** Modifying a tag is not allowed in this repository." >&2
+[35m[K../vulnerable-api/.git/hooks/update.sample[m[K[36m[K-[m[K[32m[K93[m[K[36m[K-[m[K			exit 1
+[36m[K--[m[K
+[35m[K../vulnerable-api/.git/hooks/update.sample[m[K[36m[K-[m[K[32m[K96[m[K[36m[K-[m[K	refs/heads/*,commit)
+[35m[K../vulnerable-api/.git/hooks/update.sample[m[K[36m[K-[m[K[32m[K97[m[K[36m[K-[m[K		# branch
+[35m[K../vulnerable-api/.git/hooks/update.sample[m[K[36m[K-[m[K[32m[K98[m[K[36m[K-[m[K		if [ "$oldrev" = "$zero" -a "$denycreatebranch" = "true" ]; then
+[35m[K../vulnerable-api/.git/hooks/update.sample[m[K[36m[K:[m[K[32m[K99[m[K[36m[K:[m[K			[01;31m[Kecho[m[K "*** Creating a branch is not allowed in this repository" >&2
+[35m[K../vulnerable-api/.git/hooks/update.sample[m[K[36m[K-[m[K[32m[K100[m[K[36m[K-[m[K			exit 1
+[36m[K--[m[K
+[35m[K../vulnerable-api/.git/hooks/update.sample[m[K[36m[K-[m[K[32m[K103[m[K[36m[K-[m[K	refs/heads/*,delete)
+[35m[K../vulnerable-api/.git/hooks/update.sample[m[K[36m[K-[m[K[32m[K104[m[K[36m[K-[m[K		# delete branch
+[35m[K../vulnerable-api/.git/hooks/update.sample[m[K[36m[K-[m[K[32m[K105[m[K[36m[K-[m[K		if [ "$allowdeletebranch" != "true" ]; then
+[35m[K../vulnerable-api/.git/hooks/update.sample[m[K[36m[K:[m[K[32m[K106[m[K[36m[K:[m[K			[01;31m[Kecho[m[K "*** Deleting a branch is not allowed in this repository" >&2
+[35m[K../vulnerable-api/.git/hooks/update.sample[m[K[36m[K-[m[K[32m[K107[m[K[36m[K-[m[K			exit 1
+[36m[K--[m[K
+[35m[K../vulnerable-api/.git/hooks/update.sample[m[K[36m[K-[m[K[32m[K113[m[K[36m[K-[m[K	refs/remotes/*,delete)
+[35m[K../vulnerable-api/.git/hooks/update.sample[m[K[36m[K-[m[K[32m[K114[m[K[36m[K-[m[K		# delete tracking branch
+[35m[K../vulnerable-api/.git/hooks/update.sample[m[K[36m[K-[m[K[32m[K115[m[K[36m[K-[m[K		if [ "$allowdeletebranch" != "true" ]; then
+[35m[K../vulnerable-api/.git/hooks/update.sample[m[K[36m[K:[m[K[32m[K116[m[K[36m[K:[m[K			[01;31m[Kecho[m[K "*** Deleting a tracking branch is not allowed in this repository" >&2
+[35m[K../vulnerable-api/.git/hooks/update.sample[m[K[36m[K-[m[K[32m[K117[m[K[36m[K-[m[K			exit 1
+[36m[K--[m[K
+[35m[K../vulnerable-api/.git/hooks/update.sample[m[K[36m[K-[m[K[32m[K119[m[K[36m[K-[m[K		;;
+[35m[K../vulnerable-api/.git/hooks/update.sample[m[K[36m[K-[m[K[32m[K120[m[K[36m[K-[m[K	*)
+[35m[K../vulnerable-api/.git/hooks/update.sample[m[K[36m[K-[m[K[32m[K121[m[K[36m[K-[m[K		# Anything else (is there anything else?)
+[35m[K../vulnerable-api/.git/hooks/update.sample[m[K[36m[K:[m[K[32m[K122[m[K[36m[K:[m[K		[01;31m[Kecho[m[K "*** Update hook: unknown type of update to ref $refname of type $newrev_type" >&2
+[35m[K../vulnerable-api/.git/hooks/update.sample[m[K[36m[K-[m[K[32m[K123[m[K[36m[K-[m[K		exit 1

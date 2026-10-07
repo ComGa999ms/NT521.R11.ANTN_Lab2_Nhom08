@@ -1,0 +1,23 @@
+# Info: Eval mostly means evaluating commands.
+# Filename 5_general_eval_wide.txt
+# Example: eval
+# False positive example: FALSE_POSITIVES_EXAMPLE_PLACEHOLDER
+# Grep args: 
+# Search regex: eval
+[35m[K../vulnerable-api/.git/hooks/fsmonitor-watchman.sample[m[K[36m[K-[m[K[32m[K32[m[K[36m[K-[m[Kmy $retry = 1;
+[35m[K../vulnerable-api/.git/hooks/fsmonitor-watchman.sample[m[K[36m[K-[m[K[32m[K33[m[K[36m[K-[m[K
+[35m[K../vulnerable-api/.git/hooks/fsmonitor-watchman.sample[m[K[36m[K-[m[K[32m[K34[m[K[36m[K-[m[Kmy $json_pkg;
+[35m[K../vulnerable-api/.git/hooks/fsmonitor-watchman.sample[m[K[36m[K:[m[K[32m[K35[m[K[36m[K:[m[K[01;31m[Keval[m[K {
+[35m[K../vulnerable-api/.git/hooks/fsmonitor-watchman.sample[m[K[36m[K-[m[K[32m[K36[m[K[36m[K-[m[K	require JSON::XS;
+[36m[K--[m[K
+[35m[K../vulnerable-api/.git/hooks/fsmonitor-watchman.sample[m[K[36m[K-[m[K[32m[K150[m[K[36m[K-[m[K		output_result($o->{clock}, ("/"));
+[35m[K../vulnerable-api/.git/hooks/fsmonitor-watchman.sample[m[K[36m[K-[m[K[32m[K151[m[K[36m[K-[m[K		$last_update_token = $o->{clock};
+[35m[K../vulnerable-api/.git/hooks/fsmonitor-watchman.sample[m[K[36m[K-[m[K[32m[K152[m[K[36m[K-[m[K
+[35m[K../vulnerable-api/.git/hooks/fsmonitor-watchman.sample[m[K[36m[K:[m[K[32m[K153[m[K[36m[K:[m[K		[01;31m[Keval[m[K { launch_watchman() };
+[35m[K../vulnerable-api/.git/hooks/fsmonitor-watchman.sample[m[K[36m[K-[m[K[32m[K154[m[K[36m[K-[m[K		return 0;
+[36m[K--[m[K
+[35m[K../vulnerable-api/.git/hooks/pre-receive.sample[m[K[36m[K-[m[K[32m[K11[m[K[36m[K-[m[K	i=0
+[35m[K../vulnerable-api/.git/hooks/pre-receive.sample[m[K[36m[K-[m[K[32m[K12[m[K[36m[K-[m[K	while test "$i" -lt "$GIT_PUSH_OPTION_COUNT"
+[35m[K../vulnerable-api/.git/hooks/pre-receive.sample[m[K[36m[K-[m[K[32m[K13[m[K[36m[K-[m[K	do
+[35m[K../vulnerable-api/.git/hooks/pre-receive.sample[m[K[36m[K:[m[K[32m[K14[m[K[36m[K:[m[K		[01;31m[Keval[m[K "value=\$GIT_PUSH_OPTION_$i"
+[35m[K../vulnerable-api/.git/hooks/pre-receive.sample[m[K[36m[K-[m[K[32m[K15[m[K[36m[K-[m[K		case "$value" in

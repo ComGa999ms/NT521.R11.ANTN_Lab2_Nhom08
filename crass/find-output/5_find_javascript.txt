@@ -1,0 +1,3 @@
+# Info: All javascript files according to their file extension (.js)
+# Filename: 5_find_javascript.txt
+# Search: find -iname '*.js?'

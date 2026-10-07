@@ -1,0 +1,29 @@
+# Info: Denying is often used for filtering, etc.
+# Filename 5_general_deny.txt
+# Example: deny
+# False positive example: FALSE_POSITIVES_EXAMPLE_PLACEHOLDER
+# Grep args: 
+# Search regex: [Dd]eny
+[35m[K../vulnerable-api/.git/hooks/push-to-checkout.sample[m[K[36m[K-[m[K[32m[K5[m[K[36m[K-[m[K# This hook is invoked by git-receive-pack(1) when it reacts to git
+[35m[K../vulnerable-api/.git/hooks/push-to-checkout.sample[m[K[36m[K-[m[K[32m[K6[m[K[36m[K-[m[K# push and updates reference(s) in its repository, and when the push
+[35m[K../vulnerable-api/.git/hooks/push-to-checkout.sample[m[K[36m[K-[m[K[32m[K7[m[K[36m[K-[m[K# tries to update the branch that is currently checked out and the
+[35m[K../vulnerable-api/.git/hooks/push-to-checkout.sample[m[K[36m[K:[m[K[32m[K8[m[K[36m[K:[m[K# receive.[01;31m[Kdeny[m[KCurrentBranch configuration variable is set to
+[35m[K../vulnerable-api/.git/hooks/push-to-checkout.sample[m[K[36m[K-[m[K[32m[K9[m[K[36m[K-[m[K# updateInstead.
+[36m[K--[m[K
+[35m[K../vulnerable-api/.git/hooks/update.sample[m[K[36m[K-[m[K[32m[K19[m[K[36m[K-[m[K# hooks.allowdeletebranch
+[35m[K../vulnerable-api/.git/hooks/update.sample[m[K[36m[K-[m[K[32m[K20[m[K[36m[K-[m[K#   This boolean sets whether deleting branches will be allowed in the
+[35m[K../vulnerable-api/.git/hooks/update.sample[m[K[36m[K-[m[K[32m[K21[m[K[36m[K-[m[K#   repository.  By default they won't be.
+[35m[K../vulnerable-api/.git/hooks/update.sample[m[K[36m[K:[m[K[32m[K22[m[K[36m[K:[m[K# hooks.[01;31m[Kdeny[m[Kcreatebranch
+[35m[K../vulnerable-api/.git/hooks/update.sample[m[K[36m[K-[m[K[32m[K23[m[K[36m[K-[m[K#   This boolean sets whether remotely creating branches will be denied
+[36m[K--[m[K
+[35m[K../vulnerable-api/.git/hooks/update.sample[m[K[36m[K-[m[K[32m[K45[m[K[36m[K-[m[K# --- Config
+[35m[K../vulnerable-api/.git/hooks/update.sample[m[K[36m[K-[m[K[32m[K46[m[K[36m[K-[m[Kallowunannotated=$(git config --type=bool hooks.allowunannotated)
+[35m[K../vulnerable-api/.git/hooks/update.sample[m[K[36m[K-[m[K[32m[K47[m[K[36m[K-[m[Kallowdeletebranch=$(git config --type=bool hooks.allowdeletebranch)
+[35m[K../vulnerable-api/.git/hooks/update.sample[m[K[36m[K:[m[K[32m[K48[m[K[36m[K:[m[K[01;31m[Kdeny[m[Kcreatebranch=$(git config --type=bool hooks.[01;31m[Kdeny[m[Kcreatebranch)
+[35m[K../vulnerable-api/.git/hooks/update.sample[m[K[36m[K-[m[K[32m[K49[m[K[36m[K-[m[Kallowdeletetag=$(git config --type=bool hooks.allowdeletetag)
+[36m[K--[m[K
+[35m[K../vulnerable-api/.git/hooks/update.sample[m[K[36m[K-[m[K[32m[K95[m[K[36m[K-[m[K		;;
+[35m[K../vulnerable-api/.git/hooks/update.sample[m[K[36m[K-[m[K[32m[K96[m[K[36m[K-[m[K	refs/heads/*,commit)
+[35m[K../vulnerable-api/.git/hooks/update.sample[m[K[36m[K-[m[K[32m[K97[m[K[36m[K-[m[K		# branch
+[35m[K../vulnerable-api/.git/hooks/update.sample[m[K[36m[K:[m[K[32m[K98[m[K[36m[K:[m[K		if [ "$oldrev" = "$zero" -a "$[01;31m[Kdeny[m[Kcreatebranch" = "true" ]; then
+[35m[K../vulnerable-api/.git/hooks/update.sample[m[K[36m[K-[m[K[32m[K99[m[K[36m[K-[m[K			echo "*** Creating a branch is not allowed in this repository" >&2

@@ -1,0 +1,3 @@
+# Info: All key files (private key) according to their file extension
+# Filename: 2_find_key.txt
+# Search: find -iname '*.key'

@@ -1,0 +1,3 @@
+# Info: All pfx files (certificates and private key) according to their file extension
+# Filename: 2_find_pfx.txt
+# Search: find -iname '*.pfx'

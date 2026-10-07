@@ -1,0 +1,30 @@
+# Info: Base64 encoded data (that is more than 6 bytes long). This regex won't detect a base64 encoded value over several lines and won't detect one that does not end with an equal sign...
+# Filename 5_general_base64_content.txt
+# Example: YWJj YScqKyo6LV/Dpw==
+# False positive example: /target/ //JQLite - the following ones shouldnt be an issue anymore as we require more than 6 bytes: done echo else gen/ ////
+# Grep args: 
+# Search regex: (?:[A-Za-z0-9+/]{4}){2,}(?:[A-Za-z0-9+/]{2}==|[A-Za-z0-9+/]{3}=)
+[35m[K../vulnerable-api/.git/hooks/pre-commit.sample[m[K[36m[K-[m[K[32m[K16[m[K[36m[K-[m[Kfi
+[35m[K../vulnerable-api/.git/hooks/pre-commit.sample[m[K[36m[K-[m[K[32m[K17[m[K[36m[K-[m[K
+[35m[K../vulnerable-api/.git/hooks/pre-commit.sample[m[K[36m[K-[m[K[32m[K18[m[K[36m[K-[m[K# If you want to allow non-ASCII filenames set this variable to true.
+[35m[K../vulnerable-api/.git/hooks/pre-commit.sample[m[K[36m[K:[m[K[32m[K19[m[K[36m[K:[m[Kal[01;31m[Klownonascii=[m[K$(git config --type=bool hooks.allownonascii)
+[35m[K../vulnerable-api/.git/hooks/pre-commit.sample[m[K[36m[K-[m[K[32m[K20[m[K[36m[K-[m[K
+[36m[K--[m[K
+[35m[K../vulnerable-api/.git/hooks/update.sample[m[K[36m[K-[m[K[32m[K43[m[K[36m[K-[m[Kfi
+[35m[K../vulnerable-api/.git/hooks/update.sample[m[K[36m[K-[m[K[32m[K44[m[K[36m[K-[m[K
+[35m[K../vulnerable-api/.git/hooks/update.sample[m[K[36m[K-[m[K[32m[K45[m[K[36m[K-[m[K# --- Config
+[35m[K../vulnerable-api/.git/hooks/update.sample[m[K[36m[K:[m[K[32m[K46[m[K[36m[K:[m[Ka[01;31m[Kllowunannotated=[m[K$(git config --type=bool hooks.allowunannotated)
+[35m[K../vulnerable-api/.git/hooks/update.sample[m[K[36m[K:[m[K[32m[K47[m[K[36m[K:[m[Kal[01;31m[Klowdeletebranch=[m[K$(git config --type=bool hooks.allowdeletebranch)
+[35m[K../vulnerable-api/.git/hooks/update.sample[m[K[36m[K:[m[K[32m[K48[m[K[36m[K:[m[Kd[01;31m[Kenycreatebranch=[m[K$(git config --type=bool hooks.denycreatebranch)
+[35m[K../vulnerable-api/.git/hooks/update.sample[m[K[36m[K:[m[K[32m[K49[m[K[36m[K:[m[Kall[01;31m[Kowdeletetag=[m[K$(git config --type=bool hooks.allowdeletetag)
+[35m[K../vulnerable-api/.git/hooks/update.sample[m[K[36m[K:[m[K[32m[K50[m[K[36m[K:[m[Kall[01;31m[Kowmodifytag=[m[K$(git config --type=bool hooks.allowmodifytag)
+[35m[K../vulnerable-api/.git/hooks/update.sample[m[K[36m[K-[m[K[32m[K51[m[K[36m[K-[m[K
+[35m[K../vulnerable-api/.git/hooks/update.sample[m[K[36m[K-[m[K[32m[K52[m[K[36m[K-[m[K# check for no description
+[35m[K../vulnerable-api/.git/hooks/update.sample[m[K[36m[K:[m[K[32m[K53[m[K[36m[K:[m[K[01;31m[Kprojectdesc=[m[K$(sed -e '1q' "$GIT_DIR/description")
+[35m[K../vulnerable-api/.git/hooks/update.sample[m[K[36m[K-[m[K[32m[K54[m[K[36m[K-[m[Kcase "$projectdesc" in
+[36m[K--[m[K
+[35m[K../vulnerable-api/ansible/roles/api/files/vAPI.conf[m[K[36m[K-[m[K[32m[K8[m[K[36m[K-[m[K
+[35m[K../vulnerable-api/ansible/roles/api/files/vAPI.conf[m[K[36m[K-[m[K[32m[K9[m[K[36m[K-[m[Kautostart=true
+[35m[K../vulnerable-api/ansible/roles/api/files/vAPI.conf[m[K[36m[K-[m[K[32m[K10[m[K[36m[K-[m[K
+[35m[K../vulnerable-api/ansible/roles/api/files/vAPI.conf[m[K[36m[K:[m[K[32m[K11[m[K[36m[K:[m[K[01;31m[Kautorestart=[m[Ktrue
+[35m[K../vulnerable-api/ansible/roles/api/files/vAPI.conf[m[K[36m[K-[m[K[32m[K12[m[K[36m[K-[m[K

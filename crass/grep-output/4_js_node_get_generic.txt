@@ -1,0 +1,23 @@
+# Info: The get function is usually the HTTP GET definition for a certain path
+# Filename 4_js_node_get_generic.txt
+# Example: service.get(endpoint.url, endpoint.middleware, micro[endpoint.function].bind(micro));
+# False positive example: FALSE_POSITIVES_EXAMPLE_PLACEHOLDER
+# Grep args: 
+# Search regex: \.get\(
+[35m[K../vulnerable-api/ansible/roles/api/files/vAPI.py[m[K[36m[K-[m[K[32m[K43[m[K[36m[K-[m[K    '''
+[35m[K../vulnerable-api/ansible/roles/api/files/vAPI.py[m[K[36m[K-[m[K[32m[K44[m[K[36m[K-[m[K    User needs to get an auth token before actioning the database
+[35m[K../vulnerable-api/ansible/roles/api/files/vAPI.py[m[K[36m[K-[m[K[32m[K45[m[K[36m[K-[m[K    '''
+[35m[K../vulnerable-api/ansible/roles/api/files/vAPI.py[m[K[36m[K:[m[K[32m[K46[m[K[36m[K:[m[K    content_type = request.headers[01;31m[K.get([m[K'Content-type')
+[35m[K../vulnerable-api/ansible/roles/api/files/vAPI.py[m[K[36m[K-[m[K[32m[K47[m[K[36m[K-[m[K    if content_type == 'application/xml':
+[36m[K--[m[K
+[35m[K../vulnerable-api/ansible/roles/api/files/vAPI.py[m[K[36m[K-[m[K[32m[K150[m[K[36m[K-[m[K    Expects a user id to return that user's data.
+[35m[K../vulnerable-api/ansible/roles/api/files/vAPI.py[m[K[36m[K-[m[K[32m[K151[m[K[36m[K-[m[K    X-Auth-Token is also expected
+[35m[K../vulnerable-api/ansible/roles/api/files/vAPI.py[m[K[36m[K-[m[K[32m[K152[m[K[36m[K-[m[K    '''
+[35m[K../vulnerable-api/ansible/roles/api/files/vAPI.py[m[K[36m[K:[m[K[32m[K153[m[K[36m[K:[m[K    token = request.headers[01;31m[K.get([m[K'X-Auth-Token')
+[35m[K../vulnerable-api/ansible/roles/api/files/vAPI.py[m[K[36m[K-[m[K[32m[K154[m[K[36m[K-[m[K    conn = sqlite3.connect('vAPI.db')
+[36m[K--[m[K
+[35m[K../vulnerable-api/ansible/roles/api/files/vAPI.py[m[K[36m[K-[m[K[32m[K184[m[K[36m[K-[m[K
+[35m[K../vulnerable-api/ansible/roles/api/files/vAPI.py[m[K[36m[K-[m[K[32m[K185[m[K[36m[K-[m[K@route('/user', method='POST')
+[35m[K../vulnerable-api/ansible/roles/api/files/vAPI.py[m[K[36m[K-[m[K[32m[K186[m[K[36m[K-[m[Kdef create_user():
+[35m[K../vulnerable-api/ansible/roles/api/files/vAPI.py[m[K[36m[K:[m[K[32m[K187[m[K[36m[K:[m[K    token = request.headers[01;31m[K.get([m[K'X-Auth-Token')
+[35m[K../vulnerable-api/ansible/roles/api/files/vAPI.py[m[K[36m[K-[m[K[32m[K188[m[K[36m[K-[m[K    conn = sqlite3.connect('vAPI.db')

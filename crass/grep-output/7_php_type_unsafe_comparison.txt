@@ -1,0 +1,26 @@
+# Info: The big problem with == is that in PHP (and some other languages), this comparison is not type safe. What you should always use is ===. For example a hash value that starts with 0E could be interpreted as an integer if you don't take care. There were real world bugs exploiting this issue already, think login form and comparing the hashed user password, what happens if you type in 0 as the password and brute force different usernames until a user has a hash which starts with 0E? Then there is also the question of different systems handling/doing Unicode Normalization (see for example https://gosecure.github.io/unicode-pentester-cheatsheet/ and https://www.gosecure.net/blog/2020/08/04/unicode-for-security-professionals/) or not: B\xC3\xBCcher and B\x75\xcc\x88cher is both UTF-8, but one is the character for a real Unicode u-Umlaut while the other is u[COMBINING DIAERESIS]. If the backend normalizes it could be that identifiers clash.
+# Filename 7_php_type_unsafe_comparison.txt
+# Example: hashvalue_from_db == PBKDF2(password_from_login_http_request)
+# False positive example: FALSE_POSITIVES_EXAMPLE_PLACEHOLDER
+# Grep args: 
+# Search regex: [^=]==[^=]
+[35m[K../vulnerable-api/.git/hooks/prepare-commit-msg.sample[m[K[36m[K-[m[K[32m[K30[m[K[36m[K-[m[K#  ,|template,)
+[35m[K../vulnerable-api/.git/hooks/prepare-commit-msg.sample[m[K[36m[K-[m[K[32m[K31[m[K[36m[K-[m[K#    /usr/bin/perl -i.bak -pe '
+[35m[K../vulnerable-api/.git/hooks/prepare-commit-msg.sample[m[K[36m[K-[m[K[32m[K32[m[K[36m[K-[m[K#       print "\n" . `git diff --cached --name-status -r`
+[35m[K../vulnerable-api/.git/hooks/prepare-commit-msg.sample[m[K[36m[K:[m[K[32m[K33[m[K[36m[K:[m[K# 	 if /^#/ && $first++[01;31m[K == [m[K0' "$COMMIT_MSG_FILE" ;;
+[35m[K../vulnerable-api/.git/hooks/prepare-commit-msg.sample[m[K[36m[K-[m[K[32m[K34[m[K[36m[K-[m[K#  *) ;;
+grep: ../vulnerable-api/.git/objects/pack/pack-091b857311155b508ddcd09af7a5581785c6c70c.pack: binary file matches
+[36m[K--[m[K
+[35m[K../vulnerable-api/ansible/roles/api/files/vAPI.py[m[K[36m[K-[m[K[32m[K44[m[K[36m[K-[m[K    User needs to get an auth token before actioning the database
+[35m[K../vulnerable-api/ansible/roles/api/files/vAPI.py[m[K[36m[K-[m[K[32m[K45[m[K[36m[K-[m[K    '''
+[35m[K../vulnerable-api/ansible/roles/api/files/vAPI.py[m[K[36m[K-[m[K[32m[K46[m[K[36m[K-[m[K    content_type = request.headers.get('Content-type')
+[35m[K../vulnerable-api/ansible/roles/api/files/vAPI.py[m[K[36m[K:[m[K[32m[K47[m[K[36m[K:[m[K    if content_type[01;31m[K == [m[K'application/xml':
+[35m[K../vulnerable-api/ansible/roles/api/files/vAPI.py[m[K[36m[K-[m[K[32m[K48[m[K[36m[K-[m[K        try:
+[36m[K--[m[K
+[35m[K../vulnerable-api/ansible/roles/api/files/vAPI.py[m[K[36m[K-[m[K[32m[K164[m[K[36m[K-[m[K    # you'll notice we don't actually check the token expiration date
+[35m[K../vulnerable-api/ansible/roles/api/files/vAPI.py[m[K[36m[K-[m[K[32m[K165[m[K[36m[K-[m[K    if isinstance(token_record, tuple):
+[35m[K../vulnerable-api/ansible/roles/api/files/vAPI.py[m[K[36m[K-[m[K[32m[K166[m[K[36m[K-[m[K        if isinstance(user_record, tuple):
+[35m[K../vulnerable-api/ansible/roles/api/files/vAPI.py[m[K[36m[K:[m[K[32m[K167[m[K[36m[K:[m[K            if token_record[2][01;31m[K == [m[Kuser_record[0]:
+[35m[K../vulnerable-api/ansible/roles/api/files/vAPI.py[m[K[36m[K-[m[K[32m[K168[m[K[36m[K-[m[K                response['user'] = {}
+grep: ../vulnerable-api/ip.png: binary file matches
+grep: ../vulnerable-api/kitematic.png: binary file matches

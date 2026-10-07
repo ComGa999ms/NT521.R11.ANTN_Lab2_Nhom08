@@ -1,0 +1,11 @@
+# Info: SQL injection and variants of it. Sometimes refered in comments or variable names for code that should prevent it. If you find something interesting that is used for prevention in a framework, you might want to add another grep for that in this script.
+# Filename 2_general_sql_injection.txt
+# Example: sql-injection
+# False positive example: FALSE_POSITIVES_EXAMPLE_PLACEHOLDER
+# Grep args: -i
+# Search regex: sql.{0,20}injection
+[35m[K../vulnerable-api/README.md[m[K[36m[K-[m[K[32m[K335[m[K[36m[K-[m[K3. Information exposure through server headers
+[35m[K../vulnerable-api/README.md[m[K[36m[K-[m[K[32m[K336[m[K[36m[K-[m[K4. Authentication bypass
+[35m[K../vulnerable-api/README.md[m[K[36m[K-[m[K[32m[K337[m[K[36m[K-[m[K5. User input validation
+[35m[K../vulnerable-api/README.md[m[K[36m[K:[m[K[32m[K338[m[K[36m[K:[m[K6. [01;31m[KSQL injection[m[K
+[35m[K../vulnerable-api/README.md[m[K[36m[K-[m[K[32m[K339[m[K[36m[K-[m[K7. Error handling

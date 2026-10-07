@@ -1,0 +1,3 @@
+# Info: All pem files (certificates and private key) according to their file extension
+# Filename: 2_find_pem.txt
+# Search: find -iname '*.pem'

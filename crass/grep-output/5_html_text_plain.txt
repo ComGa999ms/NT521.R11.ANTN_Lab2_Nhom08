@@ -1,0 +1,11 @@
+# Info: text/plain is subject to content sniffing in some browsers.
+# Filename 5_html_text_plain.txt
+# Example: text/plain
+# False positive example: FALSE_POSITIVES_EXAMPLE_PLACEHOLDER
+# Grep args: -i
+# Search regex: text/plain
+[35m[K../vulnerable-api/README.md[m[K[36m[K-[m[K[32m[K188[m[K[36m[K-[m[KHost: 192.168.13.37:8081
+[35m[K../vulnerable-api/README.md[m[K[36m[K-[m[K[32m[K189[m[K[36m[K-[m[KX-Auth-Token: AUTH_TOKEN
+[35m[K../vulnerable-api/README.md[m[K[36m[K-[m[K[32m[K190[m[K[36m[K-[m[KContent-type: application/json
+[35m[K../vulnerable-api/README.md[m[K[36m[K:[m[K[32m[K191[m[K[36m[K:[m[KAccept: [01;31m[Ktext/plain[m[K
+[35m[K../vulnerable-api/README.md[m[K[36m[K-[m[K[32m[K192[m[K[36m[K-[m[KAccept-Language: en-US,en;q=0.5

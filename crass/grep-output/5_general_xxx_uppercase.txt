@@ -1,0 +1,12 @@
+# Info: XXX, unfinished, buggy and insecure things?
+# Filename 5_general_xxx_uppercase.txt
+# Example: XXX:
+# False positive example: FALSE_POSITIVES_EXAMPLE_PLACEHOLDER
+# Grep args: 
+# Search regex: XXX
+[35m[K../vulnerable-api/.git/hooks/sendemail-validate.sample[m[K[36m[K-[m[K[32m[K49[m[K[36m[K-[m[Kthen
+[35m[K../vulnerable-api/.git/hooks/sendemail-validate.sample[m[K[36m[K-[m[K[32m[K50[m[K[36m[K-[m[K	remote=$(git config --default origin --get sendemail.validateRemote) &&
+[35m[K../vulnerable-api/.git/hooks/sendemail-validate.sample[m[K[36m[K-[m[K[32m[K51[m[K[36m[K-[m[K	ref=$(git config --default HEAD --get sendemail.validateRemoteRef) &&
+[35m[K../vulnerable-api/.git/hooks/sendemail-validate.sample[m[K[36m[K:[m[K[32m[K52[m[K[36m[K:[m[K	worktree=$(mktemp --tmpdir -d sendemail-validate.[01;31m[KXXX[m[K[01;31m[KXXX[m[KX) &&
+[35m[K../vulnerable-api/.git/hooks/sendemail-validate.sample[m[K[36m[K-[m[K[32m[K53[m[K[36m[K-[m[K	git worktree add -fd --checkout "$worktree" "refs/remotes/$remote/$ref" &&
+grep: ../vulnerable-api/.git/objects/pack/pack-091b857311155b508ddcd09af7a5581785c6c70c.pack: binary file matches

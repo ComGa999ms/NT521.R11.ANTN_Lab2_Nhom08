@@ -1,0 +1,3 @@
+# Info: All log files according to their file extension (.log .log1 .log2)
+# Filename: 5_find_log.txt
+# Search: find -iname '*.log?'

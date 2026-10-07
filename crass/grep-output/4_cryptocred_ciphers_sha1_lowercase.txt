@@ -1,0 +1,11 @@
+# Info: SHA1. Security depends heavily on usage and what is secured.
+# Filename 4_cryptocred_ciphers_sha1_lowercase.txt
+# Example: sha1
+# False positive example: FALSE_POSITIVES_EXAMPLE_PLACEHOLDER
+# Grep args: 
+# Search regex: sha-?1
+[35m[K../vulnerable-api/.git/hooks/update.sample[m[K[36m[K-[m[K[32m[K1[m[K[36m[K-[m[K#!/bin/sh
+[35m[K../vulnerable-api/.git/hooks/update.sample[m[K[36m[K-[m[K[32m[K2[m[K[36m[K-[m[K#
+[35m[K../vulnerable-api/.git/hooks/update.sample[m[K[36m[K-[m[K[32m[K3[m[K[36m[K-[m[K# An example hook script to block unannotated tags from entering.
+[35m[K../vulnerable-api/.git/hooks/update.sample[m[K[36m[K:[m[K[32m[K4[m[K[36m[K:[m[K# Called by "git receive-pack" with arguments: refname [01;31m[Ksha1[m[K-old [01;31m[Ksha1[m[K-new
+[35m[K../vulnerable-api/.git/hooks/update.sample[m[K[36m[K-[m[K[32m[K5[m[K[36m[K-[m[K#

@@ -1,0 +1,309 @@
+# Info: The 'is' object identity operator should not be used for numbers, see https://access.redhat.com/blogs/766093/posts/2592591
+# Filename 5_python_is_object_identity_operator_general.txt
+# Example: object.an_integer is other_object.other_integer
+# False positive example: FALSE_POSITIVES_EXAMPLE_PLACEHOLDER
+# Grep args: 
+# Search regex: \sis\s
+[35m[K../vulnerable-api/.git/hooks/commit-msg.sample[m[K[36m[K-[m[K[32m[K4[m[K[36m[K-[m[K# Called by "git commit" with one argument, the name of the file
+[35m[K../vulnerable-api/.git/hooks/commit-msg.sample[m[K[36m[K-[m[K[32m[K5[m[K[36m[K-[m[K# that has the commit message.  The hook should exit with non-zero
+[35m[K../vulnerable-api/.git/hooks/commit-msg.sample[m[K[36m[K-[m[K[32m[K6[m[K[36m[K-[m[K# status after issuing an appropriate message if it wants to stop the
+[35m[K../vulnerable-api/.git/hooks/commit-msg.sample[m[K[36m[K:[m[K[32m[K7[m[K[36m[K:[m[K# commit.  The hook[01;31m[K is [m[Kallowed to edit the commit message file.
+[35m[K../vulnerable-api/.git/hooks/commit-msg.sample[m[K[36m[K-[m[K[32m[K8[m[K[36m[K-[m[K#
+[35m[K../vulnerable-api/.git/hooks/commit-msg.sample[m[K[36m[K-[m[K[32m[K9[m[K[36m[K-[m[K# To enable this hook, rename this file to "commit-msg".
+[35m[K../vulnerable-api/.git/hooks/commit-msg.sample[m[K[36m[K-[m[K[32m[K10[m[K[36m[K-[m[K
+[35m[K../vulnerable-api/.git/hooks/commit-msg.sample[m[K[36m[K-[m[K[32m[K11[m[K[36m[K-[m[K# Uncomment the below to add a Signed-off-by line to the message.
+[35m[K../vulnerable-api/.git/hooks/commit-msg.sample[m[K[36m[K:[m[K[32m[K12[m[K[36m[K:[m[K# Doing this in a hook[01;31m[K is [m[Ka bad idea in general, but the prepare-commit-msg
+[35m[K../vulnerable-api/.git/hooks/commit-msg.sample[m[K[36m[K:[m[K[32m[K13[m[K[36m[K:[m[K# hook[01;31m[K is [m[Kmore suited to it.
+[35m[K../vulnerable-api/.git/hooks/commit-msg.sample[m[K[36m[K-[m[K[32m[K14[m[K[36m[K-[m[K#
+[36m[K--[m[K
+[35m[K../vulnerable-api/.git/hooks/fsmonitor-watchman.sample[m[K[36m[K-[m[K[32m[K8[m[K[36m[K-[m[K# (https://facebook.github.io/watchman/) with git to speed up detecting
+[35m[K../vulnerable-api/.git/hooks/fsmonitor-watchman.sample[m[K[36m[K-[m[K[32m[K9[m[K[36m[K-[m[K# new and modified files.
+[35m[K../vulnerable-api/.git/hooks/fsmonitor-watchman.sample[m[K[36m[K-[m[K[32m[K10[m[K[36m[K-[m[K#
+[35m[K../vulnerable-api/.git/hooks/fsmonitor-watchman.sample[m[K[36m[K:[m[K[32m[K11[m[K[36m[K:[m[K# The hook[01;31m[K is [m[Kpassed a version (currently 2) and last update token
+[35m[K../vulnerable-api/.git/hooks/fsmonitor-watchman.sample[m[K[36m[K-[m[K[32m[K12[m[K[36m[K-[m[K# formatted as a string and outputs to stdout a new update token and
+[36m[K--[m[K
+[35m[K../vulnerable-api/.git/hooks/fsmonitor-watchman.sample[m[K[36m[K-[m[K[32m[K123[m[K[36m[K-[m[Ksub is_work_tree_watched {
+[35m[K../vulnerable-api/.git/hooks/fsmonitor-watchman.sample[m[K[36m[K-[m[K[32m[K124[m[K[36m[K-[m[K	my ($output) = @_;
+[35m[K../vulnerable-api/.git/hooks/fsmonitor-watchman.sample[m[K[36m[K-[m[K[32m[K125[m[K[36m[K-[m[K	my $error = $output->{error};
+[35m[K../vulnerable-api/.git/hooks/fsmonitor-watchman.sample[m[K[36m[K:[m[K[32m[K126[m[K[36m[K:[m[K	if ($retry > 0 and $error and $error =~ m/unable to resolve root .* directory (.*)[01;31m[K is [m[Knot watched/) {
+[35m[K../vulnerable-api/.git/hooks/fsmonitor-watchman.sample[m[K[36m[K-[m[K[32m[K127[m[K[36m[K-[m[K		$retry--;
+[36m[K--[m[K
+[35m[K../vulnerable-api/.git/hooks/fsmonitor-watchman.sample[m[K[36m[K-[m[K[32m[K138[m[K[36m[K-[m[K		# close $fh;
+[35m[K../vulnerable-api/.git/hooks/fsmonitor-watchman.sample[m[K[36m[K-[m[K[32m[K139[m[K[36m[K-[m[K
+[35m[K../vulnerable-api/.git/hooks/fsmonitor-watchman.sample[m[K[36m[K-[m[K[32m[K140[m[K[36m[K-[m[K		# Watchman will always return all files on the first query so
+[35m[K../vulnerable-api/.git/hooks/fsmonitor-watchman.sample[m[K[36m[K:[m[K[32m[K141[m[K[36m[K:[m[K		# return the fast "everything[01;31m[K is [m[Kdirty" flag to git and do the
+[35m[K../vulnerable-api/.git/hooks/fsmonitor-watchman.sample[m[K[36m[K-[m[K[32m[K142[m[K[36m[K-[m[K		# Watchman query just to get it over with now so we won't pay
+[36m[K--[m[K
+[35m[K../vulnerable-api/.git/hooks/pre-applypatch.sample[m[K[36m[K-[m[K[32m[K1[m[K[36m[K-[m[K#!/bin/sh
+[35m[K../vulnerable-api/.git/hooks/pre-applypatch.sample[m[K[36m[K-[m[K[32m[K2[m[K[36m[K-[m[K#
+[35m[K../vulnerable-api/.git/hooks/pre-applypatch.sample[m[K[36m[K:[m[K[32m[K3[m[K[36m[K:[m[K# An example hook script to verify what[01;31m[K is [m[Kabout to be committed
+[35m[K../vulnerable-api/.git/hooks/pre-applypatch.sample[m[K[36m[K-[m[K[32m[K4[m[K[36m[K-[m[K# by applypatch from an e-mail message.
+[36m[K--[m[K
+[35m[K../vulnerable-api/.git/hooks/pre-commit.sample[m[K[36m[K-[m[K[32m[K1[m[K[36m[K-[m[K#!/bin/sh
+[35m[K../vulnerable-api/.git/hooks/pre-commit.sample[m[K[36m[K-[m[K[32m[K2[m[K[36m[K-[m[K#
+[35m[K../vulnerable-api/.git/hooks/pre-commit.sample[m[K[36m[K:[m[K[32m[K3[m[K[36m[K:[m[K# An example hook script to verify what[01;31m[K is [m[Kabout to be committed.
+[35m[K../vulnerable-api/.git/hooks/pre-commit.sample[m[K[36m[K-[m[K[32m[K4[m[K[36m[K-[m[K# Called by "git commit" with no arguments.  The hook should
+[36m[K--[m[K
+[35m[K../vulnerable-api/.git/hooks/pre-commit.sample[m[K[36m[K-[m[K[32m[K25[m[K[36m[K-[m[K# them from being added to the repository. We exploit the fact that the
+[35m[K../vulnerable-api/.git/hooks/pre-commit.sample[m[K[36m[K-[m[K[32m[K26[m[K[36m[K-[m[K# printable range starts at the space character and ends with tilde.
+[35m[K../vulnerable-api/.git/hooks/pre-commit.sample[m[K[36m[K-[m[K[32m[K27[m[K[36m[K-[m[Kif [ "$allownonascii" != "true" ] &&
+[35m[K../vulnerable-api/.git/hooks/pre-commit.sample[m[K[36m[K:[m[K[32m[K28[m[K[36m[K:[m[K	# Note that the use of brackets around a tr range[01;31m[K is [m[Kok here, (it's
+[35m[K../vulnerable-api/.git/hooks/pre-commit.sample[m[K[36m[K-[m[K[32m[K29[m[K[36m[K-[m[K	# even required, for portability to Solaris 10's /usr/bin/tr), since
+[36m[K--[m[K
+[35m[K../vulnerable-api/.git/hooks/pre-commit.sample[m[K[36m[K-[m[K[32m[K36[m[K[36m[K-[m[K
+[35m[K../vulnerable-api/.git/hooks/pre-commit.sample[m[K[36m[K-[m[K[32m[K37[m[K[36m[K-[m[KThis can cause problems if you want to work with people on other platforms.
+[35m[K../vulnerable-api/.git/hooks/pre-commit.sample[m[K[36m[K-[m[K[32m[K38[m[K[36m[K-[m[K
+[35m[K../vulnerable-api/.git/hooks/pre-commit.sample[m[K[36m[K:[m[K[32m[K39[m[K[36m[K:[m[KTo be portable it[01;31m[K is [m[Kadvisable to rename the file.
+[35m[K../vulnerable-api/.git/hooks/pre-commit.sample[m[K[36m[K-[m[K[32m[K40[m[K[36m[K-[m[K
+[36m[K--[m[K
+[35m[K../vulnerable-api/.git/hooks/pre-merge-commit.sample[m[K[36m[K-[m[K[32m[K1[m[K[36m[K-[m[K#!/bin/sh
+[35m[K../vulnerable-api/.git/hooks/pre-merge-commit.sample[m[K[36m[K-[m[K[32m[K2[m[K[36m[K-[m[K#
+[35m[K../vulnerable-api/.git/hooks/pre-merge-commit.sample[m[K[36m[K:[m[K[32m[K3[m[K[36m[K:[m[K# An example hook script to verify what[01;31m[K is [m[Kabout to be committed.
+[35m[K../vulnerable-api/.git/hooks/pre-merge-commit.sample[m[K[36m[K-[m[K[32m[K4[m[K[36m[K-[m[K# Called by "git merge" with no arguments.  The hook should
+[36m[K--[m[K
+[35m[K../vulnerable-api/.git/hooks/pre-push.sample[m[K[36m[K-[m[K[32m[K1[m[K[36m[K-[m[K#!/bin/sh
+[35m[K../vulnerable-api/.git/hooks/pre-push.sample[m[K[36m[K-[m[K[32m[K2[m[K[36m[K-[m[K
+[35m[K../vulnerable-api/.git/hooks/pre-push.sample[m[K[36m[K:[m[K[32m[K3[m[K[36m[K:[m[K# An example hook script to verify what[01;31m[K is [m[Kabout to be pushed.  Called by "git
+[35m[K../vulnerable-api/.git/hooks/pre-push.sample[m[K[36m[K-[m[K[32m[K4[m[K[36m[K-[m[K# push" after it has checked the remote status, but before anything has been
+[35m[K../vulnerable-api/.git/hooks/pre-push.sample[m[K[36m[K-[m[K[32m[K5[m[K[36m[K-[m[K# pushed.  If this script exits with a non-zero status nothing will be pushed.
+[35m[K../vulnerable-api/.git/hooks/pre-push.sample[m[K[36m[K-[m[K[32m[K6[m[K[36m[K-[m[K#
+[35m[K../vulnerable-api/.git/hooks/pre-push.sample[m[K[36m[K:[m[K[32m[K7[m[K[36m[K:[m[K# This hook[01;31m[K is [m[Kcalled with the following parameters:
+[35m[K../vulnerable-api/.git/hooks/pre-push.sample[m[K[36m[K-[m[K[32m[K8[m[K[36m[K-[m[K#
+[35m[K../vulnerable-api/.git/hooks/pre-push.sample[m[K[36m[K:[m[K[32m[K9[m[K[36m[K:[m[K# $1 -- Name of the remote to which the push[01;31m[K is [m[Kbeing done
+[35m[K../vulnerable-api/.git/hooks/pre-push.sample[m[K[36m[K:[m[K[32m[K10[m[K[36m[K:[m[K# $2 -- URL to which the push[01;31m[K is [m[Kbeing done
+[35m[K../vulnerable-api/.git/hooks/pre-push.sample[m[K[36m[K-[m[K[32m[K11[m[K[36m[K-[m[K#
+[35m[K../vulnerable-api/.git/hooks/pre-push.sample[m[K[36m[K-[m[K[32m[K12[m[K[36m[K-[m[K# If pushing without using a named remote those arguments will be equal.
+[35m[K../vulnerable-api/.git/hooks/pre-push.sample[m[K[36m[K-[m[K[32m[K13[m[K[36m[K-[m[K#
+[35m[K../vulnerable-api/.git/hooks/pre-push.sample[m[K[36m[K:[m[K[32m[K14[m[K[36m[K:[m[K# Information about the commits which are being pushed[01;31m[K is [m[Ksupplied as lines to
+[35m[K../vulnerable-api/.git/hooks/pre-push.sample[m[K[36m[K-[m[K[32m[K15[m[K[36m[K-[m[K# the standard input in the form:
+[36m[K--[m[K
+[35m[K../vulnerable-api/.git/hooks/pre-rebase.sample[m[K[36m[K-[m[K[32m[K2[m[K[36m[K-[m[K#
+[35m[K../vulnerable-api/.git/hooks/pre-rebase.sample[m[K[36m[K-[m[K[32m[K3[m[K[36m[K-[m[K# Copyright (c) 2006, 2008 Junio C Hamano
+[35m[K../vulnerable-api/.git/hooks/pre-rebase.sample[m[K[36m[K-[m[K[32m[K4[m[K[36m[K-[m[K#
+[35m[K../vulnerable-api/.git/hooks/pre-rebase.sample[m[K[36m[K:[m[K[32m[K5[m[K[36m[K:[m[K# The "pre-rebase" hook[01;31m[K is [m[Krun just before "git rebase" starts doing
+[35m[K../vulnerable-api/.git/hooks/pre-rebase.sample[m[K[36m[K-[m[K[32m[K6[m[K[36m[K-[m[K# its job, and can prevent the command from running by exiting with
+[35m[K../vulnerable-api/.git/hooks/pre-rebase.sample[m[K[36m[K-[m[K[32m[K7[m[K[36m[K-[m[K# non-zero status.
+[35m[K../vulnerable-api/.git/hooks/pre-rebase.sample[m[K[36m[K-[m[K[32m[K8[m[K[36m[K-[m[K#
+[35m[K../vulnerable-api/.git/hooks/pre-rebase.sample[m[K[36m[K:[m[K[32m[K9[m[K[36m[K:[m[K# The hook[01;31m[K is [m[Kcalled with the following parameters:
+[35m[K../vulnerable-api/.git/hooks/pre-rebase.sample[m[K[36m[K-[m[K[32m[K10[m[K[36m[K-[m[K#
+[36m[K--[m[K
+[35m[K../vulnerable-api/.git/hooks/pre-rebase.sample[m[K[36m[K-[m[K[32m[K46[m[K[36m[K-[m[Knot_in_master=`git rev-list --pretty=oneline ^master "$topic"`
+[35m[K../vulnerable-api/.git/hooks/pre-rebase.sample[m[K[36m[K-[m[K[32m[K47[m[K[36m[K-[m[Kif test -z "$not_in_master"
+[35m[K../vulnerable-api/.git/hooks/pre-rebase.sample[m[K[36m[K-[m[K[32m[K48[m[K[36m[K-[m[Kthen
+[35m[K../vulnerable-api/.git/hooks/pre-rebase.sample[m[K[36m[K:[m[K[32m[K49[m[K[36m[K:[m[K	echo >&2 "$topic[01;31m[K is [m[Kfully merged to master; better remove it."
+[35m[K../vulnerable-api/.git/hooks/pre-rebase.sample[m[K[36m[K:[m[K[32m[K50[m[K[36m[K:[m[K	exit 1 ;# we could allow it, but there[01;31m[K is [m[Kno point.
+[35m[K../vulnerable-api/.git/hooks/pre-rebase.sample[m[K[36m[K-[m[K[32m[K51[m[K[36m[K-[m[Kfi
+[36m[K--[m[K
+[35m[K../vulnerable-api/.git/hooks/pre-rebase.sample[m[K[36m[K-[m[K[32m[K58[m[K[36m[K-[m[K	not_in_topic=`git rev-list "^$topic" master`
+[35m[K../vulnerable-api/.git/hooks/pre-rebase.sample[m[K[36m[K-[m[K[32m[K59[m[K[36m[K-[m[K	if test -z "$not_in_topic"
+[35m[K../vulnerable-api/.git/hooks/pre-rebase.sample[m[K[36m[K-[m[K[32m[K60[m[K[36m[K-[m[K	then
+[35m[K../vulnerable-api/.git/hooks/pre-rebase.sample[m[K[36m[K:[m[K[32m[K61[m[K[36m[K:[m[K		echo >&2 "$topic[01;31m[K is [m[Kalready up to date with master"
+[35m[K../vulnerable-api/.git/hooks/pre-rebase.sample[m[K[36m[K:[m[K[32m[K62[m[K[36m[K:[m[K		exit 1 ;# we could allow it, but there[01;31m[K is [m[Kno point.
+[35m[K../vulnerable-api/.git/hooks/pre-rebase.sample[m[K[36m[K-[m[K[32m[K63[m[K[36m[K-[m[K	else
+[36m[K--[m[K
+[35m[K../vulnerable-api/.git/hooks/pre-rebase.sample[m[K[36m[K-[m[K[32m[K95[m[K[36m[K-[m[K
+[35m[K../vulnerable-api/.git/hooks/pre-rebase.sample[m[K[36m[K-[m[K[32m[K96[m[K[36m[K-[m[KThe workflow assumed here is:
+[35m[K../vulnerable-api/.git/hooks/pre-rebase.sample[m[K[36m[K-[m[K[32m[K97[m[K[36m[K-[m[K
+[35m[K../vulnerable-api/.git/hooks/pre-rebase.sample[m[K[36m[K:[m[K[32m[K98[m[K[36m[K:[m[K * Once a topic branch forks from "master", "master"[01;31m[K is [m[Knever
+[35m[K../vulnerable-api/.git/hooks/pre-rebase.sample[m[K[36m[K-[m[K[32m[K99[m[K[36m[K-[m[K   merged into it again (either directly or indirectly).
+[35m[K../vulnerable-api/.git/hooks/pre-rebase.sample[m[K[36m[K-[m[K[32m[K100[m[K[36m[K-[m[K
+[35m[K../vulnerable-api/.git/hooks/pre-rebase.sample[m[K[36m[K:[m[K[32m[K101[m[K[36m[K:[m[K * Once a topic branch[01;31m[K is [m[Kfully cooked and merged into "master",
+[35m[K../vulnerable-api/.git/hooks/pre-rebase.sample[m[K[36m[K:[m[K[32m[K102[m[K[36m[K:[m[K   it[01;31m[K is [m[Kdeleted.  If you need to build on top of it to correct
+[35m[K../vulnerable-api/.git/hooks/pre-rebase.sample[m[K[36m[K:[m[K[32m[K103[m[K[36m[K:[m[K   earlier mistakes, a new topic branch[01;31m[K is [m[Kcreated by forking at
+[35m[K../vulnerable-api/.git/hooks/pre-rebase.sample[m[K[36m[K:[m[K[32m[K104[m[K[36m[K:[m[K   the tip of the "master".  This[01;31m[K is [m[Knot strictly necessary, but
+[35m[K../vulnerable-api/.git/hooks/pre-rebase.sample[m[K[36m[K-[m[K[32m[K105[m[K[36m[K-[m[K   it makes it easier to keep your history simple.
+[36m[K--[m[K
+[35m[K../vulnerable-api/.git/hooks/pre-rebase.sample[m[K[36m[K-[m[K[32m[K108[m[K[36m[K-[m[K   branches, merge them into "next" branch.
+[35m[K../vulnerable-api/.git/hooks/pre-rebase.sample[m[K[36m[K-[m[K[32m[K109[m[K[36m[K-[m[K
+[35m[K../vulnerable-api/.git/hooks/pre-rebase.sample[m[K[36m[K-[m[K[32m[K110[m[K[36m[K-[m[KThe script, being an example, hardcodes the publish branch name
+[35m[K../vulnerable-api/.git/hooks/pre-rebase.sample[m[K[36m[K:[m[K[32m[K111[m[K[36m[K:[m[Kto be "next", but it[01;31m[K is [m[Ktrivial to make it configurable via
+[35m[K../vulnerable-api/.git/hooks/pre-rebase.sample[m[K[36m[K-[m[K[32m[K112[m[K[36m[K-[m[K$GIT_DIR/config mechanism.
+[36m[K--[m[K
+[35m[K../vulnerable-api/.git/hooks/pre-rebase.sample[m[K[36m[K-[m[K[32m[K117[m[K[36m[K-[m[K    topic branches can have stupid mistakes you would rather
+[35m[K../vulnerable-api/.git/hooks/pre-rebase.sample[m[K[36m[K-[m[K[32m[K118[m[K[36m[K-[m[K    clean up before publishing, and things that have not been
+[35m[K../vulnerable-api/.git/hooks/pre-rebase.sample[m[K[36m[K-[m[K[32m[K119[m[K[36m[K-[m[K    merged into other branches can be easily rebased without
+[35m[K../vulnerable-api/.git/hooks/pre-rebase.sample[m[K[36m[K:[m[K[32m[K120[m[K[36m[K:[m[K    affecting other people.  But once it[01;31m[K is [m[Kpublished, you would
+[35m[K../vulnerable-api/.git/hooks/pre-rebase.sample[m[K[36m[K-[m[K[32m[K121[m[K[36m[K-[m[K    not want to rewind it.
+[36m[K--[m[K
+[35m[K../vulnerable-api/.git/hooks/pre-rebase.sample[m[K[36m[K-[m[K[32m[K124[m[K[36m[K-[m[K    Then you can delete it.  More importantly, you should not
+[35m[K../vulnerable-api/.git/hooks/pre-rebase.sample[m[K[36m[K-[m[K[32m[K125[m[K[36m[K-[m[K    build on top of it -- other people may already want to
+[35m[K../vulnerable-api/.git/hooks/pre-rebase.sample[m[K[36m[K-[m[K[32m[K126[m[K[36m[K-[m[K    change things related to the topic as patches against your
+[35m[K../vulnerable-api/.git/hooks/pre-rebase.sample[m[K[36m[K:[m[K[32m[K127[m[K[36m[K:[m[K    "master", so if you need further changes, it[01;31m[K is [m[Kbetter to
+[35m[K../vulnerable-api/.git/hooks/pre-rebase.sample[m[K[36m[K-[m[K[32m[K128[m[K[36m[K-[m[K    fork the topic (perhaps with the same name) afresh from the
+[36m[K--[m[K
+[35m[K../vulnerable-api/.git/hooks/pre-rebase.sample[m[K[36m[K-[m[K[32m[K146[m[K[36m[K-[m[K * A has one fix since it was merged up to "next".
+[35m[K../vulnerable-api/.git/hooks/pre-rebase.sample[m[K[36m[K-[m[K[32m[K147[m[K[36m[K-[m[K
+[35m[K../vulnerable-api/.git/hooks/pre-rebase.sample[m[K[36m[K-[m[K[32m[K148[m[K[36m[K-[m[K * B has finished.  It has been fully merged up to "master" and "next",
+[35m[K../vulnerable-api/.git/hooks/pre-rebase.sample[m[K[36m[K:[m[K[32m[K149[m[K[36m[K:[m[K   and[01;31m[K is [m[Kready to be deleted.
+[35m[K../vulnerable-api/.git/hooks/pre-rebase.sample[m[K[36m[K-[m[K[32m[K150[m[K[36m[K-[m[K
+[36m[K--[m[K
+[35m[K../vulnerable-api/.git/hooks/pre-rebase.sample[m[K[36m[K-[m[K[32m[K164[m[K[36m[K-[m[K
+[35m[K../vulnerable-api/.git/hooks/pre-rebase.sample[m[K[36m[K-[m[K[32m[K165[m[K[36m[K-[m[K	git rev-list master..topic
+[35m[K../vulnerable-api/.git/hooks/pre-rebase.sample[m[K[36m[K-[m[K[32m[K166[m[K[36m[K-[m[K
+[35m[K../vulnerable-api/.git/hooks/pre-rebase.sample[m[K[36m[K:[m[K[32m[K167[m[K[36m[K:[m[K	if this[01;31m[K is [m[Kempty, it[01;31m[K is [m[Kfully merged to "master".
+[35m[K../vulnerable-api/.git/hooks/pre-rebase.sample[m[K[36m[K-[m[K[32m[K168[m[K[36m[K-[m[K
+[36m[K--[m[K
+[35m[K../vulnerable-api/.git/hooks/pre-receive.sample[m[K[36m[K-[m[K[32m[K2[m[K[36m[K-[m[K#
+[35m[K../vulnerable-api/.git/hooks/pre-receive.sample[m[K[36m[K-[m[K[32m[K3[m[K[36m[K-[m[K# An example hook script to make use of push options.
+[35m[K../vulnerable-api/.git/hooks/pre-receive.sample[m[K[36m[K-[m[K[32m[K4[m[K[36m[K-[m[K# The example simply echoes all push options that start with 'echoback='
+[35m[K../vulnerable-api/.git/hooks/pre-receive.sample[m[K[36m[K:[m[K[32m[K5[m[K[36m[K:[m[K# and rejects all pushes when the "reject" push option[01;31m[K is [m[Kused.
+[35m[K../vulnerable-api/.git/hooks/pre-receive.sample[m[K[36m[K-[m[K[32m[K6[m[K[36m[K-[m[K#
+[36m[K--[m[K
+[35m[K../vulnerable-api/.git/hooks/prepare-commit-msg.sample[m[K[36m[K-[m[K[32m[K3[m[K[36m[K-[m[K# An example hook script to prepare the commit log message.
+[35m[K../vulnerable-api/.git/hooks/prepare-commit-msg.sample[m[K[36m[K-[m[K[32m[K4[m[K[36m[K-[m[K# Called by "git commit" with the name of the file that has the
+[35m[K../vulnerable-api/.git/hooks/prepare-commit-msg.sample[m[K[36m[K-[m[K[32m[K5[m[K[36m[K-[m[K# commit message, followed by the description of the commit
+[35m[K../vulnerable-api/.git/hooks/prepare-commit-msg.sample[m[K[36m[K:[m[K[32m[K6[m[K[36m[K:[m[K# message's source.  The hook's purpose[01;31m[K is [m[Kto edit the commit
+[35m[K../vulnerable-api/.git/hooks/prepare-commit-msg.sample[m[K[36m[K-[m[K[32m[K7[m[K[36m[K-[m[K# message file.  If the hook fails with a non-zero status,
+[35m[K../vulnerable-api/.git/hooks/prepare-commit-msg.sample[m[K[36m[K:[m[K[32m[K8[m[K[36m[K:[m[K# the commit[01;31m[K is [m[Kaborted.
+[35m[K../vulnerable-api/.git/hooks/prepare-commit-msg.sample[m[K[36m[K-[m[K[32m[K9[m[K[36m[K-[m[K#
+[36m[K--[m[K
+[35m[K../vulnerable-api/.git/hooks/prepare-commit-msg.sample[m[K[36m[K-[m[K[32m[K18[m[K[36m[K-[m[K# commits.
+[35m[K../vulnerable-api/.git/hooks/prepare-commit-msg.sample[m[K[36m[K-[m[K[32m[K19[m[K[36m[K-[m[K#
+[35m[K../vulnerable-api/.git/hooks/prepare-commit-msg.sample[m[K[36m[K-[m[K[32m[K20[m[K[36m[K-[m[K# The third example adds a Signed-off-by line to the message, that can
+[35m[K../vulnerable-api/.git/hooks/prepare-commit-msg.sample[m[K[36m[K:[m[K[32m[K21[m[K[36m[K:[m[K# still be edited.  This[01;31m[K is [m[Krarely a good idea.
+[35m[K../vulnerable-api/.git/hooks/prepare-commit-msg.sample[m[K[36m[K-[m[K[32m[K22[m[K[36m[K-[m[K
+[36m[K--[m[K
+[35m[K../vulnerable-api/.git/hooks/push-to-checkout.sample[m[K[36m[K-[m[K[32m[K2[m[K[36m[K-[m[K
+[35m[K../vulnerable-api/.git/hooks/push-to-checkout.sample[m[K[36m[K-[m[K[32m[K3[m[K[36m[K-[m[K# An example hook script to update a checked-out tree on a git push.
+[35m[K../vulnerable-api/.git/hooks/push-to-checkout.sample[m[K[36m[K-[m[K[32m[K4[m[K[36m[K-[m[K#
+[35m[K../vulnerable-api/.git/hooks/push-to-checkout.sample[m[K[36m[K:[m[K[32m[K5[m[K[36m[K:[m[K# This hook[01;31m[K is [m[Kinvoked by git-receive-pack(1) when it reacts to git
+[35m[K../vulnerable-api/.git/hooks/push-to-checkout.sample[m[K[36m[K-[m[K[32m[K6[m[K[36m[K-[m[K# push and updates reference(s) in its repository, and when the push
+[35m[K../vulnerable-api/.git/hooks/push-to-checkout.sample[m[K[36m[K:[m[K[32m[K7[m[K[36m[K:[m[K# tries to update the branch that[01;31m[K is [m[Kcurrently checked out and the
+[35m[K../vulnerable-api/.git/hooks/push-to-checkout.sample[m[K[36m[K:[m[K[32m[K8[m[K[36m[K:[m[K# receive.denyCurrentBranch configuration variable[01;31m[K is [m[Kset to
+[35m[K../vulnerable-api/.git/hooks/push-to-checkout.sample[m[K[36m[K-[m[K[32m[K9[m[K[36m[K-[m[K# updateInstead.
+[35m[K../vulnerable-api/.git/hooks/push-to-checkout.sample[m[K[36m[K-[m[K[32m[K10[m[K[36m[K-[m[K#
+[35m[K../vulnerable-api/.git/hooks/push-to-checkout.sample[m[K[36m[K:[m[K[32m[K11[m[K[36m[K:[m[K# By default, such a push[01;31m[K is [m[Krefused if the working tree and the index
+[35m[K../vulnerable-api/.git/hooks/push-to-checkout.sample[m[K[36m[K-[m[K[32m[K12[m[K[36m[K-[m[K# of the remote repository has any difference from the currently
+[35m[K../vulnerable-api/.git/hooks/push-to-checkout.sample[m[K[36m[K-[m[K[32m[K13[m[K[36m[K-[m[K# checked out commit; when both the working tree and the index match
+[35m[K../vulnerable-api/.git/hooks/push-to-checkout.sample[m[K[36m[K-[m[K[32m[K14[m[K[36m[K-[m[K# the current commit, they are updated to match the newly pushed tip
+[35m[K../vulnerable-api/.git/hooks/push-to-checkout.sample[m[K[36m[K:[m[K[32m[K15[m[K[36m[K:[m[K# of the branch. This hook[01;31m[K is [m[Kto be used to override the default
+[35m[K../vulnerable-api/.git/hooks/push-to-checkout.sample[m[K[36m[K-[m[K[32m[K16[m[K[36m[K-[m[K# behaviour; however the code below reimplements the default behaviour
+[35m[K../vulnerable-api/.git/hooks/push-to-checkout.sample[m[K[36m[K-[m[K[32m[K17[m[K[36m[K-[m[K# as a starting point for convenient modification.
+[35m[K../vulnerable-api/.git/hooks/push-to-checkout.sample[m[K[36m[K-[m[K[32m[K18[m[K[36m[K-[m[K#
+[35m[K../vulnerable-api/.git/hooks/push-to-checkout.sample[m[K[36m[K-[m[K[32m[K19[m[K[36m[K-[m[K# The hook receives the commit with which the tip of the current
+[35m[K../vulnerable-api/.git/hooks/push-to-checkout.sample[m[K[36m[K:[m[K[32m[K20[m[K[36m[K:[m[K# branch[01;31m[K is [m[Kgoing to be updated:
+[35m[K../vulnerable-api/.git/hooks/push-to-checkout.sample[m[K[36m[K-[m[K[32m[K21[m[K[36m[K-[m[Kcommit=$1
+[36m[K--[m[K
+[35m[K../vulnerable-api/.git/hooks/push-to-checkout.sample[m[K[36m[K-[m[K[32m[K29[m[K[36m[K-[m[K
+[35m[K../vulnerable-api/.git/hooks/push-to-checkout.sample[m[K[36m[K-[m[K[32m[K30[m[K[36m[K-[m[K# Or it can make any necessary changes to the working tree and to the
+[35m[K../vulnerable-api/.git/hooks/push-to-checkout.sample[m[K[36m[K-[m[K[32m[K31[m[K[36m[K-[m[K# index to bring them to the desired state when the tip of the current
+[35m[K../vulnerable-api/.git/hooks/push-to-checkout.sample[m[K[36m[K:[m[K[32m[K32[m[K[36m[K:[m[K# branch[01;31m[K is [m[Kupdated to the new commit, and exit with a zero status.
+[35m[K../vulnerable-api/.git/hooks/push-to-checkout.sample[m[K[36m[K-[m[K[32m[K33[m[K[36m[K-[m[K#
+[35m[K../vulnerable-api/.git/hooks/push-to-checkout.sample[m[K[36m[K-[m[K[32m[K34[m[K[36m[K-[m[K# For example, the hook can simply run git read-tree -u -m HEAD "$1"
+[35m[K../vulnerable-api/.git/hooks/push-to-checkout.sample[m[K[36m[K:[m[K[32m[K35[m[K[36m[K:[m[K# in order to emulate git fetch that[01;31m[K is [m[Krun in the reverse direction
+[35m[K../vulnerable-api/.git/hooks/push-to-checkout.sample[m[K[36m[K-[m[K[32m[K36[m[K[36m[K-[m[K# with git push, as the two-tree form of git read-tree -u -m is
+[36m[K--[m[K
+[35m[K../vulnerable-api/.git/hooks/push-to-checkout.sample[m[K[36m[K-[m[K[32m[K38[m[K[36m[K-[m[K# branches while keeping the local changes in the working tree that do
+[35m[K../vulnerable-api/.git/hooks/push-to-checkout.sample[m[K[36m[K-[m[K[32m[K39[m[K[36m[K-[m[K# not interfere with the difference between the branches.
+[35m[K../vulnerable-api/.git/hooks/push-to-checkout.sample[m[K[36m[K-[m[K[32m[K40[m[K[36m[K-[m[K
+[35m[K../vulnerable-api/.git/hooks/push-to-checkout.sample[m[K[36m[K:[m[K[32m[K41[m[K[36m[K:[m[K# The below[01;31m[K is [m[Ka more-or-less exact translation to shell of the C code
+[35m[K../vulnerable-api/.git/hooks/push-to-checkout.sample[m[K[36m[K-[m[K[32m[K42[m[K[36m[K-[m[K# for the default behaviour for git's push-to-checkout hook defined in
+[36m[K--[m[K
+[35m[K../vulnerable-api/.git/hooks/push-to-checkout.sample[m[K[36m[K-[m[K[32m[K57[m[K[36m[K-[m[K	die "Working directory has unstaged changes"
+[35m[K../vulnerable-api/.git/hooks/push-to-checkout.sample[m[K[36m[K-[m[K[32m[K58[m[K[36m[K-[m[Kfi
+[35m[K../vulnerable-api/.git/hooks/push-to-checkout.sample[m[K[36m[K-[m[K[32m[K59[m[K[36m[K-[m[K
+[35m[K../vulnerable-api/.git/hooks/push-to-checkout.sample[m[K[36m[K:[m[K[32m[K60[m[K[36m[K:[m[K# This[01;31m[K is [m[Ka rough translation of:
+[35m[K../vulnerable-api/.git/hooks/push-to-checkout.sample[m[K[36m[K-[m[K[32m[K61[m[K[36m[K-[m[K#
+[36m[K--[m[K
+[35m[K../vulnerable-api/.git/hooks/update.sample[m[K[36m[K-[m[K[32m[K21[m[K[36m[K-[m[K#   repository.  By default they won't be.
+[35m[K../vulnerable-api/.git/hooks/update.sample[m[K[36m[K-[m[K[32m[K22[m[K[36m[K-[m[K# hooks.denycreatebranch
+[35m[K../vulnerable-api/.git/hooks/update.sample[m[K[36m[K-[m[K[32m[K23[m[K[36m[K-[m[K#   This boolean sets whether remotely creating branches will be denied
+[35m[K../vulnerable-api/.git/hooks/update.sample[m[K[36m[K:[m[K[32m[K24[m[K[36m[K:[m[K#   in the repository.  By default this[01;31m[K is [m[Kallowed.
+[35m[K../vulnerable-api/.git/hooks/update.sample[m[K[36m[K-[m[K[32m[K25[m[K[36m[K-[m[K#
+[36m[K--[m[K
+[35m[K../vulnerable-api/.git/hooks/update.sample[m[K[36m[K-[m[K[32m[K59[m[K[36m[K-[m[Kesac
+[35m[K../vulnerable-api/.git/hooks/update.sample[m[K[36m[K-[m[K[32m[K60[m[K[36m[K-[m[K
+[35m[K../vulnerable-api/.git/hooks/update.sample[m[K[36m[K-[m[K[32m[K61[m[K[36m[K-[m[K# --- Check types
+[35m[K../vulnerable-api/.git/hooks/update.sample[m[K[36m[K:[m[K[32m[K62[m[K[36m[K:[m[K# if $newrev[01;31m[K is [m[K0000...0000, it's a commit to delete a ref.
+[35m[K../vulnerable-api/.git/hooks/update.sample[m[K[36m[K-[m[K[32m[K63[m[K[36m[K-[m[Kzero=$(git hash-object --stdin </dev/null | tr '[0-9a-f]' '0')
+[36m[K--[m[K
+[35m[K../vulnerable-api/.git/hooks/update.sample[m[K[36m[K-[m[K[32m[K72[m[K[36m[K-[m[K		# un-annotated tag
+[35m[K../vulnerable-api/.git/hooks/update.sample[m[K[36m[K-[m[K[32m[K73[m[K[36m[K-[m[K		short_refname=${refname##refs/tags/}
+[35m[K../vulnerable-api/.git/hooks/update.sample[m[K[36m[K-[m[K[32m[K74[m[K[36m[K-[m[K		if [ "$allowunannotated" != "true" ]; then
+[35m[K../vulnerable-api/.git/hooks/update.sample[m[K[36m[K:[m[K[32m[K75[m[K[36m[K:[m[K			echo "*** The un-annotated tag, $short_refname,[01;31m[K is [m[Knot allowed in this repository" >&2
+[35m[K../vulnerable-api/.git/hooks/update.sample[m[K[36m[K-[m[K[32m[K76[m[K[36m[K-[m[K			echo "*** Use 'git tag [ -a | -s ]' for tags you want to propagate." >&2
+[36m[K--[m[K
+[35m[K../vulnerable-api/.git/hooks/update.sample[m[K[36m[K-[m[K[32m[K80[m[K[36m[K-[m[K	refs/tags/*,delete)
+[35m[K../vulnerable-api/.git/hooks/update.sample[m[K[36m[K-[m[K[32m[K81[m[K[36m[K-[m[K		# delete tag
+[35m[K../vulnerable-api/.git/hooks/update.sample[m[K[36m[K-[m[K[32m[K82[m[K[36m[K-[m[K		if [ "$allowdeletetag" != "true" ]; then
+[35m[K../vulnerable-api/.git/hooks/update.sample[m[K[36m[K:[m[K[32m[K83[m[K[36m[K:[m[K			echo "*** Deleting a tag[01;31m[K is [m[Knot allowed in this repository" >&2
+[35m[K../vulnerable-api/.git/hooks/update.sample[m[K[36m[K-[m[K[32m[K84[m[K[36m[K-[m[K			exit 1
+[36m[K--[m[K
+[35m[K../vulnerable-api/.git/hooks/update.sample[m[K[36m[K-[m[K[32m[K89[m[K[36m[K-[m[K		if [ "$allowmodifytag" != "true" ] && git rev-parse $refname > /dev/null 2>&1
+[35m[K../vulnerable-api/.git/hooks/update.sample[m[K[36m[K-[m[K[32m[K90[m[K[36m[K-[m[K		then
+[35m[K../vulnerable-api/.git/hooks/update.sample[m[K[36m[K-[m[K[32m[K91[m[K[36m[K-[m[K			echo "*** Tag '$refname' already exists." >&2
+[35m[K../vulnerable-api/.git/hooks/update.sample[m[K[36m[K:[m[K[32m[K92[m[K[36m[K:[m[K			echo "*** Modifying a tag[01;31m[K is [m[Knot allowed in this repository." >&2
+[35m[K../vulnerable-api/.git/hooks/update.sample[m[K[36m[K-[m[K[32m[K93[m[K[36m[K-[m[K			exit 1
+[36m[K--[m[K
+[35m[K../vulnerable-api/.git/hooks/update.sample[m[K[36m[K-[m[K[32m[K96[m[K[36m[K-[m[K	refs/heads/*,commit)
+[35m[K../vulnerable-api/.git/hooks/update.sample[m[K[36m[K-[m[K[32m[K97[m[K[36m[K-[m[K		# branch
+[35m[K../vulnerable-api/.git/hooks/update.sample[m[K[36m[K-[m[K[32m[K98[m[K[36m[K-[m[K		if [ "$oldrev" = "$zero" -a "$denycreatebranch" = "true" ]; then
+[35m[K../vulnerable-api/.git/hooks/update.sample[m[K[36m[K:[m[K[32m[K99[m[K[36m[K:[m[K			echo "*** Creating a branch[01;31m[K is [m[Knot allowed in this repository" >&2
+[35m[K../vulnerable-api/.git/hooks/update.sample[m[K[36m[K-[m[K[32m[K100[m[K[36m[K-[m[K			exit 1
+[36m[K--[m[K
+[35m[K../vulnerable-api/.git/hooks/update.sample[m[K[36m[K-[m[K[32m[K103[m[K[36m[K-[m[K	refs/heads/*,delete)
+[35m[K../vulnerable-api/.git/hooks/update.sample[m[K[36m[K-[m[K[32m[K104[m[K[36m[K-[m[K		# delete branch
+[35m[K../vulnerable-api/.git/hooks/update.sample[m[K[36m[K-[m[K[32m[K105[m[K[36m[K-[m[K		if [ "$allowdeletebranch" != "true" ]; then
+[35m[K../vulnerable-api/.git/hooks/update.sample[m[K[36m[K:[m[K[32m[K106[m[K[36m[K:[m[K			echo "*** Deleting a branch[01;31m[K is [m[Knot allowed in this repository" >&2
+[35m[K../vulnerable-api/.git/hooks/update.sample[m[K[36m[K-[m[K[32m[K107[m[K[36m[K-[m[K			exit 1
+[36m[K--[m[K
+[35m[K../vulnerable-api/.git/hooks/update.sample[m[K[36m[K-[m[K[32m[K113[m[K[36m[K-[m[K	refs/remotes/*,delete)
+[35m[K../vulnerable-api/.git/hooks/update.sample[m[K[36m[K-[m[K[32m[K114[m[K[36m[K-[m[K		# delete tracking branch
+[35m[K../vulnerable-api/.git/hooks/update.sample[m[K[36m[K-[m[K[32m[K115[m[K[36m[K-[m[K		if [ "$allowdeletebranch" != "true" ]; then
+[35m[K../vulnerable-api/.git/hooks/update.sample[m[K[36m[K:[m[K[32m[K116[m[K[36m[K:[m[K			echo "*** Deleting a tracking branch[01;31m[K is [m[Knot allowed in this repository" >&2
+[35m[K../vulnerable-api/.git/hooks/update.sample[m[K[36m[K-[m[K[32m[K117[m[K[36m[K-[m[K			exit 1
+[36m[K--[m[K
+[35m[K../vulnerable-api/ansible/roles/api/files/vAPI.py[m[K[36m[K-[m[K[32m[K1[m[K[36m[K-[m[K"""
+[35m[K../vulnerable-api/ansible/roles/api/files/vAPI.py[m[K[36m[K-[m[K[32m[K2[m[K[36m[K-[m[KThis API interacts with a user and token database.
+[35m[K../vulnerable-api/ansible/roles/api/files/vAPI.py[m[K[36m[K:[m[K[32m[K3[m[K[36m[K:[m[KThe code[01;31m[K is [m[Kwritten to exemplify common API security vulnerabilities
+[35m[K../vulnerable-api/ansible/roles/api/files/vAPI.py[m[K[36m[K-[m[K[32m[K4[m[K[36m[K-[m[K1. No input validation
+[36m[K--[m[K
+[35m[K../vulnerable-api/ansible/roles/api/files/vAPI.py[m[K[36m[K-[m[K[32m[K6[m[K[36m[K-[m[K3. No real error handling
+[35m[K../vulnerable-api/ansible/roles/api/files/vAPI.py[m[K[36m[K-[m[K[32m[K7[m[K[36m[K-[m[K4. Errors that are handled give too much information
+[35m[K../vulnerable-api/ansible/roles/api/files/vAPI.py[m[K[36m[K-[m[K[32m[K8[m[K[36m[K-[m[K4. Tokens have an expiration date, but do not expire
+[35m[K../vulnerable-api/ansible/roles/api/files/vAPI.py[m[K[36m[K:[m[K[32m[K9[m[K[36m[K:[m[K5. Token string[01;31m[K is [m[Kgenerated with an md5 of the expire datetime string
+[35m[K../vulnerable-api/ansible/roles/api/files/vAPI.py[m[K[36m[K-[m[K[32m[K10[m[K[36m[K-[m[K6. Passwords are not hashed in the database
+[35m[K../vulnerable-api/ansible/roles/api/files/vAPI.py[m[K[36m[K:[m[K[32m[K11[m[K[36m[K:[m[K7. There[01;31m[K is [m[Kan *undocumented* GET that returns the user database
+[35m[K../vulnerable-api/ansible/roles/api/files/vAPI.py[m[K[36m[K-[m[K[32m[K12[m[K[36m[K-[m[K"""
+[36m[K--[m[K
+[35m[K../vulnerable-api/ansible/roles/api/files/vAPI.py[m[K[36m[K-[m[K[32m[K46[m[K[36m[K-[m[K    content_type = request.headers.get('Content-type')
+[35m[K../vulnerable-api/ansible/roles/api/files/vAPI.py[m[K[36m[K-[m[K[32m[K47[m[K[36m[K-[m[K    if content_type == 'application/xml':
+[35m[K../vulnerable-api/ansible/roles/api/files/vAPI.py[m[K[36m[K-[m[K[32m[K48[m[K[36m[K-[m[K        try:
+[35m[K../vulnerable-api/ansible/roles/api/files/vAPI.py[m[K[36m[K:[m[K[32m[K49[m[K[36m[K:[m[K            # LXML[01;31m[K is [m[Kvulnerable to XXE, etree[01;31m[K is [m[Kvulnerable to Billion Laughs
+[35m[K../vulnerable-api/ansible/roles/api/files/vAPI.py[m[K[36m[K-[m[K[32m[K50[m[K[36m[K-[m[K            # So just have etree try to parse it just to watch it die
+[36m[K--[m[K
+[35m[K../vulnerable-api/ansible/roles/api/files/vAPI.py[m[K[36m[K-[m[K[32m[K133[m[K[36m[K-[m[K@route('/tokens', method='GET')
+[35m[K../vulnerable-api/ansible/roles/api/files/vAPI.py[m[K[36m[K-[m[K[32m[K134[m[K[36m[K-[m[Kdef get_get_token():
+[35m[K../vulnerable-api/ansible/roles/api/files/vAPI.py[m[K[36m[K-[m[K[32m[K135[m[K[36m[K-[m[K    '''
+[35m[K../vulnerable-api/ansible/roles/api/files/vAPI.py[m[K[36m[K:[m[K[32m[K136[m[K[36m[K:[m[K    this[01;31m[K is [m[Kan undocumented request. EASTER EGG
+[35m[K../vulnerable-api/ansible/roles/api/files/vAPI.py[m[K[36m[K:[m[K[32m[K137[m[K[36m[K:[m[K    /tokens[01;31m[K is [m[Konly supposed to accept a POST! Are you checking the other verbs?
+[35m[K../vulnerable-api/ansible/roles/api/files/vAPI.py[m[K[36m[K-[m[K[32m[K138[m[K[36m[K-[m[K    '''
+[36m[K--[m[K
+[35m[K../vulnerable-api/ansible/roles/api/files/vAPI.py[m[K[36m[K-[m[K[32m[K148[m[K[36m[K-[m[Kdef get_user(user):
+[35m[K../vulnerable-api/ansible/roles/api/files/vAPI.py[m[K[36m[K-[m[K[32m[K149[m[K[36m[K-[m[K    '''
+[35m[K../vulnerable-api/ansible/roles/api/files/vAPI.py[m[K[36m[K-[m[K[32m[K150[m[K[36m[K-[m[K    Expects a user id to return that user's data.
+[35m[K../vulnerable-api/ansible/roles/api/files/vAPI.py[m[K[36m[K:[m[K[32m[K151[m[K[36m[K:[m[K    X-Auth-Token[01;31m[K is [m[Kalso expected
+[35m[K../vulnerable-api/ansible/roles/api/files/vAPI.py[m[K[36m[K-[m[K[32m[K152[m[K[36m[K-[m[K    '''
+[36m[K--[m[K
+[35m[K../vulnerable-api/README.md[m[K[36m[K-[m[K[32m[K1[m[K[36m[K-[m[K## Description
+[35m[K../vulnerable-api/README.md[m[K[36m[K-[m[K[32m[K2[m[K[36m[K-[m[K
+[35m[K../vulnerable-api/README.md[m[K[36m[K:[m[K[32m[K3[m[K[36m[K:[m[KThis repository contains an example Python API that[01;31m[K is [m[Kvulnerable to several different web API attacks.
+[35m[K../vulnerable-api/README.md[m[K[36m[K-[m[K[32m[K4[m[K[36m[K-[m[K
+[36m[K--[m[K
+[35m[K../vulnerable-api/README.md[m[K[36m[K-[m[K[32m[K45[m[K[36m[K-[m[K
+[35m[K../vulnerable-api/README.md[m[K[36m[K-[m[K[32m[K46[m[K[36m[K-[m[KThe example API can be accessed on the system at port 8081.
+[35m[K../vulnerable-api/README.md[m[K[36m[K-[m[K[32m[K47[m[K[36m[K-[m[K
+[35m[K../vulnerable-api/README.md[m[K[36m[K:[m[K[32m[K48[m[K[36m[K:[m[K### What[01;31m[K is [m[KvAPI
+[35m[K../vulnerable-api/README.md[m[K[36m[K-[m[K[32m[K49[m[K[36m[K-[m[K
+[35m[K../vulnerable-api/README.md[m[K[36m[K:[m[K[32m[K50[m[K[36m[K:[m[KvAPI[01;31m[K is [m[Kan API written specifically to illustrate common API vulnerabilities.
+[35m[K../vulnerable-api/README.md[m[K[36m[K-[m[K[32m[K51[m[K[36m[K-[m[K
+[35m[K../vulnerable-api/README.md[m[K[36m[K:[m[K[32m[K52[m[K[36m[K:[m[KvAPI[01;31m[K is [m[Kimplemented using the Bottle Python Framework and consists of a user database and a token database.
+[35m[K../vulnerable-api/README.md[m[K[36m[K-[m[K[32m[K53[m[K[36m[K-[m[K
+[35m[K../vulnerable-api/README.md[m[K[36m[K:[m[K[32m[K54[m[K[36m[K:[m[K### How[01;31m[K is [m[KvAPI Used
+[35m[K../vulnerable-api/README.md[m[K[36m[K-[m[K[32m[K55[m[K[36m[K-[m[K
+[36m[K--[m[K
+[35m[K../vulnerable-api/README.md[m[K[36m[K-[m[K[32m[K61[m[K[36m[K-[m[K  * Returns a user id
+[35m[K../vulnerable-api/README.md[m[K[36m[K-[m[K[32m[K62[m[K[36m[K-[m[K2. Request user record from /user/<user_id>
+[35m[K../vulnerable-api/README.md[m[K[36m[K-[m[K[32m[K63[m[K[36m[K-[m[K  * Requires the auth token
+[35m[K../vulnerable-api/README.md[m[K[36m[K:[m[K[32m[K64[m[K[36m[K:[m[K  * Returns the user record for the user specfied, provided the auth token[01;31m[K is [m[Knot expired and[01;31m[K is [m[Kvalid for the user id specified
+[35m[K../vulnerable-api/README.md[m[K[36m[K-[m[K[32m[K65[m[K[36m[K-[m[K  * Each user can only access their own record

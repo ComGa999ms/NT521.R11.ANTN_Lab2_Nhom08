@@ -1,0 +1,53 @@
+# Info: Hash
+# Filename 6_cryptocred_hash.txt
+# Example: hash_value
+# False positive example: FALSE_POSITIVES_EXAMPLE_PLACEHOLDER
+# Grep args: -i
+# Search regex: hash(?!(table|map|set|code))
+[35m[K../vulnerable-api/.git/hooks/pre-commit.sample[m[K[36m[K-[m[K[32m[K12[m[K[36m[K-[m[K	against=HEAD
+[35m[K../vulnerable-api/.git/hooks/pre-commit.sample[m[K[36m[K-[m[K[32m[K13[m[K[36m[K-[m[Kelse
+[35m[K../vulnerable-api/.git/hooks/pre-commit.sample[m[K[36m[K-[m[K[32m[K14[m[K[36m[K-[m[K	# Initial commit: diff against an empty tree object
+[35m[K../vulnerable-api/.git/hooks/pre-commit.sample[m[K[36m[K:[m[K[32m[K15[m[K[36m[K:[m[K	against=$(git [01;31m[Khash[m[K-object -t tree /dev/null)
+[35m[K../vulnerable-api/.git/hooks/pre-commit.sample[m[K[36m[K-[m[K[32m[K16[m[K[36m[K-[m[Kfi
+[36m[K--[m[K
+[35m[K../vulnerable-api/.git/hooks/pre-push.sample[m[K[36m[K-[m[K[32m[K22[m[K[36m[K-[m[Kremote="$1"
+[35m[K../vulnerable-api/.git/hooks/pre-push.sample[m[K[36m[K-[m[K[32m[K23[m[K[36m[K-[m[Kurl="$2"
+[35m[K../vulnerable-api/.git/hooks/pre-push.sample[m[K[36m[K-[m[K[32m[K24[m[K[36m[K-[m[K
+[35m[K../vulnerable-api/.git/hooks/pre-push.sample[m[K[36m[K:[m[K[32m[K25[m[K[36m[K:[m[Kzero=$(git [01;31m[Khash[m[K-object --stdin </dev/null | tr '[0-9a-f]' '0')
+[35m[K../vulnerable-api/.git/hooks/pre-push.sample[m[K[36m[K-[m[K[32m[K26[m[K[36m[K-[m[K
+[36m[K--[m[K
+[35m[K../vulnerable-api/.git/hooks/push-to-checkout.sample[m[K[36m[K-[m[K[32m[K64[m[K[36m[K-[m[Kthen
+[35m[K../vulnerable-api/.git/hooks/push-to-checkout.sample[m[K[36m[K-[m[K[32m[K65[m[K[36m[K-[m[K	head=HEAD
+[35m[K../vulnerable-api/.git/hooks/push-to-checkout.sample[m[K[36m[K-[m[K[32m[K66[m[K[36m[K-[m[Kelse
+[35m[K../vulnerable-api/.git/hooks/push-to-checkout.sample[m[K[36m[K:[m[K[32m[K67[m[K[36m[K:[m[K	head=$(git [01;31m[Khash[m[K-object -t tree --stdin </dev/null)
+[35m[K../vulnerable-api/.git/hooks/push-to-checkout.sample[m[K[36m[K-[m[K[32m[K68[m[K[36m[K-[m[Kfi
+[36m[K--[m[K
+[35m[K../vulnerable-api/.git/hooks/update.sample[m[K[36m[K-[m[K[32m[K60[m[K[36m[K-[m[K
+[35m[K../vulnerable-api/.git/hooks/update.sample[m[K[36m[K-[m[K[32m[K61[m[K[36m[K-[m[K# --- Check types
+[35m[K../vulnerable-api/.git/hooks/update.sample[m[K[36m[K-[m[K[32m[K62[m[K[36m[K-[m[K# if $newrev is 0000...0000, it's a commit to delete a ref.
+[35m[K../vulnerable-api/.git/hooks/update.sample[m[K[36m[K:[m[K[32m[K63[m[K[36m[K:[m[Kzero=$(git [01;31m[Khash[m[K-object --stdin </dev/null | tr '[0-9a-f]' '0')
+[35m[K../vulnerable-api/.git/hooks/update.sample[m[K[36m[K-[m[K[32m[K64[m[K[36m[K-[m[Kif [ "$newrev" = "$zero" ]; then
+[36m[K--[m[K
+[35m[K../vulnerable-api/ansible/roles/api/files/vAPI.py[m[K[36m[K-[m[K[32m[K7[m[K[36m[K-[m[K4. Errors that are handled give too much information
+[35m[K../vulnerable-api/ansible/roles/api/files/vAPI.py[m[K[36m[K-[m[K[32m[K8[m[K[36m[K-[m[K4. Tokens have an expiration date, but do not expire
+[35m[K../vulnerable-api/ansible/roles/api/files/vAPI.py[m[K[36m[K-[m[K[32m[K9[m[K[36m[K-[m[K5. Token string is generated with an md5 of the expire datetime string
+[35m[K../vulnerable-api/ansible/roles/api/files/vAPI.py[m[K[36m[K:[m[K[32m[K10[m[K[36m[K:[m[K6. Passwords are not [01;31m[Khash[m[Ked in the database
+[35m[K../vulnerable-api/ansible/roles/api/files/vAPI.py[m[K[36m[K-[m[K[32m[K11[m[K[36m[K-[m[K7. There is an *undocumented* GET that returns the user database
+[36m[K--[m[K
+[35m[K../vulnerable-api/ansible/roles/api/files/vAPI.py[m[K[36m[K-[m[K[32m[K13[m[K[36m[K-[m[K
+[35m[K../vulnerable-api/ansible/roles/api/files/vAPI.py[m[K[36m[K-[m[K[32m[K14[m[K[36m[K-[m[Kimport sqlite3
+[35m[K../vulnerable-api/ansible/roles/api/files/vAPI.py[m[K[36m[K-[m[K[32m[K15[m[K[36m[K-[m[Kimport json
+[35m[K../vulnerable-api/ansible/roles/api/files/vAPI.py[m[K[36m[K:[m[K[32m[K16[m[K[36m[K:[m[Kimport [01;31m[Khash[m[Klib
+[35m[K../vulnerable-api/ansible/roles/api/files/vAPI.py[m[K[36m[K-[m[K[32m[K17[m[K[36m[K-[m[Kimport time
+[36m[K--[m[K
+[35m[K../vulnerable-api/ansible/roles/api/files/vAPI.py[m[K[36m[K-[m[K[32m[K85[m[K[36m[K-[m[K                # after creation
+[35m[K../vulnerable-api/ansible/roles/api/files/vAPI.py[m[K[36m[K-[m[K[32m[K86[m[K[36m[K-[m[K                expire_stamp = int(time.time() + 300)
+[35m[K../vulnerable-api/ansible/roles/api/files/vAPI.py[m[K[36m[K-[m[K[32m[K87[m[K[36m[K-[m[K                expire_date = time.ctime(int(expire_stamp))
+[35m[K../vulnerable-api/ansible/roles/api/files/vAPI.py[m[K[36m[K:[m[K[32m[K88[m[K[36m[K:[m[K                token = [01;31m[Khash[m[Klib.md5(expire_date).hexdigest()
+[35m[K../vulnerable-api/ansible/roles/api/files/vAPI.py[m[K[36m[K-[m[K[32m[K89[m[K[36m[K-[m[K                # we'll parameterize this one because we need this serious
+[36m[K--[m[K
+[35m[K../vulnerable-api/ansible/roles/api/files/vAPI.py[m[K[36m[K-[m[K[32m[K105[m[K[36m[K-[m[K            # no token exists. create one that expires in 5 minutes
+[35m[K../vulnerable-api/ansible/roles/api/files/vAPI.py[m[K[36m[K-[m[K[32m[K106[m[K[36m[K-[m[K            expire_stamp = int(time.time() + 300)
+[35m[K../vulnerable-api/ansible/roles/api/files/vAPI.py[m[K[36m[K-[m[K[32m[K107[m[K[36m[K-[m[K            expire_date = time.ctime(int(expire_stamp))
+[35m[K../vulnerable-api/ansible/roles/api/files/vAPI.py[m[K[36m[K:[m[K[32m[K108[m[K[36m[K:[m[K            token = [01;31m[Khash[m[Klib.md5(expire_date).hexdigest()
+[35m[K../vulnerable-api/ansible/roles/api/files/vAPI.py[m[K[36m[K-[m[K[32m[K109[m[K[36m[K-[m[K            # we'll parameterize this one because we need this serious

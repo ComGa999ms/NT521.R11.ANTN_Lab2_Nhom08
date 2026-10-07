@@ -1,0 +1,7 @@
+# Info: BUG, unfinished, buggy and insecure things?
+# Filename 5_general_bug_uppercase.txt
+# Example: BUG:
+# False positive example: FALSE_POSITIVES_EXAMPLE_PLACEHOLDER
+# Grep args: 
+# Search regex: BUG
+grep: ../vulnerable-api/.git/objects/pack/pack-091b857311155b508ddcd09af7a5581785c6c70c.pack: binary file matches

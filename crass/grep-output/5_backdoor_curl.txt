@@ -1,0 +1,11 @@
+# Info: Using curl to fetch or submit from/to internet resources is one of the way to implement a backdoor
+# Filename 5_backdoor_curl.txt
+# Example: curl --help
+# False positive example: FALSE_POSITIVES_EXAMPLE_PLACEHOLDER
+# Grep args: -i
+# Search regex: curl 
+[35m[K../vulnerable-api/README.md[m[K[36m[K-[m[K[32m[K32[m[K[36m[K-[m[K
+[35m[K../vulnerable-api/README.md[m[K[36m[K-[m[K[32m[K33[m[K[36m[K-[m[K* Install docker engine and docker client [on docker website](https://docs.docker.com/engine/installation/linux/ubuntulinux/)
+[35m[K../vulnerable-api/README.md[m[K[36m[K-[m[K[32m[K34[m[K[36m[K-[m[K* Run `docker run -tid -p 8081:8081 --name api mkam/vulnerable-api-demo`
+[35m[K../vulnerable-api/README.md[m[K[36m[K:[m[K[32m[K35[m[K[36m[K:[m[K* You can now test your api `[01;31m[Kcurl [m[Klocalhost:8081 -v`
+[35m[K../vulnerable-api/README.md[m[K[36m[K-[m[K[32m[K36[m[K[36m[K-[m[K

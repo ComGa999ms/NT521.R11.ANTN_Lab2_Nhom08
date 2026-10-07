@@ -1,0 +1,29 @@
+# Info: TOKEN environment variable
+# Filename 4_apikeys_TOKEN.txt
+# Example: TOKEN
+# False positive example: FALSE_POSITIVES_EXAMPLE_PLACEHOLDER
+# Grep args: 
+# Search regex: TOKEN
+[35m[K../vulnerable-api/README.md[m[K[36m[K-[m[K[32m[K151[m[K[36m[K-[m[K            "token":
+[35m[K../vulnerable-api/README.md[m[K[36m[K-[m[K[32m[K152[m[K[36m[K-[m[K                {
+[35m[K../vulnerable-api/README.md[m[K[36m[K-[m[K[32m[K153[m[K[36m[K-[m[K                    "expires": "Tue Jul  7 15:39:01 2015",
+[35m[K../vulnerable-api/README.md[m[K[36m[K:[m[K[32m[K154[m[K[36m[K:[m[K                    "id": "AUTH_[01;31m[KTOKEN[m[K"
+[35m[K../vulnerable-api/README.md[m[K[36m[K-[m[K[32m[K155[m[K[36m[K-[m[K                },
+[36m[K--[m[K
+[35m[K../vulnerable-api/README.md[m[K[36m[K-[m[K[32m[K168[m[K[36m[K-[m[K###### Request Headers
+[35m[K../vulnerable-api/README.md[m[K[36m[K-[m[K[32m[K169[m[K[36m[K-[m[K1. Accept: application/json
+[35m[K../vulnerable-api/README.md[m[K[36m[K-[m[K[32m[K170[m[K[36m[K-[m[K2. Content-Type: application/json
+[35m[K../vulnerable-api/README.md[m[K[36m[K:[m[K[32m[K171[m[K[36m[K:[m[K3. X-Auth-Token: <[01;31m[KTOKEN[m[K_ID> (from /tokens POST)
+[35m[K../vulnerable-api/README.md[m[K[36m[K-[m[K[32m[K172[m[K[36m[K-[m[K
+[36m[K--[m[K
+[35m[K../vulnerable-api/README.md[m[K[36m[K-[m[K[32m[K186[m[K[36m[K-[m[K```
+[35m[K../vulnerable-api/README.md[m[K[36m[K-[m[K[32m[K187[m[K[36m[K-[m[KGET /user/1 HTTP/1.1
+[35m[K../vulnerable-api/README.md[m[K[36m[K-[m[K[32m[K188[m[K[36m[K-[m[KHost: 192.168.13.37:8081
+[35m[K../vulnerable-api/README.md[m[K[36m[K:[m[K[32m[K189[m[K[36m[K:[m[KX-Auth-Token: AUTH_[01;31m[KTOKEN[m[K
+[35m[K../vulnerable-api/README.md[m[K[36m[K-[m[K[32m[K190[m[K[36m[K-[m[KContent-type: application/json
+[36m[K--[m[K
+[35m[K../vulnerable-api/README.md[m[K[36m[K-[m[K[32m[K247[m[K[36m[K-[m[KUser-Agent: curl/7.35.0
+[35m[K../vulnerable-api/README.md[m[K[36m[K-[m[K[32m[K248[m[K[36m[K-[m[KHost: 127.0.0.1:8081
+[35m[K../vulnerable-api/README.md[m[K[36m[K-[m[K[32m[K249[m[K[36m[K-[m[KAccept: */*
+[35m[K../vulnerable-api/README.md[m[K[36m[K:[m[K[32m[K250[m[K[36m[K:[m[Kx-auth-token: ADMIN [01;31m[KTOKEN[m[K
+[35m[K../vulnerable-api/README.md[m[K[36m[K-[m[K[32m[K251[m[K[36m[K-[m[KContent-type: application/json

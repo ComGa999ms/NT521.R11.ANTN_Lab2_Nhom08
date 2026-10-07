@@ -1,0 +1,121 @@
+# Info: Update code and general update strategy weaknesses
+# Filename 6_general_update.txt
+# Example: Update
+# False positive example: FALSE_POSITIVES_EXAMPLE_PLACEHOLDER
+# Grep args: -i
+# Search regex: update
+[35m[K../vulnerable-api/.git/config[m[K[36m[K-[m[K[32m[K2[m[K[36m[K-[m[K	repositoryformatversion = 0
+[35m[K../vulnerable-api/.git/config[m[K[36m[K-[m[K[32m[K3[m[K[36m[K-[m[K	filemode = false
+[35m[K../vulnerable-api/.git/config[m[K[36m[K-[m[K[32m[K4[m[K[36m[K-[m[K	bare = false
+[35m[K../vulnerable-api/.git/config[m[K[36m[K:[m[K[32m[K5[m[K[36m[K:[m[K	logallref[01;31m[Kupdate[m[Ks = true
+[35m[K../vulnerable-api/.git/config[m[K[36m[K-[m[K[32m[K6[m[K[36m[K-[m[K	ignorecase = true
+[36m[K--[m[K
+[35m[K../vulnerable-api/.git/hooks/fsmonitor-watchman.sample[m[K[36m[K-[m[K[32m[K8[m[K[36m[K-[m[K# (https://facebook.github.io/watchman/) with git to speed up detecting
+[35m[K../vulnerable-api/.git/hooks/fsmonitor-watchman.sample[m[K[36m[K-[m[K[32m[K9[m[K[36m[K-[m[K# new and modified files.
+[35m[K../vulnerable-api/.git/hooks/fsmonitor-watchman.sample[m[K[36m[K-[m[K[32m[K10[m[K[36m[K-[m[K#
+[35m[K../vulnerable-api/.git/hooks/fsmonitor-watchman.sample[m[K[36m[K:[m[K[32m[K11[m[K[36m[K:[m[K# The hook is passed a version (currently 2) and last [01;31m[Kupdate[m[K token
+[35m[K../vulnerable-api/.git/hooks/fsmonitor-watchman.sample[m[K[36m[K:[m[K[32m[K12[m[K[36m[K:[m[K# formatted as a string and outputs to stdout a new [01;31m[Kupdate[m[K token and
+[35m[K../vulnerable-api/.git/hooks/fsmonitor-watchman.sample[m[K[36m[K:[m[K[32m[K13[m[K[36m[K:[m[K# all files that have been modified since the [01;31m[Kupdate[m[K token. Paths must
+[35m[K../vulnerable-api/.git/hooks/fsmonitor-watchman.sample[m[K[36m[K-[m[K[32m[K14[m[K[36m[K-[m[K# be relative to the root of the working tree and separated by a single NUL.
+[36m[K--[m[K
+[35m[K../vulnerable-api/.git/hooks/fsmonitor-watchman.sample[m[K[36m[K-[m[K[32m[K16[m[K[36m[K-[m[K# To enable this hook, rename this file to "query-watchman" and set
+[35m[K../vulnerable-api/.git/hooks/fsmonitor-watchman.sample[m[K[36m[K-[m[K[32m[K17[m[K[36m[K-[m[K# 'git config core.fsmonitor .git/hooks/query-watchman'
+[35m[K../vulnerable-api/.git/hooks/fsmonitor-watchman.sample[m[K[36m[K-[m[K[32m[K18[m[K[36m[K-[m[K#
+[35m[K../vulnerable-api/.git/hooks/fsmonitor-watchman.sample[m[K[36m[K:[m[K[32m[K19[m[K[36m[K:[m[Kmy ($version, $last_[01;31m[Kupdate[m[K_token) = @ARGV;
+[35m[K../vulnerable-api/.git/hooks/fsmonitor-watchman.sample[m[K[36m[K-[m[K[32m[K20[m[K[36m[K-[m[K
+[35m[K../vulnerable-api/.git/hooks/fsmonitor-watchman.sample[m[K[36m[K-[m[K[32m[K21[m[K[36m[K-[m[K# Uncomment for debugging
+[35m[K../vulnerable-api/.git/hooks/fsmonitor-watchman.sample[m[K[36m[K:[m[K[32m[K22[m[K[36m[K:[m[K# print STDERR "$0 $version $last_[01;31m[Kupdate[m[K_token\n";
+[35m[K../vulnerable-api/.git/hooks/fsmonitor-watchman.sample[m[K[36m[K-[m[K[32m[K23[m[K[36m[K-[m[K
+[36m[K--[m[K
+[35m[K../vulnerable-api/.git/hooks/fsmonitor-watchman.sample[m[K[36m[K-[m[K[32m[K80[m[K[36m[K-[m[K	"Falling back to scanning...\n";
+[35m[K../vulnerable-api/.git/hooks/fsmonitor-watchman.sample[m[K[36m[K-[m[K[32m[K81[m[K[36m[K-[m[K
+[35m[K../vulnerable-api/.git/hooks/fsmonitor-watchman.sample[m[K[36m[K-[m[K[32m[K82[m[K[36m[K-[m[K	# In the query expression below we're asking for names of files that
+[35m[K../vulnerable-api/.git/hooks/fsmonitor-watchman.sample[m[K[36m[K:[m[K[32m[K83[m[K[36m[K:[m[K	# changed since $last_[01;31m[Kupdate[m[K_token but not from the .git folder.
+[35m[K../vulnerable-api/.git/hooks/fsmonitor-watchman.sample[m[K[36m[K-[m[K[32m[K84[m[K[36m[K-[m[K	#
+[36m[K--[m[K
+[35m[K../vulnerable-api/.git/hooks/fsmonitor-watchman.sample[m[K[36m[K-[m[K[32m[K86[m[K[36m[K-[m[K	# recency index to select candidate nodes and "fields" to limit the
+[35m[K../vulnerable-api/.git/hooks/fsmonitor-watchman.sample[m[K[36m[K-[m[K[32m[K87[m[K[36m[K-[m[K	# output to file names only. Then we're using the "expression" term to
+[35m[K../vulnerable-api/.git/hooks/fsmonitor-watchman.sample[m[K[36m[K-[m[K[32m[K88[m[K[36m[K-[m[K	# further constrain the results.
+[35m[K../vulnerable-api/.git/hooks/fsmonitor-watchman.sample[m[K[36m[K:[m[K[32m[K89[m[K[36m[K:[m[K	my $last_[01;31m[Kupdate[m[K_line = "";
+[35m[K../vulnerable-api/.git/hooks/fsmonitor-watchman.sample[m[K[36m[K:[m[K[32m[K90[m[K[36m[K:[m[K	if (substr($last_[01;31m[Kupdate[m[K_token, 0, 1) eq "c") {
+[35m[K../vulnerable-api/.git/hooks/fsmonitor-watchman.sample[m[K[36m[K:[m[K[32m[K91[m[K[36m[K:[m[K		$last_[01;31m[Kupdate[m[K_token = "\"$last_[01;31m[Kupdate[m[K_token\"";
+[35m[K../vulnerable-api/.git/hooks/fsmonitor-watchman.sample[m[K[36m[K:[m[K[32m[K92[m[K[36m[K:[m[K		$last_[01;31m[Kupdate[m[K_line = qq[\n"since": $last_[01;31m[Kupdate[m[K_token,];
+[35m[K../vulnerable-api/.git/hooks/fsmonitor-watchman.sample[m[K[36m[K-[m[K[32m[K93[m[K[36m[K-[m[K	}
+[35m[K../vulnerable-api/.git/hooks/fsmonitor-watchman.sample[m[K[36m[K-[m[K[32m[K94[m[K[36m[K-[m[K	my $query = <<"	END";
+[35m[K../vulnerable-api/.git/hooks/fsmonitor-watchman.sample[m[K[36m[K:[m[K[32m[K95[m[K[36m[K:[m[K		["query", "$git_work_tree", {$last_[01;31m[Kupdate[m[K_line
+[35m[K../vulnerable-api/.git/hooks/fsmonitor-watchman.sample[m[K[36m[K-[m[K[32m[K96[m[K[36m[K-[m[K			"fields": ["name"],
+[36m[K--[m[K
+[35m[K../vulnerable-api/.git/hooks/fsmonitor-watchman.sample[m[K[36m[K-[m[K[32m[K148[m[K[36m[K-[m[K		"Falling back to scanning...\n" if $error;
+[35m[K../vulnerable-api/.git/hooks/fsmonitor-watchman.sample[m[K[36m[K-[m[K[32m[K149[m[K[36m[K-[m[K
+[35m[K../vulnerable-api/.git/hooks/fsmonitor-watchman.sample[m[K[36m[K-[m[K[32m[K150[m[K[36m[K-[m[K		output_result($o->{clock}, ("/"));
+[35m[K../vulnerable-api/.git/hooks/fsmonitor-watchman.sample[m[K[36m[K:[m[K[32m[K151[m[K[36m[K:[m[K		$last_[01;31m[Kupdate[m[K_token = $o->{clock};
+[35m[K../vulnerable-api/.git/hooks/fsmonitor-watchman.sample[m[K[36m[K-[m[K[32m[K152[m[K[36m[K-[m[K
+[36m[K--[m[K
+[35m[K../vulnerable-api/.git/hooks/post-update.sample[m[K[36m[K-[m[K[32m[K3[m[K[36m[K-[m[K# An example hook script to prepare a packed repository for use over
+[35m[K../vulnerable-api/.git/hooks/post-update.sample[m[K[36m[K-[m[K[32m[K4[m[K[36m[K-[m[K# dumb transports.
+[35m[K../vulnerable-api/.git/hooks/post-update.sample[m[K[36m[K-[m[K[32m[K5[m[K[36m[K-[m[K#
+[35m[K../vulnerable-api/.git/hooks/post-update.sample[m[K[36m[K:[m[K[32m[K6[m[K[36m[K:[m[K# To enable this hook, rename this file to "post-[01;31m[Kupdate[m[K".
+[35m[K../vulnerable-api/.git/hooks/post-update.sample[m[K[36m[K-[m[K[32m[K7[m[K[36m[K-[m[K
+[35m[K../vulnerable-api/.git/hooks/post-update.sample[m[K[36m[K:[m[K[32m[K8[m[K[36m[K:[m[Kexec git [01;31m[Kupdate[m[K-server-info
+[36m[K--[m[K
+[35m[K../vulnerable-api/.git/hooks/pre-push.sample[m[K[36m[K-[m[K[32m[K36[m[K[36m[K-[m[K			# New branch, examine all commits
+[35m[K../vulnerable-api/.git/hooks/pre-push.sample[m[K[36m[K-[m[K[32m[K37[m[K[36m[K-[m[K			range="$local_oid"
+[35m[K../vulnerable-api/.git/hooks/pre-push.sample[m[K[36m[K-[m[K[32m[K38[m[K[36m[K-[m[K		else
+[35m[K../vulnerable-api/.git/hooks/pre-push.sample[m[K[36m[K:[m[K[32m[K39[m[K[36m[K:[m[K			# [01;31m[KUpdate[m[K to existing branch, examine new commits
+[35m[K../vulnerable-api/.git/hooks/pre-push.sample[m[K[36m[K-[m[K[32m[K40[m[K[36m[K-[m[K			range="$remote_oid..$local_oid"
+[36m[K--[m[K
+[35m[K../vulnerable-api/.git/hooks/push-to-checkout.sample[m[K[36m[K-[m[K[32m[K1[m[K[36m[K-[m[K#!/bin/sh
+[35m[K../vulnerable-api/.git/hooks/push-to-checkout.sample[m[K[36m[K-[m[K[32m[K2[m[K[36m[K-[m[K
+[35m[K../vulnerable-api/.git/hooks/push-to-checkout.sample[m[K[36m[K:[m[K[32m[K3[m[K[36m[K:[m[K# An example hook script to [01;31m[Kupdate[m[K a checked-out tree on a git push.
+[35m[K../vulnerable-api/.git/hooks/push-to-checkout.sample[m[K[36m[K-[m[K[32m[K4[m[K[36m[K-[m[K#
+[35m[K../vulnerable-api/.git/hooks/push-to-checkout.sample[m[K[36m[K-[m[K[32m[K5[m[K[36m[K-[m[K# This hook is invoked by git-receive-pack(1) when it reacts to git
+[35m[K../vulnerable-api/.git/hooks/push-to-checkout.sample[m[K[36m[K:[m[K[32m[K6[m[K[36m[K:[m[K# push and [01;31m[Kupdate[m[Ks reference(s) in its repository, and when the push
+[35m[K../vulnerable-api/.git/hooks/push-to-checkout.sample[m[K[36m[K:[m[K[32m[K7[m[K[36m[K:[m[K# tries to [01;31m[Kupdate[m[K the branch that is currently checked out and the
+[35m[K../vulnerable-api/.git/hooks/push-to-checkout.sample[m[K[36m[K-[m[K[32m[K8[m[K[36m[K-[m[K# receive.denyCurrentBranch configuration variable is set to
+[35m[K../vulnerable-api/.git/hooks/push-to-checkout.sample[m[K[36m[K:[m[K[32m[K9[m[K[36m[K:[m[K# [01;31m[Kupdate[m[KInstead.
+[35m[K../vulnerable-api/.git/hooks/push-to-checkout.sample[m[K[36m[K-[m[K[32m[K10[m[K[36m[K-[m[K#
+[35m[K../vulnerable-api/.git/hooks/push-to-checkout.sample[m[K[36m[K-[m[K[32m[K11[m[K[36m[K-[m[K# By default, such a push is refused if the working tree and the index
+[35m[K../vulnerable-api/.git/hooks/push-to-checkout.sample[m[K[36m[K-[m[K[32m[K12[m[K[36m[K-[m[K# of the remote repository has any difference from the currently
+[35m[K../vulnerable-api/.git/hooks/push-to-checkout.sample[m[K[36m[K-[m[K[32m[K13[m[K[36m[K-[m[K# checked out commit; when both the working tree and the index match
+[35m[K../vulnerable-api/.git/hooks/push-to-checkout.sample[m[K[36m[K:[m[K[32m[K14[m[K[36m[K:[m[K# the current commit, they are [01;31m[Kupdate[m[Kd to match the newly pushed tip
+[35m[K../vulnerable-api/.git/hooks/push-to-checkout.sample[m[K[36m[K-[m[K[32m[K15[m[K[36m[K-[m[K# of the branch. This hook is to be used to override the default
+[36m[K--[m[K
+[35m[K../vulnerable-api/.git/hooks/push-to-checkout.sample[m[K[36m[K-[m[K[32m[K17[m[K[36m[K-[m[K# as a starting point for convenient modification.
+[35m[K../vulnerable-api/.git/hooks/push-to-checkout.sample[m[K[36m[K-[m[K[32m[K18[m[K[36m[K-[m[K#
+[35m[K../vulnerable-api/.git/hooks/push-to-checkout.sample[m[K[36m[K-[m[K[32m[K19[m[K[36m[K-[m[K# The hook receives the commit with which the tip of the current
+[35m[K../vulnerable-api/.git/hooks/push-to-checkout.sample[m[K[36m[K:[m[K[32m[K20[m[K[36m[K:[m[K# branch is going to be [01;31m[Kupdate[m[Kd:
+[35m[K../vulnerable-api/.git/hooks/push-to-checkout.sample[m[K[36m[K-[m[K[32m[K21[m[K[36m[K-[m[Kcommit=$1
+[36m[K--[m[K
+[35m[K../vulnerable-api/.git/hooks/push-to-checkout.sample[m[K[36m[K-[m[K[32m[K29[m[K[36m[K-[m[K
+[35m[K../vulnerable-api/.git/hooks/push-to-checkout.sample[m[K[36m[K-[m[K[32m[K30[m[K[36m[K-[m[K# Or it can make any necessary changes to the working tree and to the
+[35m[K../vulnerable-api/.git/hooks/push-to-checkout.sample[m[K[36m[K-[m[K[32m[K31[m[K[36m[K-[m[K# index to bring them to the desired state when the tip of the current
+[35m[K../vulnerable-api/.git/hooks/push-to-checkout.sample[m[K[36m[K:[m[K[32m[K32[m[K[36m[K:[m[K# branch is [01;31m[Kupdate[m[Kd to the new commit, and exit with a zero status.
+[35m[K../vulnerable-api/.git/hooks/push-to-checkout.sample[m[K[36m[K-[m[K[32m[K33[m[K[36m[K-[m[K#
+[36m[K--[m[K
+[35m[K../vulnerable-api/.git/hooks/push-to-checkout.sample[m[K[36m[K-[m[K[32m[K47[m[K[36m[K-[m[K# the working tree, you will have to adapt your code accordingly, e.g.
+[35m[K../vulnerable-api/.git/hooks/push-to-checkout.sample[m[K[36m[K-[m[K[32m[K48[m[K[36m[K-[m[K# by adding "cd .." or using relative paths.
+[35m[K../vulnerable-api/.git/hooks/push-to-checkout.sample[m[K[36m[K-[m[K[32m[K49[m[K[36m[K-[m[K
+[35m[K../vulnerable-api/.git/hooks/push-to-checkout.sample[m[K[36m[K:[m[K[32m[K50[m[K[36m[K:[m[Kif ! git [01;31m[Kupdate[m[K-index -q --ignore-submodules --refresh
+[35m[K../vulnerable-api/.git/hooks/push-to-checkout.sample[m[K[36m[K-[m[K[32m[K51[m[K[36m[K-[m[Kthen
+[36m[K--[m[K
+[35m[K../vulnerable-api/.git/hooks/push-to-checkout.sample[m[K[36m[K-[m[K[32m[K74[m[K[36m[K-[m[K
+[35m[K../vulnerable-api/.git/hooks/push-to-checkout.sample[m[K[36m[K-[m[K[32m[K75[m[K[36m[K-[m[Kif ! git read-tree -u -m "$commit"
+[35m[K../vulnerable-api/.git/hooks/push-to-checkout.sample[m[K[36m[K-[m[K[32m[K76[m[K[36m[K-[m[Kthen
+[35m[K../vulnerable-api/.git/hooks/push-to-checkout.sample[m[K[36m[K:[m[K[32m[K77[m[K[36m[K:[m[K	die "Could not [01;31m[Kupdate[m[K working tree to new HEAD"
+[35m[K../vulnerable-api/.git/hooks/push-to-checkout.sample[m[K[36m[K-[m[K[32m[K78[m[K[36m[K-[m[Kfi
+[36m[K--[m[K
+[35m[K../vulnerable-api/.git/hooks/update.sample[m[K[36m[K-[m[K[32m[K3[m[K[36m[K-[m[K# An example hook script to block unannotated tags from entering.
+[35m[K../vulnerable-api/.git/hooks/update.sample[m[K[36m[K-[m[K[32m[K4[m[K[36m[K-[m[K# Called by "git receive-pack" with arguments: refname sha1-old sha1-new
+[35m[K../vulnerable-api/.git/hooks/update.sample[m[K[36m[K-[m[K[32m[K5[m[K[36m[K-[m[K#
+[35m[K../vulnerable-api/.git/hooks/update.sample[m[K[36m[K:[m[K[32m[K6[m[K[36m[K:[m[K# To enable this hook, rename this file to "[01;31m[Kupdate[m[K".
+[35m[K../vulnerable-api/.git/hooks/update.sample[m[K[36m[K-[m[K[32m[K7[m[K[36m[K-[m[K#
+[36m[K--[m[K
+[35m[K../vulnerable-api/.git/hooks/update.sample[m[K[36m[K-[m[K[32m[K119[m[K[36m[K-[m[K		;;
+[35m[K../vulnerable-api/.git/hooks/update.sample[m[K[36m[K-[m[K[32m[K120[m[K[36m[K-[m[K	*)
+[35m[K../vulnerable-api/.git/hooks/update.sample[m[K[36m[K-[m[K[32m[K121[m[K[36m[K-[m[K		# Anything else (is there anything else?)
+[35m[K../vulnerable-api/.git/hooks/update.sample[m[K[36m[K:[m[K[32m[K122[m[K[36m[K:[m[K		echo "*** [01;31m[KUpdate[m[K hook: unknown type of [01;31m[Kupdate[m[K to ref $refname of type $newrev_type" >&2
+[35m[K../vulnerable-api/.git/hooks/update.sample[m[K[36m[K-[m[K[32m[K123[m[K[36m[K-[m[K		exit 1
+[36m[K--[m[K
+[35m[K../vulnerable-api/ansible/roles/api/files/Dockerfile[m[K[36m[K-[m[K[32m[K1[m[K[36m[K-[m[KFROM python:2.7
+[35m[K../vulnerable-api/ansible/roles/api/files/Dockerfile[m[K[36m[K:[m[K[32m[K2[m[K[36m[K:[m[KRUN apt-get [01;31m[Kupdate[m[K && apt-get install -y sqlite3 supervisor
+[35m[K../vulnerable-api/ansible/roles/api/files/Dockerfile[m[K[36m[K-[m[K[32m[K3[m[K[36m[K-[m[KRUN pip install bottle requests lxml

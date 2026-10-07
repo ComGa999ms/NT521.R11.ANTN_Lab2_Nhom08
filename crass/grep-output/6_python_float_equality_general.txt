@@ -1,0 +1,23 @@
+# Info: The float type can not be reliably compared for equality. Make sure none of these comparisons uses floats, see https://access.redhat.com/blogs/766093/posts/2592591
+# Filename 6_python_float_equality_general.txt
+# Example: 2.2 * 3.0 == 3.3 * 2.2
+# False positive example: FALSE_POSITIVES_EXAMPLE_PLACEHOLDER
+# Grep args: 
+# Search regex: \s{1,20}==\s{1,20}
+[35m[K../vulnerable-api/.git/hooks/prepare-commit-msg.sample[m[K[36m[K-[m[K[32m[K30[m[K[36m[K-[m[K#  ,|template,)
+[35m[K../vulnerable-api/.git/hooks/prepare-commit-msg.sample[m[K[36m[K-[m[K[32m[K31[m[K[36m[K-[m[K#    /usr/bin/perl -i.bak -pe '
+[35m[K../vulnerable-api/.git/hooks/prepare-commit-msg.sample[m[K[36m[K-[m[K[32m[K32[m[K[36m[K-[m[K#       print "\n" . `git diff --cached --name-status -r`
+[35m[K../vulnerable-api/.git/hooks/prepare-commit-msg.sample[m[K[36m[K:[m[K[32m[K33[m[K[36m[K:[m[K# 	 if /^#/ && $first++[01;31m[K == [m[K0' "$COMMIT_MSG_FILE" ;;
+[35m[K../vulnerable-api/.git/hooks/prepare-commit-msg.sample[m[K[36m[K-[m[K[32m[K34[m[K[36m[K-[m[K#  *) ;;
+[36m[K--[m[K
+[35m[K../vulnerable-api/ansible/roles/api/files/vAPI.py[m[K[36m[K-[m[K[32m[K44[m[K[36m[K-[m[K    User needs to get an auth token before actioning the database
+[35m[K../vulnerable-api/ansible/roles/api/files/vAPI.py[m[K[36m[K-[m[K[32m[K45[m[K[36m[K-[m[K    '''
+[35m[K../vulnerable-api/ansible/roles/api/files/vAPI.py[m[K[36m[K-[m[K[32m[K46[m[K[36m[K-[m[K    content_type = request.headers.get('Content-type')
+[35m[K../vulnerable-api/ansible/roles/api/files/vAPI.py[m[K[36m[K:[m[K[32m[K47[m[K[36m[K:[m[K    if content_type[01;31m[K == [m[K'application/xml':
+[35m[K../vulnerable-api/ansible/roles/api/files/vAPI.py[m[K[36m[K-[m[K[32m[K48[m[K[36m[K-[m[K        try:
+[36m[K--[m[K
+[35m[K../vulnerable-api/ansible/roles/api/files/vAPI.py[m[K[36m[K-[m[K[32m[K164[m[K[36m[K-[m[K    # you'll notice we don't actually check the token expiration date
+[35m[K../vulnerable-api/ansible/roles/api/files/vAPI.py[m[K[36m[K-[m[K[32m[K165[m[K[36m[K-[m[K    if isinstance(token_record, tuple):
+[35m[K../vulnerable-api/ansible/roles/api/files/vAPI.py[m[K[36m[K-[m[K[32m[K166[m[K[36m[K-[m[K        if isinstance(user_record, tuple):
+[35m[K../vulnerable-api/ansible/roles/api/files/vAPI.py[m[K[36m[K:[m[K[32m[K167[m[K[36m[K:[m[K            if token_record[2][01;31m[K == [m[Kuser_record[0]:
+[35m[K../vulnerable-api/ansible/roles/api/files/vAPI.py[m[K[36m[K-[m[K[32m[K168[m[K[36m[K-[m[K                response['user'] = {}

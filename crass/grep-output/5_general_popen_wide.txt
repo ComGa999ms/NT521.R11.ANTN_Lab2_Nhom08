@@ -1,0 +1,11 @@
+# Info: popen: Command execution?
+# Filename 5_general_popen_wide.txt
+# Example: popen
+# False positive example: FALSE_POSITIVES_EXAMPLE_PLACEHOLDER
+# Grep args: -i
+# Search regex: popen
+[35m[K../vulnerable-api/ansible/roles/api/files/vAPI.py[m[K[36m[K-[m[K[32m[K229[m[K[36m[K-[m[K        command = "uptime -" + flag
+[35m[K../vulnerable-api/ansible/roles/api/files/vAPI.py[m[K[36m[K-[m[K[32m[K230[m[K[36m[K-[m[K    else:
+[35m[K../vulnerable-api/ansible/roles/api/files/vAPI.py[m[K[36m[K-[m[K[32m[K231[m[K[36m[K-[m[K        command = "uptime"
+[35m[K../vulnerable-api/ansible/roles/api/files/vAPI.py[m[K[36m[K:[m[K[32m[K232[m[K[36m[K:[m[K    output = os.[01;31m[Kpopen[m[K(command).read()
+[35m[K../vulnerable-api/ansible/roles/api/files/vAPI.py[m[K[36m[K-[m[K[32m[K233[m[K[36m[K-[m[K    response = {'response':

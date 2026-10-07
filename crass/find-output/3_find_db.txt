@@ -1,0 +1,4 @@
+# Info: All sqlite or other database files (cleartext?) according to their file extension (.db)
+# Filename: 3_find_db.txt
+# Search: find -iname '*.db'
+../vulnerable-api/ansible/roles/api/files/vAPI.db

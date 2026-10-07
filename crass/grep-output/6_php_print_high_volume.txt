@@ -1,0 +1,77 @@
+# Info: Methods that often introduce XSS: print
+# Filename 6_php_print_high_volume.txt
+# Example: print
+# False positive example: FALSE_POSITIVES_EXAMPLE_PLACEHOLDER
+# Grep args: -i
+# Search regex: print
+[35m[K../vulnerable-api/.git/hooks/fsmonitor-watchman.sample[m[K[36m[K-[m[K[32m[K19[m[K[36m[K-[m[Kmy ($version, $last_update_token) = @ARGV;
+[35m[K../vulnerable-api/.git/hooks/fsmonitor-watchman.sample[m[K[36m[K-[m[K[32m[K20[m[K[36m[K-[m[K
+[35m[K../vulnerable-api/.git/hooks/fsmonitor-watchman.sample[m[K[36m[K-[m[K[32m[K21[m[K[36m[K-[m[K# Uncomment for debugging
+[35m[K../vulnerable-api/.git/hooks/fsmonitor-watchman.sample[m[K[36m[K:[m[K[32m[K22[m[K[36m[K:[m[K# [01;31m[Kprint[m[K STDERR "$0 $version $last_update_token\n";
+[35m[K../vulnerable-api/.git/hooks/fsmonitor-watchman.sample[m[K[36m[K-[m[K[32m[K23[m[K[36m[K-[m[K
+[36m[K--[m[K
+[35m[K../vulnerable-api/.git/hooks/fsmonitor-watchman.sample[m[K[36m[K-[m[K[32m[K56[m[K[36m[K-[m[K	# Uncomment for debugging watchman output
+[35m[K../vulnerable-api/.git/hooks/fsmonitor-watchman.sample[m[K[36m[K-[m[K[32m[K57[m[K[36m[K-[m[K	# open (my $fh, ">", ".git/watchman-output.out");
+[35m[K../vulnerable-api/.git/hooks/fsmonitor-watchman.sample[m[K[36m[K-[m[K[32m[K58[m[K[36m[K-[m[K	# binmode $fh, ":utf8";
+[35m[K../vulnerable-api/.git/hooks/fsmonitor-watchman.sample[m[K[36m[K:[m[K[32m[K59[m[K[36m[K:[m[K	# [01;31m[Kprint[m[K $fh "$clockid\n@files\n";
+[35m[K../vulnerable-api/.git/hooks/fsmonitor-watchman.sample[m[K[36m[K-[m[K[32m[K60[m[K[36m[K-[m[K	# close $fh;
+[35m[K../vulnerable-api/.git/hooks/fsmonitor-watchman.sample[m[K[36m[K-[m[K[32m[K61[m[K[36m[K-[m[K
+[35m[K../vulnerable-api/.git/hooks/fsmonitor-watchman.sample[m[K[36m[K-[m[K[32m[K62[m[K[36m[K-[m[K	binmode STDOUT, ":utf8";
+[35m[K../vulnerable-api/.git/hooks/fsmonitor-watchman.sample[m[K[36m[K:[m[K[32m[K63[m[K[36m[K:[m[K	[01;31m[Kprint[m[K $clockid;
+[35m[K../vulnerable-api/.git/hooks/fsmonitor-watchman.sample[m[K[36m[K:[m[K[32m[K64[m[K[36m[K:[m[K	[01;31m[Kprint[m[K "\0";
+[35m[K../vulnerable-api/.git/hooks/fsmonitor-watchman.sample[m[K[36m[K-[m[K[32m[K65[m[K[36m[K-[m[K	local $, = "\0";
+[35m[K../vulnerable-api/.git/hooks/fsmonitor-watchman.sample[m[K[36m[K:[m[K[32m[K66[m[K[36m[K:[m[K	[01;31m[Kprint[m[K @files;
+[35m[K../vulnerable-api/.git/hooks/fsmonitor-watchman.sample[m[K[36m[K-[m[K[32m[K67[m[K[36m[K-[m[K}
+[36m[K--[m[K
+[35m[K../vulnerable-api/.git/hooks/fsmonitor-watchman.sample[m[K[36m[K-[m[K[32m[K100[m[K[36m[K-[m[K
+[35m[K../vulnerable-api/.git/hooks/fsmonitor-watchman.sample[m[K[36m[K-[m[K[32m[K101[m[K[36m[K-[m[K	# Uncomment for debugging the watchman query
+[35m[K../vulnerable-api/.git/hooks/fsmonitor-watchman.sample[m[K[36m[K-[m[K[32m[K102[m[K[36m[K-[m[K	# open (my $fh, ">", ".git/watchman-query.json");
+[35m[K../vulnerable-api/.git/hooks/fsmonitor-watchman.sample[m[K[36m[K:[m[K[32m[K103[m[K[36m[K:[m[K	# [01;31m[Kprint[m[K $fh $query;
+[35m[K../vulnerable-api/.git/hooks/fsmonitor-watchman.sample[m[K[36m[K-[m[K[32m[K104[m[K[36m[K-[m[K	# close $fh;
+[35m[K../vulnerable-api/.git/hooks/fsmonitor-watchman.sample[m[K[36m[K-[m[K[32m[K105[m[K[36m[K-[m[K
+[35m[K../vulnerable-api/.git/hooks/fsmonitor-watchman.sample[m[K[36m[K:[m[K[32m[K106[m[K[36m[K:[m[K	[01;31m[Kprint[m[K CHLD_IN $query;
+[35m[K../vulnerable-api/.git/hooks/fsmonitor-watchman.sample[m[K[36m[K-[m[K[32m[K107[m[K[36m[K-[m[K	close CHLD_IN;
+[36m[K--[m[K
+[35m[K../vulnerable-api/.git/hooks/fsmonitor-watchman.sample[m[K[36m[K-[m[K[32m[K109[m[K[36m[K-[m[K
+[35m[K../vulnerable-api/.git/hooks/fsmonitor-watchman.sample[m[K[36m[K-[m[K[32m[K110[m[K[36m[K-[m[K	# Uncomment for debugging the watch response
+[35m[K../vulnerable-api/.git/hooks/fsmonitor-watchman.sample[m[K[36m[K-[m[K[32m[K111[m[K[36m[K-[m[K	# open ($fh, ">", ".git/watchman-response.json");
+[35m[K../vulnerable-api/.git/hooks/fsmonitor-watchman.sample[m[K[36m[K:[m[K[32m[K112[m[K[36m[K:[m[K	# [01;31m[Kprint[m[K $fh $response;
+[35m[K../vulnerable-api/.git/hooks/fsmonitor-watchman.sample[m[K[36m[K-[m[K[32m[K113[m[K[36m[K-[m[K	# close $fh;
+[36m[K--[m[K
+[35m[K../vulnerable-api/.git/hooks/pre-commit.sample[m[K[36m[K-[m[K[32m[K23[m[K[36m[K-[m[K
+[35m[K../vulnerable-api/.git/hooks/pre-commit.sample[m[K[36m[K-[m[K[32m[K24[m[K[36m[K-[m[K# Cross platform projects tend to avoid non-ASCII filenames; prevent
+[35m[K../vulnerable-api/.git/hooks/pre-commit.sample[m[K[36m[K-[m[K[32m[K25[m[K[36m[K-[m[K# them from being added to the repository. We exploit the fact that the
+[35m[K../vulnerable-api/.git/hooks/pre-commit.sample[m[K[36m[K:[m[K[32m[K26[m[K[36m[K:[m[K# [01;31m[Kprint[m[Kable range starts at the space character and ends with tilde.
+[35m[K../vulnerable-api/.git/hooks/pre-commit.sample[m[K[36m[K-[m[K[32m[K27[m[K[36m[K-[m[Kif [ "$allownonascii" != "true" ] &&
+[36m[K--[m[K
+[35m[K../vulnerable-api/.git/hooks/pre-commit.sample[m[K[36m[K-[m[K[32m[K45[m[K[36m[K-[m[K	exit 1
+[35m[K../vulnerable-api/.git/hooks/pre-commit.sample[m[K[36m[K-[m[K[32m[K46[m[K[36m[K-[m[Kfi
+[35m[K../vulnerable-api/.git/hooks/pre-commit.sample[m[K[36m[K-[m[K[32m[K47[m[K[36m[K-[m[K
+[35m[K../vulnerable-api/.git/hooks/pre-commit.sample[m[K[36m[K:[m[K[32m[K48[m[K[36m[K:[m[K# If there are whitespace errors, [01;31m[Kprint[m[K the offending file names and fail.
+[35m[K../vulnerable-api/.git/hooks/pre-commit.sample[m[K[36m[K-[m[K[32m[K49[m[K[36m[K-[m[Kexec git diff-index --check --cached $against --
+[36m[K--[m[K
+[35m[K../vulnerable-api/.git/hooks/pre-rebase.sample[m[K[36m[K-[m[K[32m[K78[m[K[36m[K-[m[K			} split(/\n/, $ARGV[2])) {
+[35m[K../vulnerable-api/.git/hooks/pre-rebase.sample[m[K[36m[K-[m[K[32m[K79[m[K[36m[K-[m[K			if (!exists $not_in_next{$elem->[0]}) {
+[35m[K../vulnerable-api/.git/hooks/pre-rebase.sample[m[K[36m[K-[m[K[32m[K80[m[K[36m[K-[m[K				if ($msg) {
+[35m[K../vulnerable-api/.git/hooks/pre-rebase.sample[m[K[36m[K:[m[K[32m[K81[m[K[36m[K:[m[K					[01;31m[Kprint[m[K STDERR $msg;
+[35m[K../vulnerable-api/.git/hooks/pre-rebase.sample[m[K[36m[K-[m[K[32m[K82[m[K[36m[K-[m[K					undef $msg;
+[35m[K../vulnerable-api/.git/hooks/pre-rebase.sample[m[K[36m[K-[m[K[32m[K83[m[K[36m[K-[m[K				}
+[35m[K../vulnerable-api/.git/hooks/pre-rebase.sample[m[K[36m[K:[m[K[32m[K84[m[K[36m[K:[m[K				[01;31m[Kprint[m[K STDERR " $elem->[1]\n";
+[35m[K../vulnerable-api/.git/hooks/pre-rebase.sample[m[K[36m[K-[m[K[32m[K85[m[K[36m[K-[m[K			}
+[36m[K--[m[K
+[35m[K../vulnerable-api/.git/hooks/prepare-commit-msg.sample[m[K[36m[K-[m[K[32m[K24[m[K[36m[K-[m[KCOMMIT_SOURCE=$2
+[35m[K../vulnerable-api/.git/hooks/prepare-commit-msg.sample[m[K[36m[K-[m[K[32m[K25[m[K[36m[K-[m[KSHA1=$3
+[35m[K../vulnerable-api/.git/hooks/prepare-commit-msg.sample[m[K[36m[K-[m[K[32m[K26[m[K[36m[K-[m[K
+[35m[K../vulnerable-api/.git/hooks/prepare-commit-msg.sample[m[K[36m[K:[m[K[32m[K27[m[K[36m[K:[m[K/usr/bin/perl -i.bak -ne '[01;31m[Kprint[m[K unless(m/^. Please enter the commit message/..m/^#$/)' "$COMMIT_MSG_FILE"
+[35m[K../vulnerable-api/.git/hooks/prepare-commit-msg.sample[m[K[36m[K-[m[K[32m[K28[m[K[36m[K-[m[K
+[35m[K../vulnerable-api/.git/hooks/prepare-commit-msg.sample[m[K[36m[K-[m[K[32m[K29[m[K[36m[K-[m[K# case "$COMMIT_SOURCE,$SHA1" in
+[35m[K../vulnerable-api/.git/hooks/prepare-commit-msg.sample[m[K[36m[K-[m[K[32m[K30[m[K[36m[K-[m[K#  ,|template,)
+[35m[K../vulnerable-api/.git/hooks/prepare-commit-msg.sample[m[K[36m[K-[m[K[32m[K31[m[K[36m[K-[m[K#    /usr/bin/perl -i.bak -pe '
+[35m[K../vulnerable-api/.git/hooks/prepare-commit-msg.sample[m[K[36m[K:[m[K[32m[K32[m[K[36m[K:[m[K#       [01;31m[Kprint[m[K "\n" . `git diff --cached --name-status -r`
+[35m[K../vulnerable-api/.git/hooks/prepare-commit-msg.sample[m[K[36m[K-[m[K[32m[K33[m[K[36m[K-[m[K# 	 if /^#/ && $first++ == 0' "$COMMIT_MSG_FILE" ;;
+[36m[K--[m[K
+[35m[K../vulnerable-api/.git/hooks/prepare-commit-msg.sample[m[K[36m[K-[m[K[32m[K38[m[K[36m[K-[m[K# git interpret-trailers --in-place --trailer "$SOB" "$COMMIT_MSG_FILE"
+[35m[K../vulnerable-api/.git/hooks/prepare-commit-msg.sample[m[K[36m[K-[m[K[32m[K39[m[K[36m[K-[m[K# if test -z "$COMMIT_SOURCE"
+[35m[K../vulnerable-api/.git/hooks/prepare-commit-msg.sample[m[K[36m[K-[m[K[32m[K40[m[K[36m[K-[m[K# then
+[35m[K../vulnerable-api/.git/hooks/prepare-commit-msg.sample[m[K[36m[K:[m[K[32m[K41[m[K[36m[K:[m[K#   /usr/bin/perl -i.bak -pe '[01;31m[Kprint[m[K "\n" if !$first_line++' "$COMMIT_MSG_FILE"
+[35m[K../vulnerable-api/.git/hooks/prepare-commit-msg.sample[m[K[36m[K-[m[K[32m[K42[m[K[36m[K-[m[K# fi

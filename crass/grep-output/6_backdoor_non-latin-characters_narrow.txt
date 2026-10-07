@@ -1,0 +1,11 @@
+# Info: Find non-latin alphabet character strings of at least length 3, can catch homoglyph attacks, backdoor comments
+# Filename 6_backdoor_non-latin-characters_narrow.txt
+# Example: ศึกษา.ไทย    католик
+# False positive example: FALSE_POSITIVES_EXAMPLE_PLACEHOLDER
+# Grep args: -i
+# Search regex: [\p{Arabic}\p{Armenian}\p{Bengali}\p{Bopomofo}\p{Braille}\p{Buhid}\p{Canadian_Aboriginal}\p{Cherokee}\p{Cyrillic}\p{Devanagari}\p{Ethiopic}\p{Georgian}\p{Greek}\p{Gujarati}\p{Gurmukhi}\p{Han}\p{Hangul}\p{Hanunoo}\p{Hebrew}\p{Hiragana}\p{Inherited}\p{Kannada}\p{Katakana}\p{Khmer}\p{Lao}\p{Limbu}\p{Malayalam}\p{Mongolian}\p{Myanmar}\p{Ogham}\p{Oriya}\p{Runic}\p{Sinhala}\p{Syriac}\p{Tagalog}\p{Tagbanwa}\p{TaiLe}\p{Tamil}\p{Telugu}\p{Thaana}\p{Thai}\p{Tibetan}]{3}
+grep: ../vulnerable-api/.git/objects/pack/pack-091b857311155b508ddcd09af7a5581785c6c70c.pack: binary file matches
+grep: ../vulnerable-api/browser.png: binary file matches
+grep: ../vulnerable-api/ip.png: binary file matches
+grep: ../vulnerable-api/kitematic.png: binary file matches
+grep: ../vulnerable-api/kitematic_win.png: binary file matches

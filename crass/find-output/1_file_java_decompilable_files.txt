@@ -1,0 +1,3 @@
+# Info: Java class files (and therefore decompilable) according to file command, but attention: file detects jar files as zips, so jars are not listed.
+# Filename: 1_file_java_decompilable_files.txt
+# Search: grep -v '^#' ./find-output/3_file_all_files_listed.txt |grep -i "Java class"

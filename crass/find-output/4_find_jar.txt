@@ -1,0 +1,3 @@
+# Info: All class files (decompilable!) according to their file extension
+# Filename: 4_find_jar.txt
+# Search: find -iname '*.jar'

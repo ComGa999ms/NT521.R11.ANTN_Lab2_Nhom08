@@ -1,0 +1,11 @@
+# Info: Relative paths. May allow an attacker to put something early in the search path (if parts are user supplied input) and overwrite behavior
+# Filename 5_general_relative_paths.txt
+# Example: ../../
+# False positive example: FALSE_POSITIVES_EXAMPLE_PLACEHOLDER
+# Grep args: -i
+# Search regex: \./
+grep: ../vulnerable-api/.git/objects/pack/pack-091b857311155b508ddcd09af7a5581785c6c70c.pack: binary file matches
+grep: ../vulnerable-api/browser.png: binary file matches
+grep: ../vulnerable-api/create.png: binary file matches
+grep: ../vulnerable-api/ip.png: binary file matches
+grep: ../vulnerable-api/kitematic.png: binary file matches

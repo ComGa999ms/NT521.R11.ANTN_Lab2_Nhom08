@@ -1,0 +1,68 @@
+# Info: Everything between backticks, because in Perl and Shell scirpting (eg. cgi-scripts) these are system execs.
+# Filename 5_general_backticks.txt
+# Example: `basename file-var`
+# False positive example: FALSE_POSITIVES_EXAMPLE_PLACEHOLDER
+# Grep args: -i
+# Search regex: `.{2,200}`
+[35m[K../vulnerable-api/.git/hooks/pre-rebase.sample[m[K[36m[K-[m[K[32m[K21[m[K[36m[K-[m[Kthen
+[35m[K../vulnerable-api/.git/hooks/pre-rebase.sample[m[K[36m[K-[m[K[32m[K22[m[K[36m[K-[m[K	topic="refs/heads/$2"
+[35m[K../vulnerable-api/.git/hooks/pre-rebase.sample[m[K[36m[K-[m[K[32m[K23[m[K[36m[K-[m[Kelse
+[35m[K../vulnerable-api/.git/hooks/pre-rebase.sample[m[K[36m[K:[m[K[32m[K24[m[K[36m[K:[m[K	topic=[01;31m[K`git symbolic-ref HEAD`[m[K ||
+[35m[K../vulnerable-api/.git/hooks/pre-rebase.sample[m[K[36m[K-[m[K[32m[K25[m[K[36m[K-[m[K	exit 0 ;# we do not interrupt rebasing detached HEAD
+[36m[K--[m[K
+[35m[K../vulnerable-api/.git/hooks/pre-rebase.sample[m[K[36m[K-[m[K[32m[K43[m[K[36m[K-[m[K}
+[35m[K../vulnerable-api/.git/hooks/pre-rebase.sample[m[K[36m[K-[m[K[32m[K44[m[K[36m[K-[m[K
+[35m[K../vulnerable-api/.git/hooks/pre-rebase.sample[m[K[36m[K-[m[K[32m[K45[m[K[36m[K-[m[K# Is topic fully merged to master?
+[35m[K../vulnerable-api/.git/hooks/pre-rebase.sample[m[K[36m[K:[m[K[32m[K46[m[K[36m[K:[m[Knot_in_master=[01;31m[K`git rev-list --pretty=oneline ^master "$topic"`[m[K
+[35m[K../vulnerable-api/.git/hooks/pre-rebase.sample[m[K[36m[K-[m[K[32m[K47[m[K[36m[K-[m[Kif test -z "$not_in_master"
+[36m[K--[m[K
+[35m[K../vulnerable-api/.git/hooks/pre-rebase.sample[m[K[36m[K-[m[K[32m[K51[m[K[36m[K-[m[Kfi
+[35m[K../vulnerable-api/.git/hooks/pre-rebase.sample[m[K[36m[K-[m[K[32m[K52[m[K[36m[K-[m[K
+[35m[K../vulnerable-api/.git/hooks/pre-rebase.sample[m[K[36m[K-[m[K[32m[K53[m[K[36m[K-[m[K# Is topic ever merged to next?  If so you should not be rebasing it.
+[35m[K../vulnerable-api/.git/hooks/pre-rebase.sample[m[K[36m[K:[m[K[32m[K54[m[K[36m[K:[m[Konly_next_1=[01;31m[K`git rev-list ^master "^$topic" ${publish} | sort`[m[K
+[35m[K../vulnerable-api/.git/hooks/pre-rebase.sample[m[K[36m[K:[m[K[32m[K55[m[K[36m[K:[m[Konly_next_2=[01;31m[K`git rev-list ^master           ${publish} | sort`[m[K
+[35m[K../vulnerable-api/.git/hooks/pre-rebase.sample[m[K[36m[K-[m[K[32m[K56[m[K[36m[K-[m[Kif test "$only_next_1" = "$only_next_2"
+[35m[K../vulnerable-api/.git/hooks/pre-rebase.sample[m[K[36m[K-[m[K[32m[K57[m[K[36m[K-[m[Kthen
+[35m[K../vulnerable-api/.git/hooks/pre-rebase.sample[m[K[36m[K:[m[K[32m[K58[m[K[36m[K:[m[K	not_in_topic=[01;31m[K`git rev-list "^$topic" master`[m[K
+[35m[K../vulnerable-api/.git/hooks/pre-rebase.sample[m[K[36m[K-[m[K[32m[K59[m[K[36m[K-[m[K	if test -z "$not_in_topic"
+[36m[K--[m[K
+[35m[K../vulnerable-api/.git/hooks/pre-rebase.sample[m[K[36m[K-[m[K[32m[K64[m[K[36m[K-[m[K		exit 0
+[35m[K../vulnerable-api/.git/hooks/pre-rebase.sample[m[K[36m[K-[m[K[32m[K65[m[K[36m[K-[m[K	fi
+[35m[K../vulnerable-api/.git/hooks/pre-rebase.sample[m[K[36m[K-[m[K[32m[K66[m[K[36m[K-[m[Kelse
+[35m[K../vulnerable-api/.git/hooks/pre-rebase.sample[m[K[36m[K:[m[K[32m[K67[m[K[36m[K:[m[K	not_in_next=[01;31m[K`git rev-list --pretty=oneline ^${publish} "$topic"`[m[K
+[35m[K../vulnerable-api/.git/hooks/pre-rebase.sample[m[K[36m[K-[m[K[32m[K68[m[K[36m[K-[m[K	/usr/bin/perl -e '
+[36m[K--[m[K
+[35m[K../vulnerable-api/.git/hooks/prepare-commit-msg.sample[m[K[36m[K-[m[K[32m[K29[m[K[36m[K-[m[K# case "$COMMIT_SOURCE,$SHA1" in
+[35m[K../vulnerable-api/.git/hooks/prepare-commit-msg.sample[m[K[36m[K-[m[K[32m[K30[m[K[36m[K-[m[K#  ,|template,)
+[35m[K../vulnerable-api/.git/hooks/prepare-commit-msg.sample[m[K[36m[K-[m[K[32m[K31[m[K[36m[K-[m[K#    /usr/bin/perl -i.bak -pe '
+[35m[K../vulnerable-api/.git/hooks/prepare-commit-msg.sample[m[K[36m[K:[m[K[32m[K32[m[K[36m[K:[m[K#       print "\n" . [01;31m[K`git diff --cached --name-status -r`[m[K
+[35m[K../vulnerable-api/.git/hooks/prepare-commit-msg.sample[m[K[36m[K-[m[K[32m[K33[m[K[36m[K-[m[K# 	 if /^#/ && $first++ == 0' "$COMMIT_MSG_FILE" ;;
+grep: ../vulnerable-api/.git/objects/pack/pack-091b857311155b508ddcd09af7a5581785c6c70c.pack: binary file matches
+grep: ../vulnerable-api/create.png: binary file matches
+grep: ../vulnerable-api/ip.png: binary file matches
+grep: ../vulnerable-api/kitematic.png: binary file matches
+[36m[K--[m[K
+[35m[K../vulnerable-api/README.md[m[K[36m[K-[m[K[32m[K11[m[K[36m[K-[m[K* Download the latest version of [docker toolbox](https://www.docker.com/products/docker-toolbox)
+[35m[K../vulnerable-api/README.md[m[K[36m[K-[m[K[32m[K12[m[K[36m[K-[m[K* Go through installation steps
+[35m[K../vulnerable-api/README.md[m[K[36m[K-[m[K[32m[K13[m[K[36m[K-[m[K* Start up Kitematic ![kitematic](kitematic.png).
+[35m[K../vulnerable-api/README.md[m[K[36m[K:[m[K[32m[K14[m[K[36m[K:[m[K* In the search box type [01;31m[K`mkam/vulnerable-api-demo`[m[K and click create ![create](create.png).
+[35m[K../vulnerable-api/README.md[m[K[36m[K-[m[K[32m[K15[m[K[36m[K-[m[K* On right side you will see an IP:PORT access url ![ip](ip.png).
+[36m[K--[m[K
+[35m[K../vulnerable-api/README.md[m[K[36m[K-[m[K[32m[K23[m[K[36m[K-[m[K* Download the latest version of [docker toolbox](https://www.docker.com/products/docker-toolbox)
+[35m[K../vulnerable-api/README.md[m[K[36m[K-[m[K[32m[K24[m[K[36m[K-[m[K* Go through installation steps
+[35m[K../vulnerable-api/README.md[m[K[36m[K-[m[K[32m[K25[m[K[36m[K-[m[K* Start up Kitematic ![kitematic](kitematic_win.png).
+[35m[K../vulnerable-api/README.md[m[K[36m[K:[m[K[32m[K26[m[K[36m[K:[m[K* In the search box type [01;31m[K`mkam/vulnerable-api-demo`[m[K and click create ![create](create.png).
+[35m[K../vulnerable-api/README.md[m[K[36m[K-[m[K[32m[K27[m[K[36m[K-[m[K* On right side you will see an IP:PORT access url ![ip](ip.png).
+[36m[K--[m[K
+[35m[K../vulnerable-api/README.md[m[K[36m[K-[m[K[32m[K31[m[K[36m[K-[m[K### Linux
+[35m[K../vulnerable-api/README.md[m[K[36m[K-[m[K[32m[K32[m[K[36m[K-[m[K
+[35m[K../vulnerable-api/README.md[m[K[36m[K-[m[K[32m[K33[m[K[36m[K-[m[K* Install docker engine and docker client [on docker website](https://docs.docker.com/engine/installation/linux/ubuntulinux/)
+[35m[K../vulnerable-api/README.md[m[K[36m[K:[m[K[32m[K34[m[K[36m[K:[m[K* Run [01;31m[K`docker run -tid -p 8081:8081 --name api mkam/vulnerable-api-demo`[m[K
+[35m[K../vulnerable-api/README.md[m[K[36m[K:[m[K[32m[K35[m[K[36m[K:[m[K* You can now test your api [01;31m[K`curl localhost:8081 -v`[m[K
+[35m[K../vulnerable-api/README.md[m[K[36m[K-[m[K[32m[K36[m[K[36m[K-[m[K
+[36m[K--[m[K
+[35m[K../vulnerable-api/README.md[m[K[36m[K-[m[K[32m[K221[m[K[36m[K-[m[KCreates an user with the given username and password.
+[35m[K../vulnerable-api/README.md[m[K[36m[K-[m[K[32m[K222[m[K[36m[K-[m[K2 Conditions:
+[35m[K../vulnerable-api/README.md[m[K[36m[K-[m[K[32m[K223[m[K[36m[K-[m[K  1. User cannot already exist
+[35m[K../vulnerable-api/README.md[m[K[36m[K:[m[K[32m[K224[m[K[36m[K:[m[K  2. Username has to meet strict naming guidlines. The username must be matched by this regular expression: [01;31m[K```([a-z]+)*[0-9]```[m[K. This means that a username has to start with a lowercase letter and end with numbers. So, usernames that look like "user1" or "abc123" will be accepted, but usernames that look like "USER1" or "1user" will not be accepted.
+[35m[K../vulnerable-api/README.md[m[K[36m[K-[m[K[32m[K225[m[K[36m[K-[m[K

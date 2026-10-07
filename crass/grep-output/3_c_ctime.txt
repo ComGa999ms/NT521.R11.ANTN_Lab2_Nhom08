@@ -1,0 +1,23 @@
+# Info: ctime, ctime_r, asctime and asctime_r are in banned.h
+# Filename 3_c_ctime.txt
+# Example: asctime_r()
+# False positive example: FALSE_POSITIVES_EXAMPLE_PLACEHOLDER
+# Grep args: 
+# Search regex: ctime_?r?\(
+[35m[K../vulnerable-api/ansible/roles/api/files/vAPI.py[m[K[36m[K-[m[K[32m[K84[m[K[36m[K-[m[K                # token has expired. create new one that expires 5 minutes
+[35m[K../vulnerable-api/ansible/roles/api/files/vAPI.py[m[K[36m[K-[m[K[32m[K85[m[K[36m[K-[m[K                # after creation
+[35m[K../vulnerable-api/ansible/roles/api/files/vAPI.py[m[K[36m[K-[m[K[32m[K86[m[K[36m[K-[m[K                expire_stamp = int(time.time() + 300)
+[35m[K../vulnerable-api/ansible/roles/api/files/vAPI.py[m[K[36m[K:[m[K[32m[K87[m[K[36m[K:[m[K                expire_date = time.[01;31m[Kctime([m[Kint(expire_stamp))
+[35m[K../vulnerable-api/ansible/roles/api/files/vAPI.py[m[K[36m[K-[m[K[32m[K88[m[K[36m[K-[m[K                token = hashlib.md5(expire_date).hexdigest()
+[36m[K--[m[K
+[35m[K../vulnerable-api/ansible/roles/api/files/vAPI.py[m[K[36m[K-[m[K[32m[K98[m[K[36m[K-[m[K                    'id': token, 'expires': expire_date}
+[35m[K../vulnerable-api/ansible/roles/api/files/vAPI.py[m[K[36m[K-[m[K[32m[K99[m[K[36m[K-[m[K            else:
+[35m[K../vulnerable-api/ansible/roles/api/files/vAPI.py[m[K[36m[K-[m[K[32m[K100[m[K[36m[K-[m[K                # recent token hasn't expired. use same one.
+[35m[K../vulnerable-api/ansible/roles/api/files/vAPI.py[m[K[36m[K:[m[K[32m[K101[m[K[36m[K:[m[K                expire_date = time.[01;31m[Kctime([m[Kint(token_record[3]))
+[35m[K../vulnerable-api/ansible/roles/api/files/vAPI.py[m[K[36m[K-[m[K[32m[K102[m[K[36m[K-[m[K                response['access']['token'] = {
+[36m[K--[m[K
+[35m[K../vulnerable-api/ansible/roles/api/files/vAPI.py[m[K[36m[K-[m[K[32m[K104[m[K[36m[K-[m[K        else:
+[35m[K../vulnerable-api/ansible/roles/api/files/vAPI.py[m[K[36m[K-[m[K[32m[K105[m[K[36m[K-[m[K            # no token exists. create one that expires in 5 minutes
+[35m[K../vulnerable-api/ansible/roles/api/files/vAPI.py[m[K[36m[K-[m[K[32m[K106[m[K[36m[K-[m[K            expire_stamp = int(time.time() + 300)
+[35m[K../vulnerable-api/ansible/roles/api/files/vAPI.py[m[K[36m[K:[m[K[32m[K107[m[K[36m[K:[m[K            expire_date = time.[01;31m[Kctime([m[Kint(expire_stamp))
+[35m[K../vulnerable-api/ansible/roles/api/files/vAPI.py[m[K[36m[K-[m[K[32m[K108[m[K[36m[K-[m[K            token = hashlib.md5(expire_date).hexdigest()

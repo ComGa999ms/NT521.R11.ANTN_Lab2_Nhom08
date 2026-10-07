@@ -1,0 +1,8 @@
+# Info: XSS. Sometimes refered in comments or variable names for code that should prevent it. If you find something interesting that is used for prevention in a framework, you might want to add another grep for that in this script.
+# Filename 4_general_xss_lowercase.txt
+# Example: xss
+# False positive example: FALSE_POSITIVES_EXAMPLE_PLACEHOLDER
+# Grep args: 
+# Search regex: xss
+grep: ../vulnerable-api/.git/objects/pack/pack-091b857311155b508ddcd09af7a5581785c6c70c.pack: binary file matches
+grep: ../vulnerable-api/kitematic.png: binary file matches

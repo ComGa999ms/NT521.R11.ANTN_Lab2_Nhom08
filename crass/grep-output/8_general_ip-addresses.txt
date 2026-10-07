@@ -1,0 +1,44 @@
+# Info: IP addresses
+# Filename 8_general_ip-addresses.txt
+# Example: 192.168.0.1 10.0.0.1
+# False positive example: FALSE_POSITIVES_EXAMPLE_PLACEHOLDER
+# Grep args: -i
+# Search regex: (25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)
+[35m[K../vulnerable-api/ansible/inventory/hosts[m[K[36m[K-[m[K[32m[K1[m[K[36m[K-[m[K[servers]
+[35m[K../vulnerable-api/ansible/inventory/hosts[m[K[36m[K:[m[K[32m[K2[m[K[36m[K:[m[K[01;31m[K0.0.0.0[m[K
+[35m[K../vulnerable-api/ansible/inventory/hosts[m[K[36m[K-[m[K[32m[K3[m[K[36m[K-[m[K
+[36m[K--[m[K
+[35m[K../vulnerable-api/ansible/roles/api/files/vAPI.py[m[K[36m[K-[m[K[32m[K250[m[K[36m[K-[m[K    resp.headers['Access-Control-Allow-Headers'] = '*'
+[35m[K../vulnerable-api/ansible/roles/api/files/vAPI.py[m[K[36m[K-[m[K[32m[K251[m[K[36m[K-[m[K
+[35m[K../vulnerable-api/ansible/roles/api/files/vAPI.py[m[K[36m[K-[m[K[32m[K252[m[K[36m[K-[m[Kdebug(True)
+[35m[K../vulnerable-api/ansible/roles/api/files/vAPI.py[m[K[36m[K:[m[K[32m[K253[m[K[36m[K:[m[Krun(host='[01;31m[K0.0.0.0[m[K', port=8081, reloader=True)
+[36m[K--[m[K
+[35m[K../vulnerable-api/README.md[m[K[36m[K-[m[K[32m[K107[m[K[36m[K-[m[KAccept: application/json
+[35m[K../vulnerable-api/README.md[m[K[36m[K-[m[K[32m[K108[m[K[36m[K-[m[KContent-Length: 36
+[35m[K../vulnerable-api/README.md[m[K[36m[K-[m[K[32m[K109[m[K[36m[K-[m[KContent-Type: application/json
+[35m[K../vulnerable-api/README.md[m[K[36m[K:[m[K[32m[K110[m[K[36m[K:[m[KHost: [01;31m[K192.168.13.37[m[K:8081
+[35m[K../vulnerable-api/README.md[m[K[36m[K-[m[K[32m[K111[m[K[36m[K-[m[K
+[36m[K--[m[K
+[35m[K../vulnerable-api/README.md[m[K[36m[K-[m[K[32m[K126[m[K[36m[K-[m[KAccept: */*
+[35m[K../vulnerable-api/README.md[m[K[36m[K-[m[K[32m[K127[m[K[36m[K-[m[KContent-Length: 170
+[35m[K../vulnerable-api/README.md[m[K[36m[K-[m[K[32m[K128[m[K[36m[K-[m[KContent-Type: application/xml
+[35m[K../vulnerable-api/README.md[m[K[36m[K:[m[K[32m[K129[m[K[36m[K:[m[KHost: [01;31m[K192.168.13.37[m[K:8081
+[35m[K../vulnerable-api/README.md[m[K[36m[K-[m[K[32m[K130[m[K[36m[K-[m[K
+[36m[K--[m[K
+[35m[K../vulnerable-api/README.md[m[K[36m[K-[m[K[32m[K185[m[K[36m[K-[m[K###### Request
+[35m[K../vulnerable-api/README.md[m[K[36m[K-[m[K[32m[K186[m[K[36m[K-[m[K```
+[35m[K../vulnerable-api/README.md[m[K[36m[K-[m[K[32m[K187[m[K[36m[K-[m[KGET /user/1 HTTP/1.1
+[35m[K../vulnerable-api/README.md[m[K[36m[K:[m[K[32m[K188[m[K[36m[K:[m[KHost: [01;31m[K192.168.13.37[m[K:8081
+[35m[K../vulnerable-api/README.md[m[K[36m[K-[m[K[32m[K189[m[K[36m[K-[m[KX-Auth-Token: AUTH_TOKEN
+[36m[K--[m[K
+[35m[K../vulnerable-api/README.md[m[K[36m[K-[m[K[32m[K245[m[K[36m[K-[m[K```
+[35m[K../vulnerable-api/README.md[m[K[36m[K-[m[K[32m[K246[m[K[36m[K-[m[KPOST /user HTTP/1.1
+[35m[K../vulnerable-api/README.md[m[K[36m[K-[m[K[32m[K247[m[K[36m[K-[m[KUser-Agent: curl/7.35.0
+[35m[K../vulnerable-api/README.md[m[K[36m[K:[m[K[32m[K248[m[K[36m[K:[m[KHost: [01;31m[K127.0.0.1[m[K:8081
+[35m[K../vulnerable-api/README.md[m[K[36m[K-[m[K[32m[K249[m[K[36m[K-[m[KAccept: */*
+[36m[K--[m[K
+[35m[K../vulnerable-api/README.md[m[K[36m[K-[m[K[32m[K301[m[K[36m[K-[m[K###### Request
+[35m[K../vulnerable-api/README.md[m[K[36m[K-[m[K[32m[K302[m[K[36m[K-[m[K```
+[35m[K../vulnerable-api/README.md[m[K[36m[K-[m[K[32m[K303[m[K[36m[K-[m[KGET /uptime/s HTTP/1.1
+[35m[K../vulnerable-api/README.md[m[K[36m[K:[m[K[32m[K304[m[K[36m[K:[m[KHost: [01;31m[K192.168.13.37[m[K:8081
+[35m[K../vulnerable-api/README.md[m[K[36m[K-[m[K[32m[K305[m[K[36m[K-[m[KAccept-Language: en-US,en;q=0.5

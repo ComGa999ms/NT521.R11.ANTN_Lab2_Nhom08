@@ -1,0 +1,3 @@
+# Info: web.xml is the Spring frameworks main mapping XML and important to understand which URLs are mapped to where
+# Filename: 1_filename_web-xml.txt
+# Search: find -iname 'web.xml'

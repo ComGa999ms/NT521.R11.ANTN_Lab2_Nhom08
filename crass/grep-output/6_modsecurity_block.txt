@@ -1,0 +1,10 @@
+# Info: Block is not recommended to use because it is depending on default action, use deny (or allow)
+# Filename 6_modsecurity_block.txt
+# Example: block
+# False positive example: FALSE_POSITIVES_EXAMPLE_PLACEHOLDER
+# Grep args: -i
+# Search regex: block
+[35m[K../vulnerable-api/.git/hooks/update.sample[m[K[36m[K-[m[K[32m[K1[m[K[36m[K-[m[K#!/bin/sh
+[35m[K../vulnerable-api/.git/hooks/update.sample[m[K[36m[K-[m[K[32m[K2[m[K[36m[K-[m[K#
+[35m[K../vulnerable-api/.git/hooks/update.sample[m[K[36m[K:[m[K[32m[K3[m[K[36m[K:[m[K# An example hook script to [01;31m[Kblock[m[K unannotated tags from entering.
+[35m[K../vulnerable-api/.git/hooks/update.sample[m[K[36m[K-[m[K[32m[K4[m[K[36m[K-[m[K# Called by "git receive-pack" with arguments: refname sha1-old sha1-new

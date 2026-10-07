@@ -1,0 +1,16 @@
+# Info: MySQL old style hash
+# Filename 3_cryptocred_mysql_old_hashes.txt
+# Example: pass="6f8c114b58f2ce9e"
+# False positive example: FALSE_POSITIVES_EXAMPLE_PLACEHOLDER
+# Grep args: 
+# Search regex: [0-7][0-9a-f]{7}[0-7][0-9a-f]{7}
+[35m[K../vulnerable-api/.git/logs/HEAD[m[K[36m[K:[m[K[32m[K1[m[K[36m[K:[m[K[01;31m[K0000000000000000[m[K[01;31m[K0000000000000000[m[K00000000 4b[01;31m[K050235e20bc272e6[m[K[01;31m[K46fa62e14cb8f015[m[Kec2592 ComGa999ms <nguyendangkhoa1415@gmail.com> 1791335668 +0700	clone: from https://github.com/rahulunair/vulnerable-api
+[36m[K--[m[K
+[35m[K../vulnerable-api/.git/logs/refs/heads/master[m[K[36m[K:[m[K[32m[K1[m[K[36m[K:[m[K[01;31m[K0000000000000000[m[K[01;31m[K0000000000000000[m[K00000000 4b[01;31m[K050235e20bc272e6[m[K[01;31m[K46fa62e14cb8f015[m[Kec2592 ComGa999ms <nguyendangkhoa1415@gmail.com> 1791335668 +0700	clone: from https://github.com/rahulunair/vulnerable-api
+[36m[K--[m[K
+[35m[K../vulnerable-api/.git/logs/refs/remotes/origin/HEAD[m[K[36m[K:[m[K[32m[K1[m[K[36m[K:[m[K[01;31m[K0000000000000000[m[K[01;31m[K0000000000000000[m[K00000000 4b[01;31m[K050235e20bc272e6[m[K[01;31m[K46fa62e14cb8f015[m[Kec2592 ComGa999ms <nguyendangkhoa1415@gmail.com> 1791335668 +0700	clone: from https://github.com/rahulunair/vulnerable-api
+[36m[K--[m[K
+[35m[K../vulnerable-api/.git/packed-refs[m[K[36m[K-[m[K[32m[K1[m[K[36m[K-[m[K# pack-refs with: peeled fully-peeled sorted 
+[35m[K../vulnerable-api/.git/packed-refs[m[K[36m[K:[m[K[32m[K2[m[K[36m[K:[m[K4b[01;31m[K050235e20bc272e6[m[K[01;31m[K46fa62e14cb8f015[m[Kec2592 refs/remotes/origin/master
+[36m[K--[m[K
+[35m[K../vulnerable-api/.git/refs/heads/master[m[K[36m[K:[m[K[32m[K1[m[K[36m[K:[m[K4b[01;31m[K050235e20bc272e6[m[K[01;31m[K46fa62e14cb8f015[m[Kec2592

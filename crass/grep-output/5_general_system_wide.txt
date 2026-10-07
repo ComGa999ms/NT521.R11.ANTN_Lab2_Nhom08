@@ -1,0 +1,29 @@
+# Info: system: Command execution?
+# Filename 5_general_system_wide.txt
+# Example: system
+# False positive example: FALSE_POSITIVES_EXAMPLE_PLACEHOLDER
+# Grep args: -i
+# Search regex: system
+[35m[K../vulnerable-api/README.md[m[K[36m[K-[m[K[32m[K43[m[K[36m[K-[m[K
+[35m[K../vulnerable-api/README.md[m[K[36m[K-[m[K[32m[K44[m[K[36m[K-[m[K## API Details
+[35m[K../vulnerable-api/README.md[m[K[36m[K-[m[K[32m[K45[m[K[36m[K-[m[K
+[35m[K../vulnerable-api/README.md[m[K[36m[K:[m[K[32m[K46[m[K[36m[K:[m[KThe example API can be accessed on the [01;31m[Ksystem[m[K at port 8081.
+[35m[K../vulnerable-api/README.md[m[K[36m[K-[m[K[32m[K47[m[K[36m[K-[m[K
+[36m[K--[m[K
+[35m[K../vulnerable-api/README.md[m[K[36m[K-[m[K[32m[K77[m[K[36m[K-[m[K
+[35m[K../vulnerable-api/README.md[m[K[36m[K-[m[K[32m[K78[m[K[36m[K-[m[K##### URL
+[35m[K../vulnerable-api/README.md[m[K[36m[K-[m[K[32m[K79[m[K[36m[K-[m[K
+[35m[K../vulnerable-api/README.md[m[K[36m[K:[m[K[32m[K80[m[K[36m[K:[m[K[01;31m[KSYSTEM[m[K_IP:8081
+[35m[K../vulnerable-api/README.md[m[K[36m[K-[m[K[32m[K81[m[K[36m[K-[m[K
+[36m[K--[m[K
+[35m[K../vulnerable-api/README.md[m[K[36m[K-[m[K[32m[K284[m[K[36m[K-[m[K##### GET /uptime
+[35m[K../vulnerable-api/README.md[m[K[36m[K-[m[K[32m[K285[m[K[36m[K-[m[K##### GET /uptime/FLAG
+[35m[K../vulnerable-api/README.md[m[K[36m[K-[m[K[32m[K286[m[K[36m[K-[m[KReturns the server uptime, and now supports pretty formatting just by passing in command line flags. 
+[35m[K../vulnerable-api/README.md[m[K[36m[K:[m[K[32m[K287[m[K[36m[K:[m[KSuper useful for [01;31m[Ksystem[m[K administrators!
+[35m[K../vulnerable-api/README.md[m[K[36m[K-[m[K[32m[K288[m[K[36m[K-[m[K
+[36m[K--[m[K
+[35m[K../vulnerable-api/README.md[m[K[36m[K-[m[K[32m[K292[m[K[36m[K-[m[K
+[35m[K../vulnerable-api/README.md[m[K[36m[K-[m[K[32m[K293[m[K[36m[K-[m[K###### Response JSON Object
+[35m[K../vulnerable-api/README.md[m[K[36m[K-[m[K[32m[K294[m[K[36m[K-[m[K1. Response
+[35m[K../vulnerable-api/README.md[m[K[36m[K:[m[K[32m[K295[m[K[36m[K:[m[K  * Command (string) - The [01;31m[Ksystem[m[K call you made
+[35m[K../vulnerable-api/README.md[m[K[36m[K-[m[K[32m[K296[m[K[36m[K-[m[K  * Output (string) - uptime

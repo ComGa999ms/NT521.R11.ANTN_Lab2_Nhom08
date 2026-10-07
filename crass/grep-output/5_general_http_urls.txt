@@ -1,0 +1,17 @@
+# Info: All HTTP URIs
+# Filename 5_general_http_urls.txt
+# Example: http://example.com
+# False positive example: FALSE_POSITIVES_EXAMPLE_PLACEHOLDER
+# Grep args: -i
+# Search regex: http://
+grep: ../vulnerable-api/browser.png: binary file matches
+grep: ../vulnerable-api/create.png: binary file matches
+grep: ../vulnerable-api/ip.png: binary file matches
+grep: ../vulnerable-api/kitematic.png: binary file matches
+grep: ../vulnerable-api/kitematic_win.png: binary file matches
+[36m[K--[m[K
+[35m[K../vulnerable-api/README.md[m[K[36m[K-[m[K[32m[K36[m[K[36m[K-[m[K
+[35m[K../vulnerable-api/README.md[m[K[36m[K-[m[K[32m[K37[m[K[36m[K-[m[K#### Install Burp Proxy
+[35m[K../vulnerable-api/README.md[m[K[36m[K-[m[K[32m[K38[m[K[36m[K-[m[K
+[35m[K../vulnerable-api/README.md[m[K[36m[K:[m[K[32m[K39[m[K[36m[K:[m[K* Install java [from oracle website]([01;31m[Khttp://[m[Kwww.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html) if you don't have it already
+[35m[K../vulnerable-api/README.md[m[K[36m[K-[m[K[32m[K40[m[K[36m[K-[m[K* Download jar file from [burp website](https://portswigger.net/burp/downloadfree.html)

@@ -1,0 +1,11 @@
+# Info: Do a query on Android
+# Filename 6_android_access_query.txt
+# Example: .query(
+# False positive example: FALSE_POSITIVES_EXAMPLE_PLACEHOLDER
+# Grep args: 
+# Search regex: query\(
+[35m[K../vulnerable-api/.git/hooks/fsmonitor-watchman.sample[m[K[36m[K-[m[K[32m[K44[m[K[36m[K-[m[Klaunch_watchman();
+[35m[K../vulnerable-api/.git/hooks/fsmonitor-watchman.sample[m[K[36m[K-[m[K[32m[K45[m[K[36m[K-[m[K
+[35m[K../vulnerable-api/.git/hooks/fsmonitor-watchman.sample[m[K[36m[K-[m[K[32m[K46[m[K[36m[K-[m[Ksub launch_watchman {
+[35m[K../vulnerable-api/.git/hooks/fsmonitor-watchman.sample[m[K[36m[K:[m[K[32m[K47[m[K[36m[K:[m[K	my $o = watchman_[01;31m[Kquery([m[K);
+[35m[K../vulnerable-api/.git/hooks/fsmonitor-watchman.sample[m[K[36m[K-[m[K[32m[K48[m[K[36m[K-[m[K	if (is_work_tree_watched($o)) {

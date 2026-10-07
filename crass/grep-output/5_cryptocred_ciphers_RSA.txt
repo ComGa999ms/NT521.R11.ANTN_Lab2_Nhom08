@@ -1,0 +1,7 @@
+# Info: RSA cipher. Security depends heavily on usage and what is secured.
+# Filename 5_cryptocred_ciphers_RSA.txt
+# Example: RSA
+# False positive example: FALSE_POSITIVES_EXAMPLE_PLACEHOLDER
+# Grep args: -i
+# Search regex: RSA
+grep: ../vulnerable-api/.git/objects/pack/pack-091b857311155b508ddcd09af7a5581785c6c70c.pack: binary file matches

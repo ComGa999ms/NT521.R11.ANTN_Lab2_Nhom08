@@ -1,0 +1,3 @@
+# Info: All publishsettings files (Azure settings file) according to their file extension
+# Filename: 1_find_azure_publishsettings.txt
+# Search: find -iname '*.publishsettings'

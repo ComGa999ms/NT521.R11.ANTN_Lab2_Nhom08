@@ -1,0 +1,23 @@
+# Info: SQL INSERT statement
+# Filename 4_general_sql_insert.txt
+# Example: INSERT INTO TABLE example VALUES(123);
+# False positive example: FALSE_POSITIVES_EXAMPLE_PLACEHOLDER
+# Grep args: -i
+# Search regex: INSERT.{0,20}INTO
+[35m[K../vulnerable-api/ansible/roles/api/files/vAPI.py[m[K[36m[K-[m[K[32m[K89[m[K[36m[K-[m[K                # we'll parameterize this one because we need this serious
+[35m[K../vulnerable-api/ansible/roles/api/files/vAPI.py[m[K[36m[K-[m[K[32m[K90[m[K[36m[K-[m[K                # functionality
+[35m[K../vulnerable-api/ansible/roles/api/files/vAPI.py[m[K[36m[K-[m[K[32m[K91[m[K[36m[K-[m[K                c.execute(
+[35m[K../vulnerable-api/ansible/roles/api/files/vAPI.py[m[K[36m[K:[m[K[32m[K92[m[K[36m[K:[m[K                    '[01;31m[KINSERT INTO[m[K tokens (token, userid, expires) VALUES (?, ?, ?)',
+[35m[K../vulnerable-api/ansible/roles/api/files/vAPI.py[m[K[36m[K-[m[K[32m[K93[m[K[36m[K-[m[K                    (token,
+[36m[K--[m[K
+[35m[K../vulnerable-api/ansible/roles/api/files/vAPI.py[m[K[36m[K-[m[K[32m[K109[m[K[36m[K-[m[K            # we'll parameterize this one because we need this serious
+[35m[K../vulnerable-api/ansible/roles/api/files/vAPI.py[m[K[36m[K-[m[K[32m[K110[m[K[36m[K-[m[K            # functionality
+[35m[K../vulnerable-api/ansible/roles/api/files/vAPI.py[m[K[36m[K-[m[K[32m[K111[m[K[36m[K-[m[K            c.execute(
+[35m[K../vulnerable-api/ansible/roles/api/files/vAPI.py[m[K[36m[K:[m[K[32m[K112[m[K[36m[K:[m[K                '[01;31m[KINSERT INTO[m[K tokens (token, userid, expires) VALUES (?, ?, ?)',
+[35m[K../vulnerable-api/ansible/roles/api/files/vAPI.py[m[K[36m[K-[m[K[32m[K113[m[K[36m[K-[m[K                (token,
+[36m[K--[m[K
+[35m[K../vulnerable-api/ansible/roles/api/files/vAPI.py[m[K[36m[K-[m[K[32m[K209[m[K[36m[K-[m[K                    name}
+[35m[K../vulnerable-api/ansible/roles/api/files/vAPI.py[m[K[36m[K-[m[K[32m[K210[m[K[36m[K-[m[K            else:
+[35m[K../vulnerable-api/ansible/roles/api/files/vAPI.py[m[K[36m[K-[m[K[32m[K211[m[K[36m[K-[m[K                c.execute(
+[35m[K../vulnerable-api/ansible/roles/api/files/vAPI.py[m[K[36m[K:[m[K[32m[K212[m[K[36m[K:[m[K                    "[01;31m[KINSERT INTO[m[K users (username, password) VALUES (?, ?)", (name, password))
+[35m[K../vulnerable-api/ansible/roles/api/files/vAPI.py[m[K[36m[K-[m[K[32m[K213[m[K[36m[K-[m[K                conn.commit()

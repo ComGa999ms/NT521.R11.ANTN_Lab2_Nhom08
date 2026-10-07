@@ -1,0 +1,47 @@
+# Info: All HTTPS URIs
+# Filename 5_general_https_urls.txt
+# Example: https://example.com
+# False positive example: FALSE_POSITIVES_EXAMPLE_PLACEHOLDER
+# Grep args: -i
+# Search regex: https://
+[35m[K../vulnerable-api/.git/config[m[K[36m[K-[m[K[32m[K5[m[K[36m[K-[m[K	logallrefupdates = true
+[35m[K../vulnerable-api/.git/config[m[K[36m[K-[m[K[32m[K6[m[K[36m[K-[m[K	ignorecase = true
+[35m[K../vulnerable-api/.git/config[m[K[36m[K-[m[K[32m[K7[m[K[36m[K-[m[K[remote "origin"]
+[35m[K../vulnerable-api/.git/config[m[K[36m[K:[m[K[32m[K8[m[K[36m[K:[m[K	url = [01;31m[Khttps://[m[Kgithub.com/rahulunair/vulnerable-api
+[35m[K../vulnerable-api/.git/config[m[K[36m[K-[m[K[32m[K9[m[K[36m[K-[m[K	fetch = +refs/heads/*:refs/remotes/origin/*
+[36m[K--[m[K
+[35m[K../vulnerable-api/.git/hooks/fsmonitor-watchman.sample[m[K[36m[K-[m[K[32m[K5[m[K[36m[K-[m[Kuse IPC::Open2;
+[35m[K../vulnerable-api/.git/hooks/fsmonitor-watchman.sample[m[K[36m[K-[m[K[32m[K6[m[K[36m[K-[m[K
+[35m[K../vulnerable-api/.git/hooks/fsmonitor-watchman.sample[m[K[36m[K-[m[K[32m[K7[m[K[36m[K-[m[K# An example hook script to integrate Watchman
+[35m[K../vulnerable-api/.git/hooks/fsmonitor-watchman.sample[m[K[36m[K:[m[K[32m[K8[m[K[36m[K:[m[K# ([01;31m[Khttps://[m[Kfacebook.github.io/watchman/) with git to speed up detecting
+[35m[K../vulnerable-api/.git/hooks/fsmonitor-watchman.sample[m[K[36m[K-[m[K[32m[K9[m[K[36m[K-[m[K# new and modified files.
+[36m[K--[m[K
+[35m[K../vulnerable-api/.git/logs/HEAD[m[K[36m[K:[m[K[32m[K1[m[K[36m[K:[m[K0000000000000000000000000000000000000000 4b050235e20bc272e646fa62e14cb8f015ec2592 ComGa999ms <nguyendangkhoa1415@gmail.com> 1791335668 +0700	clone: from [01;31m[Khttps://[m[Kgithub.com/rahulunair/vulnerable-api
+[36m[K--[m[K
+[35m[K../vulnerable-api/.git/logs/refs/heads/master[m[K[36m[K:[m[K[32m[K1[m[K[36m[K:[m[K0000000000000000000000000000000000000000 4b050235e20bc272e646fa62e14cb8f015ec2592 ComGa999ms <nguyendangkhoa1415@gmail.com> 1791335668 +0700	clone: from [01;31m[Khttps://[m[Kgithub.com/rahulunair/vulnerable-api
+[36m[K--[m[K
+[35m[K../vulnerable-api/.git/logs/refs/remotes/origin/HEAD[m[K[36m[K:[m[K[32m[K1[m[K[36m[K:[m[K0000000000000000000000000000000000000000 4b050235e20bc272e646fa62e14cb8f015ec2592 ComGa999ms <nguyendangkhoa1415@gmail.com> 1791335668 +0700	clone: from [01;31m[Khttps://[m[Kgithub.com/rahulunair/vulnerable-api
+[36m[K--[m[K
+[35m[K../vulnerable-api/README.md[m[K[36m[K-[m[K[32m[K8[m[K[36m[K-[m[K
+[35m[K../vulnerable-api/README.md[m[K[36m[K-[m[K[32m[K9[m[K[36m[K-[m[K### MacOSX
+[35m[K../vulnerable-api/README.md[m[K[36m[K-[m[K[32m[K10[m[K[36m[K-[m[K
+[35m[K../vulnerable-api/README.md[m[K[36m[K:[m[K[32m[K11[m[K[36m[K:[m[K* Download the latest version of [docker toolbox]([01;31m[Khttps://[m[Kwww.docker.com/products/docker-toolbox)
+[35m[K../vulnerable-api/README.md[m[K[36m[K-[m[K[32m[K12[m[K[36m[K-[m[K* Go through installation steps
+[36m[K--[m[K
+[35m[K../vulnerable-api/README.md[m[K[36m[K-[m[K[32m[K20[m[K[36m[K-[m[K
+[35m[K../vulnerable-api/README.md[m[K[36m[K-[m[K[32m[K21[m[K[36m[K-[m[K***YOU WILL NEED ADMIN RIGHTS TO INSTALL***
+[35m[K../vulnerable-api/README.md[m[K[36m[K-[m[K[32m[K22[m[K[36m[K-[m[K
+[35m[K../vulnerable-api/README.md[m[K[36m[K:[m[K[32m[K23[m[K[36m[K:[m[K* Download the latest version of [docker toolbox]([01;31m[Khttps://[m[Kwww.docker.com/products/docker-toolbox)
+[35m[K../vulnerable-api/README.md[m[K[36m[K-[m[K[32m[K24[m[K[36m[K-[m[K* Go through installation steps
+[36m[K--[m[K
+[35m[K../vulnerable-api/README.md[m[K[36m[K-[m[K[32m[K30[m[K[36m[K-[m[K
+[35m[K../vulnerable-api/README.md[m[K[36m[K-[m[K[32m[K31[m[K[36m[K-[m[K### Linux
+[35m[K../vulnerable-api/README.md[m[K[36m[K-[m[K[32m[K32[m[K[36m[K-[m[K
+[35m[K../vulnerable-api/README.md[m[K[36m[K:[m[K[32m[K33[m[K[36m[K:[m[K* Install docker engine and docker client [on docker website]([01;31m[Khttps://[m[Kdocs.docker.com/engine/installation/linux/ubuntulinux/)
+[35m[K../vulnerable-api/README.md[m[K[36m[K-[m[K[32m[K34[m[K[36m[K-[m[K* Run `docker run -tid -p 8081:8081 --name api mkam/vulnerable-api-demo`
+[36m[K--[m[K
+[35m[K../vulnerable-api/README.md[m[K[36m[K-[m[K[32m[K37[m[K[36m[K-[m[K#### Install Burp Proxy
+[35m[K../vulnerable-api/README.md[m[K[36m[K-[m[K[32m[K38[m[K[36m[K-[m[K
+[35m[K../vulnerable-api/README.md[m[K[36m[K-[m[K[32m[K39[m[K[36m[K-[m[K* Install java [from oracle website](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html) if you don't have it already
+[35m[K../vulnerable-api/README.md[m[K[36m[K:[m[K[32m[K40[m[K[36m[K:[m[K* Download jar file from [burp website]([01;31m[Khttps://[m[Kportswigger.net/burp/downloadfree.html)
+[35m[K../vulnerable-api/README.md[m[K[36m[K-[m[K[32m[K41[m[K[36m[K-[m[K* Run java -jar burpsuite_free_v1.6.32.jar

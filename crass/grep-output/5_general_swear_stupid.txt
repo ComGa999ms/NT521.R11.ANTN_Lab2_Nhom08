@@ -1,0 +1,11 @@
+# Info: Stupid: Swear words are often used when things don't work as intended by the developer.
+# Filename 5_general_swear_stupid.txt
+# Example: Stupid!
+# False positive example: FALSE_POSITIVES_EXAMPLE_PLACEHOLDER
+# Grep args: -i
+# Search regex: stupid
+[35m[K../vulnerable-api/.git/hooks/pre-rebase.sample[m[K[36m[K-[m[K[32m[K114[m[K[36m[K-[m[KWith this workflow, you would want to know:
+[35m[K../vulnerable-api/.git/hooks/pre-rebase.sample[m[K[36m[K-[m[K[32m[K115[m[K[36m[K-[m[K
+[35m[K../vulnerable-api/.git/hooks/pre-rebase.sample[m[K[36m[K-[m[K[32m[K116[m[K[36m[K-[m[K(1) ... if a topic branch has ever been merged to "next".  Young
+[35m[K../vulnerable-api/.git/hooks/pre-rebase.sample[m[K[36m[K:[m[K[32m[K117[m[K[36m[K:[m[K    topic branches can have [01;31m[Kstupid[m[K mistakes you would rather
+[35m[K../vulnerable-api/.git/hooks/pre-rebase.sample[m[K[36m[K-[m[K[32m[K118[m[K[36m[K-[m[K    clean up before publishing, and things that have not been

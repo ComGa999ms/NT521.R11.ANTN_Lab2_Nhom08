@@ -1,0 +1,11 @@
+# Info: Email addresses
+# Filename 6_general_email.txt
+# Example: example-email_address-@example-domain.com
+# False positive example: FALSE_POSITIVES_EXAMPLE_PLACEHOLDER
+# Grep args: -i
+# Search regex: \b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}\b
+[35m[K../vulnerable-api/.git/logs/HEAD[m[K[36m[K:[m[K[32m[K1[m[K[36m[K:[m[K0000000000000000000000000000000000000000 4b050235e20bc272e646fa62e14cb8f015ec2592 ComGa999ms <[01;31m[Knguyendangkhoa1415@gmail.com[m[K> 1791335668 +0700	clone: from https://github.com/rahulunair/vulnerable-api
+[36m[K--[m[K
+[35m[K../vulnerable-api/.git/logs/refs/heads/master[m[K[36m[K:[m[K[32m[K1[m[K[36m[K:[m[K0000000000000000000000000000000000000000 4b050235e20bc272e646fa62e14cb8f015ec2592 ComGa999ms <[01;31m[Knguyendangkhoa1415@gmail.com[m[K> 1791335668 +0700	clone: from https://github.com/rahulunair/vulnerable-api
+[36m[K--[m[K
+[35m[K../vulnerable-api/.git/logs/refs/remotes/origin/HEAD[m[K[36m[K:[m[K[32m[K1[m[K[36m[K:[m[K0000000000000000000000000000000000000000 4b050235e20bc272e646fa62e14cb8f015ec2592 ComGa999ms <[01;31m[Knguyendangkhoa1415@gmail.com[m[K> 1791335668 +0700	clone: from https://github.com/rahulunair/vulnerable-api

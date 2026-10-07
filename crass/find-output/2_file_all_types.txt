@@ -1,0 +1,19 @@
+# Info: All types uniquely listed (according to the file command)
+# Filename: 2_file_all_types.txt
+# Search: grep -v '^#' ./find-output/3_file_all_files_listed.txt | cut -d ':' -f 2- | sort -u
+ ASCII text
+ Git index, version 2, 17 entries
+ Git pack index, version 2
+ Git pack, version 2, 516 objects
+ PNG image data, 1509 x 900, 8-bit/color RGBA, non-interlaced
+ PNG image data, 1512 x 907, 8-bit/color RGBA, non-interlaced
+ PNG image data, 279 x 433, 8-bit/color RGBA, non-interlaced
+ PNG image data, 351 x 90, 8-bit/color RGBA, non-interlaced
+ PNG image data, 849 x 716, 8-bit/color RGBA, non-interlaced
+ POSIX shell script, ASCII text executable
+ Perl script text executable
+ Python script, ASCII text executable
+ SQLite 3.x database, last written using SQLite version 3008002, page size 1024, file counter 21, database pages 3, cookie 0x6, schema 4, UTF-8, version-valid-for 21
+ Unicode text, UTF-8 text, with very long lines (352)
+ data
+ directory

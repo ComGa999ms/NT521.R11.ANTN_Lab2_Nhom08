@@ -1,0 +1,89 @@
+# Info: Base64 URL-safe encoded data (that is more than 6 bytes long). To get from URL-safe base64 to regular base64 you need .replace('-','+').replace('_','/'). This regex won't detect a base64 encoded value over several lines and won't detect one that does not end with an equal sign...
+# Filename 5_general_base64_urlsafe.txt
+# Example: YScqKyo6LV_Dpw==
+# False positive example: /target/ //JQLite - the following ones shouldnt be an issue anymore as we require more than 6 bytes: done echo else gen/ ////
+# Grep args: 
+# Search regex: (?:[A-Za-z0-9_-]{4}){2,}(?:[A-Za-z0-9_-]{2}==|[A-Za-z0-9_-]{3}=)
+[35m[K../vulnerable-api/.git/hooks/pre-commit.sample[m[K[36m[K-[m[K[32m[K16[m[K[36m[K-[m[Kfi
+[35m[K../vulnerable-api/.git/hooks/pre-commit.sample[m[K[36m[K-[m[K[32m[K17[m[K[36m[K-[m[K
+[35m[K../vulnerable-api/.git/hooks/pre-commit.sample[m[K[36m[K-[m[K[32m[K18[m[K[36m[K-[m[K# If you want to allow non-ASCII filenames set this variable to true.
+[35m[K../vulnerable-api/.git/hooks/pre-commit.sample[m[K[36m[K:[m[K[32m[K19[m[K[36m[K:[m[Kal[01;31m[Klownonascii=[m[K$(git config --type=bool hooks.allownonascii)
+[35m[K../vulnerable-api/.git/hooks/pre-commit.sample[m[K[36m[K-[m[K[32m[K20[m[K[36m[K-[m[K
+[36m[K--[m[K
+[35m[K../vulnerable-api/.git/hooks/pre-commit.sample[m[K[36m[K-[m[K[32m[K28[m[K[36m[K-[m[K	# Note that the use of brackets around a tr range is ok here, (it's
+[35m[K../vulnerable-api/.git/hooks/pre-commit.sample[m[K[36m[K-[m[K[32m[K29[m[K[36m[K-[m[K	# even required, for portability to Solaris 10's /usr/bin/tr), since
+[35m[K../vulnerable-api/.git/hooks/pre-commit.sample[m[K[36m[K-[m[K[32m[K30[m[K[36m[K-[m[K	# the square bracket bytes happen to fall in the designated range.
+[35m[K../vulnerable-api/.git/hooks/pre-commit.sample[m[K[36m[K:[m[K[32m[K31[m[K[36m[K:[m[K	test $(git diff --cached --name-only --[01;31m[Kdiff-filter=[m[KA -z $against |
+[35m[K../vulnerable-api/.git/hooks/pre-commit.sample[m[K[36m[K-[m[K[32m[K32[m[K[36m[K-[m[K	  LC_ALL=C tr -d '[ -~]\0' | wc -c) != 0
+[36m[K--[m[K
+[35m[K../vulnerable-api/.git/hooks/pre-rebase.sample[m[K[36m[K-[m[K[32m[K43[m[K[36m[K-[m[K}
+[35m[K../vulnerable-api/.git/hooks/pre-rebase.sample[m[K[36m[K-[m[K[32m[K44[m[K[36m[K-[m[K
+[35m[K../vulnerable-api/.git/hooks/pre-rebase.sample[m[K[36m[K-[m[K[32m[K45[m[K[36m[K-[m[K# Is topic fully merged to master?
+[35m[K../vulnerable-api/.git/hooks/pre-rebase.sample[m[K[36m[K:[m[K[32m[K46[m[K[36m[K:[m[Kno[01;31m[Kt_in_master=[m[K`git rev-list --pretty=oneline ^master "$topic"`
+[35m[K../vulnerable-api/.git/hooks/pre-rebase.sample[m[K[36m[K-[m[K[32m[K47[m[K[36m[K-[m[Kif test -z "$not_in_master"
+[36m[K--[m[K
+[35m[K../vulnerable-api/.git/hooks/pre-rebase.sample[m[K[36m[K-[m[K[32m[K51[m[K[36m[K-[m[Kfi
+[35m[K../vulnerable-api/.git/hooks/pre-rebase.sample[m[K[36m[K-[m[K[32m[K52[m[K[36m[K-[m[K
+[35m[K../vulnerable-api/.git/hooks/pre-rebase.sample[m[K[36m[K-[m[K[32m[K53[m[K[36m[K-[m[K# Is topic ever merged to next?  If so you should not be rebasing it.
+[35m[K../vulnerable-api/.git/hooks/pre-rebase.sample[m[K[36m[K:[m[K[32m[K54[m[K[36m[K:[m[K[01;31m[Konly_next_1=[m[K`git rev-list ^master "^$topic" ${publish} | sort`
+[35m[K../vulnerable-api/.git/hooks/pre-rebase.sample[m[K[36m[K:[m[K[32m[K55[m[K[36m[K:[m[K[01;31m[Konly_next_2=[m[K`git rev-list ^master           ${publish} | sort`
+[35m[K../vulnerable-api/.git/hooks/pre-rebase.sample[m[K[36m[K-[m[K[32m[K56[m[K[36m[K-[m[Kif test "$only_next_1" = "$only_next_2"
+[35m[K../vulnerable-api/.git/hooks/pre-rebase.sample[m[K[36m[K-[m[K[32m[K57[m[K[36m[K-[m[Kthen
+[35m[K../vulnerable-api/.git/hooks/pre-rebase.sample[m[K[36m[K:[m[K[32m[K58[m[K[36m[K:[m[K	n[01;31m[Kot_in_topic=[m[K`git rev-list "^$topic" master`
+[35m[K../vulnerable-api/.git/hooks/pre-rebase.sample[m[K[36m[K-[m[K[32m[K59[m[K[36m[K-[m[K	if test -z "$not_in_topic"
+[36m[K--[m[K
+[35m[K../vulnerable-api/.git/hooks/pre-rebase.sample[m[K[36m[K-[m[K[32m[K64[m[K[36m[K-[m[K		exit 0
+[35m[K../vulnerable-api/.git/hooks/pre-rebase.sample[m[K[36m[K-[m[K[32m[K65[m[K[36m[K-[m[K	fi
+[35m[K../vulnerable-api/.git/hooks/pre-rebase.sample[m[K[36m[K-[m[K[32m[K66[m[K[36m[K-[m[Kelse
+[35m[K../vulnerable-api/.git/hooks/pre-rebase.sample[m[K[36m[K:[m[K[32m[K67[m[K[36m[K:[m[K	[01;31m[Knot_in_next=[m[K`git rev-list --pretty=oneline ^${publish} "$topic"`
+[35m[K../vulnerable-api/.git/hooks/pre-rebase.sample[m[K[36m[K-[m[K[32m[K68[m[K[36m[K-[m[K	/usr/bin/perl -e '
+[36m[K--[m[K
+[35m[K../vulnerable-api/.git/hooks/prepare-commit-msg.sample[m[K[36m[K-[m[K[32m[K20[m[K[36m[K-[m[K# The third example adds a Signed-off-by line to the message, that can
+[35m[K../vulnerable-api/.git/hooks/prepare-commit-msg.sample[m[K[36m[K-[m[K[32m[K21[m[K[36m[K-[m[K# still be edited.  This is rarely a good idea.
+[35m[K../vulnerable-api/.git/hooks/prepare-commit-msg.sample[m[K[36m[K-[m[K[32m[K22[m[K[36m[K-[m[K
+[35m[K../vulnerable-api/.git/hooks/prepare-commit-msg.sample[m[K[36m[K:[m[K[32m[K23[m[K[36m[K:[m[K[01;31m[KCOMMIT_MSG_FILE=[m[K$1
+[35m[K../vulnerable-api/.git/hooks/prepare-commit-msg.sample[m[K[36m[K:[m[K[32m[K24[m[K[36m[K:[m[KCO[01;31m[KMMIT_SOURCE=[m[K$2
+[35m[K../vulnerable-api/.git/hooks/prepare-commit-msg.sample[m[K[36m[K-[m[K[32m[K25[m[K[36m[K-[m[KSHA1=$3
+[36m[K--[m[K
+[35m[K../vulnerable-api/.git/hooks/update.sample[m[K[36m[K-[m[K[32m[K43[m[K[36m[K-[m[Kfi
+[35m[K../vulnerable-api/.git/hooks/update.sample[m[K[36m[K-[m[K[32m[K44[m[K[36m[K-[m[K
+[35m[K../vulnerable-api/.git/hooks/update.sample[m[K[36m[K-[m[K[32m[K45[m[K[36m[K-[m[K# --- Config
+[35m[K../vulnerable-api/.git/hooks/update.sample[m[K[36m[K:[m[K[32m[K46[m[K[36m[K:[m[Ka[01;31m[Kllowunannotated=[m[K$(git config --type=bool hooks.allowunannotated)
+[35m[K../vulnerable-api/.git/hooks/update.sample[m[K[36m[K:[m[K[32m[K47[m[K[36m[K:[m[Kal[01;31m[Klowdeletebranch=[m[K$(git config --type=bool hooks.allowdeletebranch)
+[35m[K../vulnerable-api/.git/hooks/update.sample[m[K[36m[K:[m[K[32m[K48[m[K[36m[K:[m[Kd[01;31m[Kenycreatebranch=[m[K$(git config --type=bool hooks.denycreatebranch)
+[35m[K../vulnerable-api/.git/hooks/update.sample[m[K[36m[K:[m[K[32m[K49[m[K[36m[K:[m[Kall[01;31m[Kowdeletetag=[m[K$(git config --type=bool hooks.allowdeletetag)
+[35m[K../vulnerable-api/.git/hooks/update.sample[m[K[36m[K:[m[K[32m[K50[m[K[36m[K:[m[Kall[01;31m[Kowmodifytag=[m[K$(git config --type=bool hooks.allowmodifytag)
+[35m[K../vulnerable-api/.git/hooks/update.sample[m[K[36m[K-[m[K[32m[K51[m[K[36m[K-[m[K
+[35m[K../vulnerable-api/.git/hooks/update.sample[m[K[36m[K-[m[K[32m[K52[m[K[36m[K-[m[K# check for no description
+[35m[K../vulnerable-api/.git/hooks/update.sample[m[K[36m[K:[m[K[32m[K53[m[K[36m[K:[m[K[01;31m[Kprojectdesc=[m[K$(sed -e '1q' "$GIT_DIR/description")
+[35m[K../vulnerable-api/.git/hooks/update.sample[m[K[36m[K-[m[K[32m[K54[m[K[36m[K-[m[Kcase "$projectdesc" in
+[36m[K--[m[K
+[35m[K../vulnerable-api/.git/hooks/update.sample[m[K[36m[K-[m[K[32m[K62[m[K[36m[K-[m[K# if $newrev is 0000...0000, it's a commit to delete a ref.
+[35m[K../vulnerable-api/.git/hooks/update.sample[m[K[36m[K-[m[K[32m[K63[m[K[36m[K-[m[Kzero=$(git hash-object --stdin </dev/null | tr '[0-9a-f]' '0')
+[35m[K../vulnerable-api/.git/hooks/update.sample[m[K[36m[K-[m[K[32m[K64[m[K[36m[K-[m[Kif [ "$newrev" = "$zero" ]; then
+[35m[K../vulnerable-api/.git/hooks/update.sample[m[K[36m[K:[m[K[32m[K65[m[K[36m[K:[m[K	[01;31m[Knewrev_type=[m[Kdelete
+[35m[K../vulnerable-api/.git/hooks/update.sample[m[K[36m[K-[m[K[32m[K66[m[K[36m[K-[m[Kelse
+[35m[K../vulnerable-api/.git/hooks/update.sample[m[K[36m[K:[m[K[32m[K67[m[K[36m[K:[m[K	[01;31m[Knewrev_type=[m[K$(git cat-file -t $newrev)
+[35m[K../vulnerable-api/.git/hooks/update.sample[m[K[36m[K-[m[K[32m[K68[m[K[36m[K-[m[Kfi
+[36m[K--[m[K
+[35m[K../vulnerable-api/.git/hooks/update.sample[m[K[36m[K-[m[K[32m[K70[m[K[36m[K-[m[Kcase "$refname","$newrev_type" in
+[35m[K../vulnerable-api/.git/hooks/update.sample[m[K[36m[K-[m[K[32m[K71[m[K[36m[K-[m[K	refs/tags/*,commit)
+[35m[K../vulnerable-api/.git/hooks/update.sample[m[K[36m[K-[m[K[32m[K72[m[K[36m[K-[m[K		# un-annotated tag
+[35m[K../vulnerable-api/.git/hooks/update.sample[m[K[36m[K:[m[K[32m[K73[m[K[36m[K:[m[K		sh[01;31m[Kort_refname=[m[K${refname##refs/tags/}
+[35m[K../vulnerable-api/.git/hooks/update.sample[m[K[36m[K-[m[K[32m[K74[m[K[36m[K-[m[K		if [ "$allowunannotated" != "true" ]; then
+[36m[K--[m[K
+[35m[K../vulnerable-api/.git/info/exclude[m[K[36m[K:[m[K[32m[K1[m[K[36m[K:[m[K# git ls-files --others --e[01;31m[Kxclude-from=[m[K.git/info/exclude
+[35m[K../vulnerable-api/.git/info/exclude[m[K[36m[K-[m[K[32m[K2[m[K[36m[K-[m[K# Lines that start with '#' are comments.
+[36m[K--[m[K
+[35m[K../vulnerable-api/ansible/roles/api/files/vAPI.conf[m[K[36m[K-[m[K[32m[K8[m[K[36m[K-[m[K
+[35m[K../vulnerable-api/ansible/roles/api/files/vAPI.conf[m[K[36m[K-[m[K[32m[K9[m[K[36m[K-[m[Kautostart=true
+[35m[K../vulnerable-api/ansible/roles/api/files/vAPI.conf[m[K[36m[K-[m[K[32m[K10[m[K[36m[K-[m[K
+[35m[K../vulnerable-api/ansible/roles/api/files/vAPI.conf[m[K[36m[K:[m[K[32m[K11[m[K[36m[K:[m[K[01;31m[Kautorestart=[m[Ktrue
+[35m[K../vulnerable-api/ansible/roles/api/files/vAPI.conf[m[K[36m[K-[m[K[32m[K12[m[K[36m[K-[m[K
+[35m[K../vulnerable-api/ansible/roles/api/files/vAPI.conf[m[K[36m[K:[m[K[32m[K13[m[K[36m[K:[m[K[01;31m[Kredirect_stderr=[m[Ktrue
+[36m[K--[m[K
+[35m[K../vulnerable-api/ansible/roles/api/files/vAPI.py[m[K[36m[K-[m[K[32m[K53[m[K[36m[K-[m[K            # But etree will throw an exception for XXE, so ignore that
+[35m[K../vulnerable-api/ansible/roles/api/files/vAPI.py[m[K[36m[K-[m[K[32m[K54[m[K[36m[K-[m[K            pass
+[35m[K../vulnerable-api/ansible/roles/api/files/vAPI.py[m[K[36m[K-[m[K[32m[K55[m[K[36m[K-[m[K        # force unsafe external entity parsing
+[35m[K../vulnerable-api/ansible/roles/api/files/vAPI.py[m[K[36m[K:[m[K[32m[K56[m[K[36m[K:[m[K        parser = etree.XMLParser(load_dtd=True, r[01;31m[Kesolve_entities=[m[KTrue)
+[35m[K../vulnerable-api/ansible/roles/api/files/vAPI.py[m[K[36m[K-[m[K[32m[K57[m[K[36m[K-[m[K        data = etree.parse(request.body, parser)

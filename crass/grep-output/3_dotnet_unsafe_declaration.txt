@@ -1,0 +1,11 @@
+# Info: If you declare a variable 'unsafe' in .NET you can do pointer arythmetic and therefore introduce buffer overflows etc. again
+# Filename 3_dotnet_unsafe_declaration.txt
+# Example: int unsafe bla
+# False positive example: FALSE_POSITIVES_EXAMPLE_PLACEHOLDER
+# Grep args: 
+# Search regex: unsafe\s
+[35m[K../vulnerable-api/ansible/roles/api/files/vAPI.py[m[K[36m[K-[m[K[32m[K52[m[K[36m[K-[m[K        except Exception:
+[35m[K../vulnerable-api/ansible/roles/api/files/vAPI.py[m[K[36m[K-[m[K[32m[K53[m[K[36m[K-[m[K            # But etree will throw an exception for XXE, so ignore that
+[35m[K../vulnerable-api/ansible/roles/api/files/vAPI.py[m[K[36m[K-[m[K[32m[K54[m[K[36m[K-[m[K            pass
+[35m[K../vulnerable-api/ansible/roles/api/files/vAPI.py[m[K[36m[K:[m[K[32m[K55[m[K[36m[K:[m[K        # force [01;31m[Kunsafe [m[Kexternal entity parsing
+[35m[K../vulnerable-api/ansible/roles/api/files/vAPI.py[m[K[36m[K-[m[K[32m[K56[m[K[36m[K-[m[K        parser = etree.XMLParser(load_dtd=True, resolve_entities=True)

@@ -1,0 +1,17 @@
+# Info: Bypass. Sounds suspicious, what do they bypass exactly?
+# Filename 5_general_bypass.txt
+# Example: bypass
+# False positive example: FALSE_POSITIVES_EXAMPLE_PLACEHOLDER
+# Grep args: -i
+# Search regex: bypass
+[35m[K../vulnerable-api/README.md[m[K[36m[K-[m[K[32m[K333[m[K[36m[K-[m[K1. Transport Layer Security
+[35m[K../vulnerable-api/README.md[m[K[36m[K-[m[K[32m[K334[m[K[36m[K-[m[K2. User enumeration
+[35m[K../vulnerable-api/README.md[m[K[36m[K-[m[K[32m[K335[m[K[36m[K-[m[K3. Information exposure through server headers
+[35m[K../vulnerable-api/README.md[m[K[36m[K:[m[K[32m[K336[m[K[36m[K:[m[K4. Authentication [01;31m[Kbypass[m[K
+[35m[K../vulnerable-api/README.md[m[K[36m[K-[m[K[32m[K337[m[K[36m[K-[m[K5. User input validation
+[36m[K--[m[K
+[35m[K../vulnerable-api/README.md[m[K[36m[K-[m[K[32m[K339[m[K[36m[K-[m[K7. Error handling
+[35m[K../vulnerable-api/README.md[m[K[36m[K-[m[K[32m[K340[m[K[36m[K-[m[K8. Session management
+[35m[K../vulnerable-api/README.md[m[K[36m[K-[m[K[32m[K341[m[K[36m[K-[m[K9. Encryption
+[35m[K../vulnerable-api/README.md[m[K[36m[K:[m[K[32m[K342[m[K[36m[K:[m[K10. AuthN [01;31m[Kbypass[m[K
+[35m[K../vulnerable-api/README.md[m[K[36m[K-[m[K[32m[K343[m[K[36m[K-[m[K11. Command Injection
